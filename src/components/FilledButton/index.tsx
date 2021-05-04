@@ -1,23 +1,23 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { Button } from 'react-native-paper';
-import theme from '../theme';
+import theme from '../../theme';
 
 type Props = {
   style?: StyleProp<ViewStyle>,
   labelStyle?: StyleProp<TextStyle>,
   icon?: string,
-  mode?: 'text' | 'outlined' | 'contained',
   onPress?: () => void,
   children?: React.ReactNode
 };
 
-const SButton = ({ style, labelStyle, icon, mode, onPress, ...props }: Props) => {
-  const _mode = mode ? mode : 'outlined';
+const FilledButton = ({ style, labelStyle, icon, onPress, ...props }: Props) => {
   const buttonStyles = [style, styles.button];
   const labelStyles= [labelStyle, styles.label];
+
   return (
-    <Button style={buttonStyles} labelStyle={labelStyles} icon={icon} mode={_mode} onPress={onPress}>
+    <Button testID='FilledButton' style={buttonStyles} labelStyle={labelStyles} icon={icon} mode={'outlined'} onPress={onPress}>
       {props.children}
     </Button>
   );
@@ -31,13 +31,16 @@ interface Styles {
 const styles: Styles = StyleSheet.create({
   button: {
     //width: 150,
-    backgroundColor: theme.colors.peachCrayolaTransparent,
+    backgroundColor: theme.colors.peachCrayola,
     borderRadius: 20,
   },
   label: {
-    fontSize: 16,
-    color: '#FFFFFF'
+    fontFamily: 'OpenSans-Light',
+    fontSize: theme.fontSizes.medium,
+    textShadowColor: theme.colors.gray,
+    textShadowRadius: 1,
+    color: 'white',
   }
 });
 
-export default SButton;
+export default FilledButton;

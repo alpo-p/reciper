@@ -1,5 +1,5 @@
-import { Dimensions, Platform } from 'react-native';
-import { configureFonts, DefaultTheme } from 'react-native-paper';
+import { Dimensions } from 'react-native';
+import { DefaultTheme } from 'react-native-paper';
 
 const theme = {
   colors: {
@@ -16,64 +16,18 @@ const theme = {
   dimensions: {
     height: Dimensions.get('window').height,
   },
-  fonts: {
-    main: Platform.select({
-      android: 'sans-serif-light',
-      ios: 'GillSans-Light'
-    })
-  },
   fontSizes: {
-    medium: 14,
-    bigger: 16,
+    medium: 18,
+    bigger: 22,
   },
-};
-
-const fontConfig = {
-  ios: {
-    regular: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    medium: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    light: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    thin: {
-      fontFamily: 'sans-serif-thin',
-      fontWeight: 'normal',
-    },
-  },
-  android: {
-    regular: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    medium: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    light: {
-      fontFamily: 'sans-serif-light',
-      fontWeight: 'normal',
-    },
-    thin: {
-      fontFamily: 'sans-serif-thin',
-      fontWeight: 'normal',
-    },
-  }
 };
 
 export const paperTheme = {
   ...DefaultTheme,
-  fonts: configureFonts(fontConfig),
   colors: {
     ...DefaultTheme.colors,
-    primary: theme.colors.rifleGreen,
-    //accent: theme.colors.mainGreen,
+    primary: theme.colors.peachCrayola,
+    text: theme.colors.darkGray 
   }
 };
 

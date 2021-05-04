@@ -2,20 +2,23 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
-import { Title } from 'react-native-paper';
-import SButton from '../../../components/SButton';
+import FilledButton from '../../../components/FilledButton';
+import SLogo from '../../../components/Logo';
+import SText from '../../../components/SText';
+import STitle from '../../../components/STitle';
+import TextButton from '../../../components/TextButton';
 import theme from '../../../theme';
 
 const ChooseLoginOrRegister = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.form}>
-      <SButton onPress={() => navigation.navigate('Login')} style={styles.buttons}>
+      <FilledButton onPress={() => navigation.navigate('Register')}>
+        Register
+      </FilledButton>
+      <TextButton onPress={() => navigation.navigate('Login')} style={styles.textButton}>
         Already an user? Login! 
-      </SButton>
-      <SButton onPress={() => navigation.navigate('Register')}>
-        Register a new user
-      </SButton>
+      </TextButton>
     </View>
   );
 };
@@ -30,7 +33,10 @@ const WelcomeContainer = () => {
       blurRadius={2}
     >
       <View style={styles.container}>
-        <Title style={styles.title}>WELCOME TO RECIPER</Title>
+        <STitle>WELCOME TO</STitle>
+        <SLogo />
+        <STitle>___________</STitle>
+        <SText style={styles.subheading}>The best app to find recipes!</SText>
         <ChooseLoginOrRegister />
       </View>
     </ImageBackground>
@@ -38,27 +44,28 @@ const WelcomeContainer = () => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    color: theme.colors.gray,
-    fontFamily: 'sans-serif-thin',
-    fontSize: 30,
-    alignSelf: 'center'
-  },
   container: {
     height: theme.dimensions.height,
     marginTop: '65%',
     marginLeft: '10%',
     marginRight: '10%',
   },
+  subheading: {
+    marginTop: '5%',
+    fontSize: theme.fontSizes.bigger
+  },
   img: {
     width: '100%',
     height: '100%'
   },
   form: {
-    marginTop: '120%',
+    //marginTop: '50%'
+    position: 'absolute',
+    alignSelf: 'center',
+    bottom: '30%'
   },
-  buttons: {
-    marginBottom: 20,
+  textButton: {
+    marginTop: '5%',
   }
 });
 

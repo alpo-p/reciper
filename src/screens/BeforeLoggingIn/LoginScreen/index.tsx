@@ -2,7 +2,6 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import { Title } from 'react-native-paper';
-import SButton from '../../../components/SButton';
 import SText from '../../../components/SText';
 import theme from '../../../theme';
 
@@ -10,9 +9,6 @@ const LoginForm = () => {
   return (
     <View style={styles.form}>
       <SText>Tähän formi</SText>
-      <SButton style={styles.buttons}>
-        Login
-      </SButton>
     </View>
   );
 };
