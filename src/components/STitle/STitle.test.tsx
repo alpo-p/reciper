@@ -3,13 +3,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import STitle from './index';
-
-
-interface ExtendedMatchers extends jest.Matchers<void> {
-  toHaveTextContent: (htmlElement: string) => object;
-  toBeInTheDOM: () => void;
-}
-
+import { ExtendedMatchers } from '../../test_types';
 
 describe('The stylish title text', () => {
   it('renders correctly with text from props.children', () => {

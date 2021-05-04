@@ -5,6 +5,7 @@ import { Title } from 'react-native-paper';
 import SText from '../../../components/SText';
 import theme from '../../../theme';
 
+//TÄHÄN JÄIN; KAIKKI MUU TOIMII :)
 const LoginForm = () => {
   return (
     <View style={styles.form}>

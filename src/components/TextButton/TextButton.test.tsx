@@ -3,13 +3,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import TextButton from './index';
-
-
-interface ExtendedMatchers extends jest.Matchers<void> {
-  toHaveTextContent: (htmlElement: string) => object;
-  toBeInTheDOM: () => void;
-}
-
+import { ExtendedMatchers } from '../../test_types';
 
 describe('The text button', () => {
   it('renders correctly with text based on props.children', () => {

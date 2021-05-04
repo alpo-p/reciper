@@ -3,13 +3,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import Logo from './index';
-
-
-interface ExtendedMatchers extends jest.Matchers<void> {
-  toHaveTextContent: (htmlElement: string) => object;
-  toBeInTheDOM: () => void;
-}
-
+import { ExtendedMatchers } from '../../test_types';
 
 describe('The Logo', () => {
   it('renders correctly with text', () => {
