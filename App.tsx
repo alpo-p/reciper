@@ -1,19 +1,17 @@
 import React from 'react';
-import Constants from 'expo-constants';
+import { Provider } from 'react-native-paper';
+
+import { paperTheme } from './src/theme';
 
 import Main from './src/Main';
-import { StyleSheet, View } from 'react-native';
+//import theme from './src/theme';
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <Provider theme={paperTheme}>
       <Main  />
-    </View>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: Constants.statusBarHeight
-  }
-});

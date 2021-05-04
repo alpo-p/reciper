@@ -1,37 +1,42 @@
 import React from 'react';
-import { GestureResponderEvent, Pressable, StyleProp, StyleSheet, Text, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Button } from 'react-native-paper';
 import theme from '../theme';
 
 type Props = {
   style?: StyleProp<ViewStyle>,
-  onPress?: (event: GestureResponderEvent) => void,
+  labelStyle?: StyleProp<TextStyle>,
+  icon?: string,
+  mode?: 'text' | 'outlined' | 'contained',
+  onPress?: () => void,
   children?: React.ReactNode
 };
 
-const SButton = ({ style, onPress, ...props }: Props) => {
-  const buttonStyle = [styles.button, style];
+const SButton = ({ style, labelStyle, icon, mode, onPress, ...props }: Props) => {
+  const _mode = mode ? mode : 'outlined';
+  const buttonStyles = [style, styles.button];
+  const labelStyles= [labelStyle, styles.label];
   return (
-    <Pressable style={buttonStyle} onPress={onPress}>
-      <Text style={styles.text}>{props.children}</Text>
-    </Pressable>
+    <Button style={buttonStyles} labelStyle={labelStyles} icon={icon} mode={_mode} onPress={onPress}>
+      {props.children}
+    </Button>
   );
 };
 
-const styles = StyleSheet.create({
-  button: {
-    height: 50,
-    width: 150,
-    borderColor: theme.colors.gray,
-    borderRadius: 25,
-    borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+interface Styles {
+  button: ViewStyle,
+  label: TextStyle
+}
 
+const styles: Styles = StyleSheet.create({
+  button: {
+    //width: 150,
+    backgroundColor: theme.colors.peachCrayolaTransparent,
+    borderRadius: 20,
   },
-  text: {
-    fontFamily: theme.fonts.main,
-    fontSize: theme.fontSizes.bigger,
-    color: theme.colors.darkGray 
+  label: {
+    fontSize: 16,
+    color: '#FFFFFF'
   }
 });
 
