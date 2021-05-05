@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text } from 'react-native-paper';
 import { StyleSheet, TextStyle, View } from 'react-native';
+import theme from '../../theme';
 
 const Logo = () => (
   <View>
@@ -17,7 +18,7 @@ const styles: Styles = StyleSheet.create({
   text: {
     fontFamily: 'TangerineBold',
     paddingRight: 10,
-    fontSize: 85,
+    fontSize: theme.fontSizes.huge,
     alignSelf: 'center'
   }
 });

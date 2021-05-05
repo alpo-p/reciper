@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { Text } from 'react-native-paper';
+import theme from '../../theme';
 
 const STitle = ({ ...props }: {children: React.ReactNode}) => (
   <Text testID='STitle' style={styles.title}>{props.children}</Text>
@@ -15,7 +16,7 @@ const styles: Styles = StyleSheet.create({
   title: {
     fontFamily: 'OpenSans-Bold',
     textAlign: 'center',
-    fontSize: 40,
+    fontSize: theme.fontSizes.bigger,
   },
 });
 

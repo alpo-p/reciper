@@ -34,7 +34,7 @@ const styles: Styles = StyleSheet.create({
   button: {
     borderWidth: 1.3,
     borderColor: theme.colors.primaryWhite,
-    borderRadius: theme.buttons.borderRadius,
+    borderRadius: theme.borders.borderRadius,
   },
   label: {
     fontFamily: 'OpenSans-Bold',

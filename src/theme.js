@@ -5,25 +5,20 @@ const theme = {
   colors: {
     primaryWhite: '#f5f5f5',
     primaryColor: '#2a9d8f',
-    //OLD SHIT
-    peachCrayolaTransparent: 'rgba(241, 191, 152, 0.4)',
-    peachCrayola: 'rgb(241, 191, 152)',
-    nyanza: '#E1F4CB',
-    laurelGreen: '#BACBA9',
-    nickel: '#717568',
-    rifleGreen: '#3f4739',
-    gray: '#858585',
-    darkGray: '#545454',
-    //transparentGray: 'rgba(148, 148, 148, 0.1)',
+    error: '#e76f51',
+    lightBlack: '#666666',
   },
   dimensions: {
     height: Dimensions.get('window').height,
+    smoothWidth: '95%'
   },
   fontSizes: {
+    small: 12,
     medium: 18,
-    bigger: 22,
+    bigger: 40,
+    huge: 85,
   },
-  buttons: {
+  borders: {
     borderRadius: 10,
   }
 };

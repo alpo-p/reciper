@@ -3,7 +3,7 @@ import React from 'react';
 import { View } from 'react-native';
 import SLogo from '../../../components/Logo';
 import STitle from '../../../components/STitle';
-import { BackgroundImage } from '../BackgroundImage';
+import { BackgroundImage } from './BackgroundImage';
 import { LoginAndRegisterContainer } from './LoginAndRegisterContainer';
 import { styles } from './styles';
 

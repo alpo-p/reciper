@@ -9,7 +9,7 @@ interface Props {
   style?: StyleProp<TextStyle>
 }
 
-const SText = ({ ...props }: Props) => {
+const BoldText = ({ ...props }: Props) => {
   const _styles = [styles.text, props.style] as TextStyle;
 
   return (
@@ -23,7 +23,7 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   text: {
-    fontFamily: 'OpenSans-Light',
+    fontFamily: 'OpenSans-Bold',
     paddingRight: 10,
     fontSize: theme.fontSizes.medium,
     alignSelf: 'center',
@@ -31,4 +31,4 @@ const styles: Styles = StyleSheet.create({
   }
 });
 
-export default SText;
+export default BoldText;

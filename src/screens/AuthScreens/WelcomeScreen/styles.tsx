@@ -3,10 +3,11 @@ import theme from '../../../theme';
 
 interface Styles {
   container: ViewStyle,
+  logo: ViewStyle,
   subheading: TextStyle,
-  img: ImageStyle
-  buttons: ViewStyle
-  outlinedButton: ViewStyle
+  img: ImageStyle,
+  buttons: ViewStyle,
+  outlinedButton: ViewStyle,
 }
 
 export const styles: Styles = StyleSheet.create({
@@ -25,8 +26,8 @@ export const styles: Styles = StyleSheet.create({
   },
   buttons: {
     marginTop: 20,
-    paddingLeft: 15,
-    paddingRight: 15
+    alignSelf: 'center',
+    width: theme.dimensions.smoothWidth,
   },
   outlinedButton: {
     marginTop: 10,

@@ -4,8 +4,8 @@ import theme from "../../theme";
 export const styles = StyleSheet.create({
   container: {
     width: '95%',
-    borderRadius: theme.buttons.borderRadius,
+    borderRadius: theme.borders.borderRadius,
     alignSelf: 'center',
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.primaryWhite,
   }
 });

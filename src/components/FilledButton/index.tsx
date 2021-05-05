@@ -33,7 +33,7 @@ interface Styles {
 const styles: Styles = StyleSheet.create({
   button: {
     width: '100%',
-    borderRadius: theme.buttons.borderRadius,
+    borderRadius: theme.borders.borderRadius,
     borderWidth: 0,
   },
   label: {

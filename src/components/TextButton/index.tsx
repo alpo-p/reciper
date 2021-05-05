@@ -12,7 +12,7 @@ type Props = {
   children?: React.ReactNode
 };
 
-const SButton = ({ style, labelStyle, icon, onPress, ...props }: Props) => {
+const TextButton = ({ style, labelStyle, icon, onPress, ...props }: Props) => {
   const buttonStyles = [style, styles.button];
   const labelStyles= [labelStyle, styles.label];
 
@@ -39,4 +39,4 @@ const styles: Styles = StyleSheet.create({
   }
 });
 
-export default SButton;
+export default TextButton;
