@@ -5,32 +5,30 @@ interface Styles {
   container: ViewStyle,
   subheading: TextStyle,
   img: ImageStyle
-  form: ViewStyle
-  textButton: ViewStyle
+  buttons: ViewStyle
+  outlinedButton: ViewStyle
 }
 
 export const styles: Styles = StyleSheet.create({
   container: {
     height: theme.dimensions.height,
-    marginTop: '65%',
-    marginLeft: '10%',
-    marginRight: '10%',
+  },
+  logo : {
+    marginTop: 130
   },
   subheading: {
-    marginTop: '5%',
-    fontSize: theme.fontSizes.bigger
+    marginTop: 390,
   },
   img: {
     width: '100%',
     height: '100%'
   },
-  form: {
-    //marginTop: '50%'
-    position: 'absolute',
-    alignSelf: 'center',
-    bottom: '30%'
+  buttons: {
+    marginTop: 20,
+    paddingLeft: 15,
+    paddingRight: 15
   },
-  textButton: {
-    marginTop: '5%',
-  }
+  outlinedButton: {
+    marginTop: 10,
+  },
 });

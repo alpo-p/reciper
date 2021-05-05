@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import { StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
 import { Button } from 'react-native-paper';
 import theme from '../../theme';
 
@@ -17,9 +17,11 @@ const FilledButton = ({ style, labelStyle, icon, onPress, ...props }: Props) => 
   const labelStyles= [labelStyle, styles.label];
 
   return (
-    <Button testID='FilledButton' style={buttonStyles} labelStyle={labelStyles} icon={icon} mode={'outlined'} onPress={onPress}>
-      {props.children}
-    </Button>
+    <View>
+      <Button testID='FilledButton' style={buttonStyles} labelStyle={labelStyles} icon={icon} mode={'contained'} onPress={onPress}>
+        {props.children}
+      </Button>
+    </View>
   );
 };
 
@@ -30,16 +32,13 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   button: {
-    //width: 150,
-    backgroundColor: theme.colors.peachCrayola,
-    borderRadius: 20,
+    width: '100%',
+    borderRadius: theme.buttons.borderRadius,
+    borderWidth: 0,
   },
   label: {
-    fontFamily: 'OpenSans-Light',
+    fontFamily: 'OpenSans-Bold',
     fontSize: theme.fontSizes.medium,
-    textShadowColor: theme.colors.gray,
-    textShadowRadius: 1,
-    color: 'white',
   }
 });
 

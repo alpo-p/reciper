@@ -23,13 +23,9 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   text: {
-    fontFamily: 'CaviarDreams',
+    fontFamily: 'OpenSans-Light',
     paddingRight: 10,
     fontSize: theme.fontSizes.medium,
-    color: 'white',
-    textShadowColor: theme.colors.gray,
-    textShadowRadius: 1,
-    textShadowOffset:{width: 1, height: 1},
     alignSelf: 'center'
   }
 });

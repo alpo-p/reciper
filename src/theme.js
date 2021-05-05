@@ -3,6 +3,9 @@ import { DefaultTheme } from 'react-native-paper';
 
 const theme = {
   colors: {
+    primaryWhite: '#f5f5f5',
+    primaryColor: '#2a9d8f',
+    //OLD SHIT
     peachCrayolaTransparent: 'rgba(241, 191, 152, 0.4)',
     peachCrayola: 'rgb(241, 191, 152)',
     nyanza: '#E1F4CB',
@@ -20,14 +23,17 @@ const theme = {
     medium: 18,
     bigger: 22,
   },
+  buttons: {
+    borderRadius: 10,
+  }
 };
 
 export const paperTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: theme.colors.peachCrayola,
-    text: theme.colors.darkGray 
+    primary: theme.colors.primaryColor,
+    text: theme.colors.primaryWhite, 
   }
 };
 

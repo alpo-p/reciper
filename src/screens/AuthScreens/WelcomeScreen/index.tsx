@@ -2,28 +2,29 @@
 import React from 'react';
 import { View } from 'react-native';
 import SLogo from '../../../components/Logo';
-import SText from '../../../components/SText';
 import STitle from '../../../components/STitle';
-import { FoodBackgroundImage } from '../FoodBackgroundImage';
-import { LoginOrRegisterContainer } from './LoginOrRegisterContainer';
+import { BackgroundImage } from '../BackgroundImage';
+import { LoginAndRegisterContainer } from './LoginAndRegisterContainer';
 import { styles } from './styles';
 
 export const WelcomeText = () => (
   <View testID='WelcomeText' >
-    <STitle>WELCOME TO</STitle>
-    <SLogo />
-    <STitle>___________</STitle>
-    <SText style={styles.subheading}>Find the best recipes!</SText>
+    <View style={styles.logo}>
+      <SLogo />
+    </View>
+    <View style={styles.subheading}>
+      <STitle>Find the best recipes.</STitle>
+    </View>
   </View>
 );
 
 const WelcomeScreen = () => (
-  <FoodBackgroundImage>
+  <BackgroundImage>
     <View style={styles.container}>
       <WelcomeText />
-      <LoginOrRegisterContainer />
+      <LoginAndRegisterContainer />
     </View>
-  </FoodBackgroundImage>
+  </BackgroundImage>
 );
 
 export default function () {

@@ -11,8 +11,7 @@ export default function App() {
   const [fontsLoaded, error] = useFonts({
     'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
     'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
-    'TangerineRegular': require('./assets/fonts/TangerineRegular.ttf'),
-    'CaviarDreams': require('./assets/fonts/CaviarDreams.ttf')
+    'TangerineBold': require('./assets/fonts/TangerineBold.ttf'),
   }); 
 
   if (!fontsLoaded || error) {

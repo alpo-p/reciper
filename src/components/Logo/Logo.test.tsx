@@ -10,6 +10,6 @@ describe('The Logo', () => {
     const { getByTestId } = render(<Logo />);
     const logo = getByTestId('Logo');
 
-    (expect(logo) as unknown as ExtendedMatchers).toHaveTextContent('Reciper');
+    (expect(logo) as unknown as ExtendedMatchers).toHaveTextContent('reciper');
   }); 
 });
