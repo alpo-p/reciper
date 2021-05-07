@@ -31,7 +31,8 @@ export const LoginAndRegisterContainer = () => {
   const toggleLoginModal = () => setLoginVisible(!loginVisible);
 
   const handleSubmitRegister = (values: RegisterAndLoginFormValues) => {
-    console.log(values);
+    console.log(values.username);
+    console.log(values.password);
   };
 
   return (

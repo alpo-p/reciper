@@ -1,23 +1,30 @@
+/* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { render } from '@testing-library/react-native';
 import React from 'react';
 import RegisterModal from '.';
 
 describe('Register modal', () => {
-  const init = () => {
-    const visible = true;
+  const init = (visible: boolean) => {
     const toggle = () => console.log('toggling');
-    const submit = jest.fn();
-    const { getByText } = render(
-      <RegisterModal registerVisible={visible} toggleRegisterVisible={toggle} handleSubmit={submit} />
+    const onSubmit = jest.fn();
+    const { getByText, queryByText  } = render(
+      <RegisterModal registerVisible={visible} toggleRegisterVisible={toggle} handleSubmit={onSubmit} />
     );
 
-    return { getByText };
+    return { getByText, queryByText }; 
   };
 
   it('should render correctly by showing title "Register a new user"', () => {
-    const { getByText } = init();
+    const { getByText } = init(true);
     const text = getByText('Register a new user');
     expect(text).toBeTruthy();
   });
+
+  it('should not be visible when visible is set to false', () => {
+    const { queryByText } = init(false);
+    
+    expect(queryByText('Register a new user')).toBeFalsy();
+  });
+
 });

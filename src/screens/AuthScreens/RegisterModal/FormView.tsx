@@ -11,7 +11,7 @@ export const FormView = ({ onSubmit }: { onSubmit: () => void; }) => (
     <View style={styles.inputFields}>
       <FormikTextInput name="username" label="Username" />
       <FormikTextInput secureTextEntry name="password" label="Password" />
-      <FormikTextInput secureTextEntry name="confirmation" label="Password confirmation" />
+      <FormikTextInput secureTextEntry name="confirmation" label="Confirm your password" />
     </View>
     <View style={styles.formButton}>
       <FilledButton onPress={onSubmit}>Register</FilledButton>
