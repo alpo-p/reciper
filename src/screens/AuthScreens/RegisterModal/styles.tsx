@@ -11,12 +11,12 @@ interface Styles {
 
 export const styles: Styles = StyleSheet.create({
   modalContainer: {
-    marginBottom: 40,
-    height: 320
+    marginBottom: 60,
+    height: 365
   },
   header: {
     alignSelf: 'center',
-    marginBottom: 25,
+    marginBottom: 15,
   },
   formContainer: {
     alignItems: 'center',

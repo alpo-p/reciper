@@ -7,11 +7,11 @@ import { styles } from './styles';
 
 interface Props {
   name: string
-  placeholder: string
+  label: string
   secureTextEntry?: boolean
 }
 
-const FormikTextInput = ({ name, ...props}: Props) => {
+const FormikTextInput = ({ name, label, ...props}: Props) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.touched && meta.error;
 
@@ -25,6 +25,7 @@ const FormikTextInput = ({ name, ...props}: Props) => {
         }
       </View>
       <TextInput
+        label={label}
         style={styles.field}
         onChangeText={value => helpers.setValue(value)}
         onBlur={() => helpers.setTouched(true)}

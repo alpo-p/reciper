@@ -3,7 +3,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import FilledButton from './index';
-import { ExtendedMatchers } from '../../test_types';
+import { ExtendedMatchers } from '../../types';
 
 describe('The filled button', () => {
   it('renders correctly with text based on props.children', () => {

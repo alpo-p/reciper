@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { FormView } from "./FormView";
+import { RegisterAndLoginFormValues } from '../../../types';
 
 const initialValues = {
   username: '',
@@ -27,7 +28,7 @@ const validationSchema: yup.ObjectSchema<any> = yup.object().shape({
     .oneOf([yup.ref('password'), null], `Passwords don't match!`)
 });
 
-export const FormikForm = ({ onSubmit }: { onSubmit: () => void; }) => (
+export const FormikForm = ({ onSubmit }: { onSubmit: (values: RegisterAndLoginFormValues) => void; }) => (
   <Formik
     initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
     {({ handleSubmit }) => <FormView onSubmit={handleSubmit} />}

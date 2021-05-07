@@ -27,11 +27,7 @@ export const styles: Styles = StyleSheet.create({
     minHeight: 8,
   },
   field: {
-    height: 45,
-    padding: 10,
-    backgroundColor: '#e0e0e0',
-    color: theme.colors.lightBlack,
     borderRadius: theme.borders.borderRadius,
-    marginBottom: 10,
+    marginBottom: 5,
   },
 });

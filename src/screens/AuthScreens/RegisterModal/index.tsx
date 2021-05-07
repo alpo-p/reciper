@@ -7,10 +7,12 @@ import SModal from '../../../components/SModal';
 import { styles } from './styles';
 import { FormikForm } from './FormikForm';
 import BoldText from '../../../components/BoldText';
+import { RegisterAndLoginFormValues } from '../../../types';
 
 interface Props {
   registerVisible: boolean
   toggleRegisterVisible: () => void
+  handleSubmit: (values: RegisterAndLoginFormValues) => void
 }
 
 const Header = () => (
@@ -19,17 +21,11 @@ const Header = () => (
   </View>
 );
 
-const RegisterModal = ({ registerVisible, toggleRegisterVisible }: Props) => {
-  const handleSubmit = () => {
-    console.log("register OK!");
-  };
-
-  return (
-    <SModal style={styles.modalContainer} visible={registerVisible} toggleVisible={toggleRegisterVisible}>
-      <Header />
-      <FormikForm onSubmit={handleSubmit}/> 
-    </SModal>
-  );
-};
+const RegisterModal = ({ registerVisible, toggleRegisterVisible, handleSubmit }: Props) => (
+  <SModal style={styles.modalContainer} visible={registerVisible} toggleVisible={toggleRegisterVisible}>
+    <Header />
+    <FormikForm onSubmit={handleSubmit}/> 
+  </SModal>
+);
 
 export default RegisterModal;

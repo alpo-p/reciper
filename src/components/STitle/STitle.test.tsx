@@ -3,7 +3,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import STitle from './index';
-import { ExtendedMatchers } from '../../test_types';
+import { ExtendedMatchers } from '../../types';
 
 describe('The stylish title text', () => {
   it('renders correctly with text from props.children', () => {

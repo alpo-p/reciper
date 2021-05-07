@@ -8,6 +8,7 @@ interface Props {
   toggleVisible: () => void
   children: React.ReactNode,
   style?: StyleProp<ViewStyle>
+  testID?: string
 }
 
 const SModal = ({ visible, toggleVisible, ...props }: Props) => {

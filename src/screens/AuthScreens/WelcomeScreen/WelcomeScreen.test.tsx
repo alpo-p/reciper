@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
-import { ExtendedMatchers } from '../../../test_types';
+import { ExtendedMatchers } from '../../../types';
 import { WelcomeText } from '.';
 import { LoginAndRegisterButtonsView } from './LoginAndRegisterContainer';
 

@@ -10,6 +10,7 @@ const theme = {
   },
   dimensions: {
     height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width,
     smoothWidth: '95%'
   },
   fontSizes: {
@@ -28,6 +29,7 @@ export const paperTheme = {
   colors: {
     ...DefaultTheme.colors,
     primary: theme.colors.primaryColor,
+    accent: theme.colors.primaryColor,
     text: theme.colors.primaryWhite, 
   }
 };

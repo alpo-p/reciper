@@ -3,7 +3,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import Logo from './index';
-import { ExtendedMatchers } from '../../test_types';
+import { ExtendedMatchers } from '../../types';
 
 describe('The Logo', () => {
   it('renders correctly with text', () => {

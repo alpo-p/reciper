@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Provider, Portal } from 'react-native-paper';
 import FilledButton from '../../../components/FilledButton';
 import OutlinedButton from '../../../components/OutlinedButton';
+import { RegisterAndLoginFormValues } from '../../../types';
 import RegisterModal from '../RegisterModal';
 import { styles } from './styles';
 
@@ -26,15 +27,23 @@ export const LoginAndRegisterContainer = () => {
   const [registerVisible, setRegisterVisible] = useState(false);
   const [loginVisible, setLoginVisible] = useState(false);
 
-  const toggleRegister = () => setRegisterVisible(!registerVisible);
-  const toggleLogin = () => setLoginVisible(!loginVisible);
+  const toggleRegisterModal = () => setRegisterVisible(!registerVisible);
+  const toggleLoginModal = () => setLoginVisible(!loginVisible);
+
+  const handleSubmitRegister = (values: RegisterAndLoginFormValues) => {
+    console.log(values);
+  };
 
   return (
     <Provider>
       <Portal>
-        <RegisterModal registerVisible={registerVisible} toggleRegisterVisible={toggleRegister} />
+        <RegisterModal 
+          handleSubmit={handleSubmitRegister} 
+          registerVisible={registerVisible} 
+          toggleRegisterVisible={toggleRegisterModal} 
+        />
       </Portal>
-      <LoginAndRegisterButtonsView toRegister={toggleRegister} toLogin={toggleLogin} />
+      <LoginAndRegisterButtonsView toRegister={toggleRegisterModal} toLogin={toggleLoginModal} />
     </Provider>
   );
 };

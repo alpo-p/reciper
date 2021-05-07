@@ -3,7 +3,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import SText from './index';
-import { ExtendedMatchers } from '../../test_types';
+import { ExtendedMatchers } from '../../types';
 
 describe('The stylish text', () => {
   it('renders correctly with text', () => {
