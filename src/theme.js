@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions, StatusBar } from 'react-native';
 import { DefaultTheme } from 'react-native-paper';
 
 const theme = {
@@ -11,6 +11,7 @@ const theme = {
   dimensions: {
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
+    statusBar: StatusBar.currentHeight,
     smoothWidth: '95%'
   },
   fontSizes: {

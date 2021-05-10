@@ -7,8 +7,6 @@ import { RegisterAndLoginFormValues } from '../../../types';
 
 import { LoginAndRegisterButtonsView } from './LoginAndRegisterButtonsView';
 
-import LoginModal from '../LoginModal';
-import RegisterModal from '../RegisterModal';
 import ModalProvider from './ModalProvider';
 
 export const LoginAndRegisterContainer = () => {
@@ -30,6 +28,7 @@ export const LoginAndRegisterContainer = () => {
     if (success) {
       navigation.navigate('HomeScreen');
     }
+    console.log('Invalid creds!');
   };
 
   return (
