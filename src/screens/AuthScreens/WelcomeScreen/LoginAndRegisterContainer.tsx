@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { Provider, Portal } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/core';
+
+import useLogin from '../../../hooks/useLogin';
+
 import { RegisterAndLoginFormValues } from '../../../types';
-import LoginModal from '../LoginModal';
-import RegisterModal from '../RegisterModal';
+
 import { LoginAndRegisterButtonsView } from './LoginAndRegisterButtonsView';
 
+import LoginModal from '../LoginModal';
+import RegisterModal from '../RegisterModal';
+import ModalProvider from './ModalProvider';
+
 export const LoginAndRegisterContainer = () => {
+  const navigation = useNavigation();
+
   const [registerVisible, setRegisterVisible] = useState(false);
   const [loginVisible, setLoginVisible] = useState(false);
 
@@ -18,25 +26,22 @@ export const LoginAndRegisterContainer = () => {
   };
 
   const handleSubmitLogin = (values: RegisterAndLoginFormValues) => {
-    console.log(values.username);
-    console.log(values.password);
+    const success = useLogin(values);
+    if (success) {
+      navigation.navigate('HomeScreen');
+    }
   };
 
   return (
-    <Provider>
-      <Portal>
-        <RegisterModal 
-          handleSubmit={handleSubmitRegister} 
-          visible={registerVisible} 
-          toggleVisible={toggleRegisterModal} 
-        />
-        <LoginModal
-          handleSubmit={handleSubmitLogin}
-          visible={loginVisible}
-          toggleVisible={toggleLoginModal}
-        />
-      </Portal>
+    <ModalProvider
+      handleSubmitRegister={handleSubmitRegister}
+      registerVisible={registerVisible}
+      toggleRegisterModal={toggleRegisterModal}
+      handleSubmitLogin={handleSubmitLogin}
+      loginVisible={loginVisible}
+      toggleLoginModal={toggleLoginModal}
+    >
       <LoginAndRegisterButtonsView toRegister={toggleRegisterModal} toLogin={toggleLoginModal} />
-    </Provider>
+    </ModalProvider>
   );
 };

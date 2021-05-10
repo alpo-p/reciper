@@ -3,12 +3,19 @@ import { Provider } from 'react-native-paper';
 
 import { paperTheme } from './src/theme';
 
-import Main from './src/Main';
+import useLoadFonts from './src/hooks/useLoadFonts';
+import Routes from './src/Routes';
 
 export default function App() {
+  const [fontsLoaded, error] = useLoadFonts(); 
+  
+  if (!fontsLoaded || error) {
+    return <></>;
+  }
+  
   return (
     <Provider theme={paperTheme}>
-      <Main  />
+      <Routes  />
     </Provider>
   );
 }
