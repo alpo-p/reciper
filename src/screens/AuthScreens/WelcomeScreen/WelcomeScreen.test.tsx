@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { ExtendedMatchers } from '../../../types';
 import { WelcomeText } from '.';
-import { LoginAndRegisterButtonsView } from './LoginAndRegisterContainer';
+import { LoginAndRegisterButtonsView } from "./LoginAndRegisterButtonsView";
 
 describe('The welcome screen', () => {
   it('should render welcome text correctly', () => {

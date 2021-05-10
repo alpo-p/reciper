@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/screens/AuthScreens/WelcomeScreen/styles.tsx</title>
+    <title>Code coverage report for src/screens/AuthScreens/RegisterModal copy/styles.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/screens/AuthScreens/WelcomeScreen</a> styles.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/screens/AuthScreens/RegisterModal copy</a> styles.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -88,11 +88,17 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,7 +110,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,53 +119,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { StyleSheet, ViewStyle } from 'react-native';
 import theme from '../../../theme';
 &nbsp;
 interface Styles {
-  container: ViewStyle,
-  logo: ViewStyle,
-  subheading: TextStyle,
-  img: ImageStyle,
-  buttons: ViewStyle,
-  outlinedButton: ViewStyle,
+  modalContainer: ViewStyle,
+  header: ViewStyle,
+  formContainer: ViewStyle,
+  formButton: ViewStyle,
+  inputFields: ViewStyle,
 }
 &nbsp;
 export const styles: Styles = StyleSheet.create({
-  container: {
-    height: theme.dimensions.height,
+  modalContainer: {
+    marginBottom: 60,
+    height: 365
   },
-  logo : {
-    marginTop: 130
-  },
-  subheading: {
-    marginTop: 390,
-  },
-  img: {
-    width: '100%',
-    height: '100%'
-  },
-  buttons: {
-    marginTop: 20,
+  header: {
     alignSelf: 'center',
+    marginBottom: 15,
+  },
+  formContainer: {
+    alignItems: 'center',
+  },
+  inputFields: {
+    width: theme.dimensions.smoothWidth
+  },
+  formButton: {
     width: theme.dimensions.smoothWidth,
-  },
-  outlinedButton: {
-    marginTop: 10,
-  },
+    marginTop: 10
+  }
 });
 &nbsp;</pre></td></tr></table></pre>
 

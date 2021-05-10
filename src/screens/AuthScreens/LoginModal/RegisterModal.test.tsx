@@ -17,14 +17,14 @@ describe('Register modal', () => {
 
   it('should render correctly by showing title "Register a new user"', () => {
     const { getByText } = init(true);
-    const text = getByText('Create an account');
+    const text = getByText('Welcome back! Login below');
     expect(text).toBeTruthy();
   });
 
   it('should not be visible when visible is set to false', () => {
     const { queryByText } = init(false);
     
-    expect(queryByText('Create an account')).toBeFalsy();
+    expect(queryByText('Welcome back! Login below')).toBeFalsy();
   });
 
 });

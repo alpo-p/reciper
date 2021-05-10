@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/screens/AuthScreens/WelcomeScreen/styles.tsx</title>
+    <title>Code coverage report for src/screens/AuthScreens/RegisterModal copy/index.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/screens/AuthScreens/WelcomeScreen</a> styles.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/screens/AuthScreens/RegisterModal copy</a> index.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -87,12 +87,14 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -102,67 +104,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import theme from '../../../theme';
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { View } from 'react-native';
 &nbsp;
-interface Styles {
-  container: ViewStyle,
-  logo: ViewStyle,
-  subheading: TextStyle,
-  img: ImageStyle,
-  buttons: ViewStyle,
-  outlinedButton: ViewStyle,
+&nbsp;
+import SModal from '../../../components/SModal';
+&nbsp;
+import { styles } from './styles';
+import { FormikForm } from './FormikForm';
+import BoldText from '../../../components/BoldText';
+import { RegisterAndLoginFormValues } from '../../../types';
+&nbsp;
+interface Props {
+  visible: boolean
+  toggleVisible: () =&gt; void
+  handleSubmit: (values: RegisterAndLoginFormValues) =&gt; void
 }
 &nbsp;
-export const styles: Styles = StyleSheet.create({
-  container: {
-    height: theme.dimensions.height,
-  },
-  logo : {
-    marginTop: 130
-  },
-  subheading: {
-    marginTop: 390,
-  },
-  img: {
-    width: '100%',
-    height: '100%'
-  },
-  buttons: {
-    marginTop: 20,
-    alignSelf: 'center',
-    width: theme.dimensions.smoothWidth,
-  },
-  outlinedButton: {
-    marginTop: 10,
-  },
-});
-&nbsp;</pre></td></tr></table></pre>
+const Header = () =&gt; (
+  &lt;View style={styles.header}&gt;
+    &lt;BoldText&gt;Register a new user&lt;/BoldText&gt;
+  &lt;/View&gt;
+);
+&nbsp;
+const RegisterModal = ({ visible, toggleVisible, handleSubmit }: Props) =&gt; (
+  &lt;SModal style={styles.modalContainer} visible={visible} toggleVisible={toggleVisible}&gt;
+    &lt;Header /&gt;
+    &lt;FormikForm onSubmit={handleSubmit}/&gt; 
+  &lt;/SModal&gt;
+);
+&nbsp;
+export default RegisterModal;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

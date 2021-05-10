@@ -1,27 +1,9 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
 import { Provider, Portal } from 'react-native-paper';
-import FilledButton from '../../../components/FilledButton';
-import OutlinedButton from '../../../components/OutlinedButton';
 import { RegisterAndLoginFormValues } from '../../../types';
+import LoginModal from '../LoginModal';
 import RegisterModal from '../RegisterModal';
-import { styles } from './styles';
-
-interface Props {
-  toRegister: () => void
-  toLogin: () => void
-}
-
-export const LoginAndRegisterButtonsView = ({toRegister, toLogin}: Props) => (
-  <View style={styles.buttons}>
-    <FilledButton onPress={toRegister}>
-      Register
-    </FilledButton>
-    <OutlinedButton onPress={toLogin} style={styles.outlinedButton}>
-      Already an user? Login!
-    </OutlinedButton>
-  </View>
-);
+import { LoginAndRegisterButtonsView } from './LoginAndRegisterButtonsView';
 
 export const LoginAndRegisterContainer = () => {
   const [registerVisible, setRegisterVisible] = useState(false);
@@ -35,13 +17,23 @@ export const LoginAndRegisterContainer = () => {
     console.log(values.password);
   };
 
+  const handleSubmitLogin = (values: RegisterAndLoginFormValues) => {
+    console.log(values.username);
+    console.log(values.password);
+  };
+
   return (
     <Provider>
       <Portal>
         <RegisterModal 
           handleSubmit={handleSubmitRegister} 
-          registerVisible={registerVisible} 
-          toggleRegisterVisible={toggleRegisterModal} 
+          visible={registerVisible} 
+          toggleVisible={toggleRegisterModal} 
+        />
+        <LoginModal
+          handleSubmit={handleSubmitLogin}
+          visible={loginVisible}
+          toggleVisible={toggleLoginModal}
         />
       </Portal>
       <LoginAndRegisterButtonsView toRegister={toggleRegisterModal} toLogin={toggleLoginModal} />

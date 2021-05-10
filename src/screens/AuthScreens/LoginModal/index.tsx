@@ -17,7 +17,7 @@ interface Props {
 
 const Header = () => (
   <View style={styles.header}>
-    <BoldText>Create an account</BoldText>
+    <BoldText>Welcome back! Login below</BoldText>
   </View>
 );
 
