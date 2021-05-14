@@ -11,7 +11,7 @@ const theme = {
   dimensions: {
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
-    statusBar: StatusBar.currentHeight,
+    statusBar: StatusBar.currentHeight as number,
     smoothWidth: '95%'
   },
   fontSizes: {

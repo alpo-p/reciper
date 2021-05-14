@@ -15,10 +15,10 @@ export const styles: Styles = StyleSheet.create({
     height: theme.dimensions.height,
   },
   logo : {
-    marginTop: 130
+    marginTop: 180
   },
   subheading: {
-    marginTop: 390,
+    marginTop: 340,
   },
   img: {
     width: '100%',

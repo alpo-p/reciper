@@ -1,25 +1,51 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react';
-import { ImageBackground, ImageSourcePropType, View } from 'react-native';
+import { Video } from 'expo-av';
+import { StyleSheet, View } from 'react-native';
 import theme from '../../../theme';
 
-// source for image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F83457399321453561%2F&psig=AOvVaw2x7xuylCUUJ0xOZN7a8PiF&ust=1620283124695000&source=images&cd=vfe&ved=0CA0QjhxqGAoTCODwxJP3sfACFQAAAAAdAAAAABCDAQ
+// Video source: https://vod-progressive.akamaized.net/exp=1621001497~acl=%2A%2F1049364409.mp4%2A~hmac=5b5ec8e8794e90e413b694261dabc88f2e02c76a66a398130e227cff2caa67fb/vimeo-prod-skyfire-std-us/01/996/11/279984417/1049364409.mp4
 export const BackgroundImage = (props: { children: React.ReactNode; }) => (
-  <View style={{
-    backgroundColor: 'rgba(0,0,0,.7)'
-  }}>
-    <ImageBackground
-      style={{
-        width: theme.dimensions.width,
-        height: theme.dimensions.height + 50,
-      }}
-      imageStyle={{
-        opacity: 0.6
-      }}
-      source={require('../../../../assets/movingBackground.gif') as ImageSourcePropType}
-      blurRadius={4}
-    >
+  <View style={styles.container}>
+    <View style={styles.children}>
       {props.children}
-    </ImageBackground>
+    </View>
+    <Video
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      source={require('../../../../assets/movingBackground.mp4')}
+      rate={1.0}
+      isMuted={true}
+      resizeMode='cover'
+      shouldPlay
+      isLooping
+      style={styles.video}
+    />
   </View>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'rgba(0,0,0,.7)',
+    height: theme.dimensions.height,
+    flex: 1,
+    justifyContent: 'center',
+  },
+  children: {
+    height: theme.dimensions.height,
+    width: theme.dimensions.width,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: 2
+  },
+  video: {
+    height: theme.dimensions.height + theme.dimensions.statusBar,
+    width: theme.dimensions.width,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: 1
+  }
+});
