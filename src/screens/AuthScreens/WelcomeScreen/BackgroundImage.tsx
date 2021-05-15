@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     bottom: 0,
+    opacity: 0.9,
     zIndex: 1
   }
 });
