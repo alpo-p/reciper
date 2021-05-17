@@ -32,7 +32,6 @@ const LoginModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
 
 const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => {
   const [signIn] = useLogin();
-
   const navigation = useNavigation();
 
   const handleSubmitLogin = async (values: ILogin) => {
