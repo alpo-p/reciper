@@ -8,3 +8,12 @@ export const LOGIN = gql`
     ) {token}
   }
 `;
+
+export const REGISTER = gql`
+  mutation addUser($username:String!, $password:String!) {
+    addUser(
+      username:$username
+      password:$password
+    ) {id}
+  }
+`;

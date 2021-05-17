@@ -5,7 +5,6 @@ import STitle from '../../../components/STitle';
 import { styles } from './styles';
 
 const HomeScreen = () => {
-  console.log('Entering home screen');
   return (
     <View style={styles.homeContainer}>
       <STitle>Toimiii!</STitle>

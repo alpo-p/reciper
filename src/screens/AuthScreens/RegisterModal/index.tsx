@@ -8,6 +8,9 @@ import { styles } from './styles';
 import { FormikForm } from './FormikForm';
 import BoldText from '../../../components/BoldText';
 import { IRegister } from '../../../types';
+import useRegister from '../../../hooks/useRegister';
+import useLogin from '../../../hooks/useLogin';
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
   visible: boolean
@@ -29,9 +32,28 @@ const RegisterModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
 );
 
 const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) => {
-  const handleSubmitRegister = (values: IRegister) => {
-    console.log(values.username);
-    console.log(values.password);
+  const [signUp] = useRegister();
+  const [signIn] = useLogin();
+  const navigation = useNavigation();
+
+  const handleSubmitRegister = async (values: IRegister) => {
+    const { username, password, confirmation } = values;
+    if (password !== confirmation) {
+      throw new Error("Password doesn't match confirmation!");
+    }
+
+    try {
+      await signUp({ username, password });
+      await signIn({ username, password });
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }]
+      });
+    } catch(e) {
+      //TODO: show a popup or something?
+      console.log(e);
+    }
+
   };
 
   return (
