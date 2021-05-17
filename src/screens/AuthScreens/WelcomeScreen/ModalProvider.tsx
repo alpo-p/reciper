@@ -1,15 +1,15 @@
 import React from 'react';
 import { Provider, Portal } from 'react-native-paper';
-import { RegisterAndLoginFormValues } from '../../../types';
+import { ILogin, IRegister } from '../../../types';
   
 import LoginModal from '../LoginModal';
 import RegisterModal from '../RegisterModal';
 
 interface Props {
-  handleSubmitRegister: (values: RegisterAndLoginFormValues) => void
+  handleSubmitRegister: (values: IRegister) => void
   registerVisible: boolean
   toggleRegisterModal: () => void
-  handleSubmitLogin: (values: RegisterAndLoginFormValues) => void
+  handleSubmitLogin: (values: ILogin) => void
   loginVisible: boolean
   toggleLoginModal: () => void
   children?: React.ReactNode

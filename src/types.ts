@@ -6,8 +6,11 @@ export interface ExtendedMatchers extends jest.Matchers<void> {
   toBeInTheDOM: () => void;
 }
 
-export interface RegisterAndLoginFormValues {
+export interface ILogin {
   username: string
   password: string
-  confirmation?: string
+}
+
+export interface IRegister extends ILogin {
+  confirmation: string
 }

@@ -7,12 +7,12 @@ import SModal from '../../../components/SModal';
 import { styles } from './styles';
 import { FormikForm } from './FormikForm';
 import BoldText from '../../../components/BoldText';
-import { RegisterAndLoginFormValues } from '../../../types';
+import { ILogin } from '../../../types';
 
 interface Props {
   visible: boolean
   toggleVisible: () => void
-  handleSubmit: (values: RegisterAndLoginFormValues) => void
+  handleSubmit: (values: ILogin) => void
 }
 
 const Header = () => (

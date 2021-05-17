@@ -5,7 +5,7 @@ import WelcomeScreen from './screens/AuthScreens/WelcomeScreen';
 import HomeScreen from './screens/MainStack/HomeScreen';
 
 
-const Routes = () => {
+const Navigator = () => {
   const Stack = createStackNavigator();
 
   return (
@@ -21,4 +21,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default Navigator;
