@@ -8,5 +8,5 @@ Login and register fully working. Next up end-to-end tests for both.
 ![Screen Shot][product-screenshot]
 
 
-[product-screenshot]: screenshot-mobile.jpg
+[product-screenshot]: Screenshot_20210517-221327.jpg
 
