@@ -4,6 +4,7 @@ import { ExtendedMatchers } from '../../../types';
 import { WelcomeText } from '.';
 import { LoginAndRegisterButtonsView } from "./LoginAndRegisterButtonsView";
 
+/// NOTE: These tests broke down when started using video as a background image. Cannot get these to work...
 describe('The welcome screen', () => {
   it('should render welcome text correctly', () => {
     const { getByTestId } = render(<WelcomeText />);

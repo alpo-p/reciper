@@ -7,9 +7,8 @@ import RegisterModal from '.';
 describe('Register modal', () => {
   const init = (visible: boolean) => {
     const toggle = () => console.log('toggling');
-    const onSubmit = jest.fn();
     const { getByText, queryByText  } = render(
-      <RegisterModal visible={visible} toggleVisible={toggle} handleSubmit={onSubmit} />
+      <RegisterModal visible={visible} toggleVisible={toggle} />
     );
 
     return { getByText, queryByText }; 

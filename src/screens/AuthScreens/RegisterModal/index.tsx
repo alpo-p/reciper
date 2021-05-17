@@ -21,11 +21,22 @@ const Header = () => (
   </View>
 );
 
-const RegisterModal = ({ visible, toggleVisible, handleSubmit }: Props) => (
+const RegisterModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
   <SModal style={styles.modalContainer} visible={visible} toggleVisible={toggleVisible}>
     <Header />
     <FormikForm onSubmit={handleSubmit}/> 
   </SModal>
 );
+
+const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) => {
+  const handleSubmitRegister = (values: IRegister) => {
+    console.log(values.username);
+    console.log(values.password);
+  };
+
+  return (
+    <RegisterModalView visible={visible} toggleVisible={toggleVisible} handleSubmit={handleSubmitRegister} />
+  );
+};
 
 export default RegisterModal;
