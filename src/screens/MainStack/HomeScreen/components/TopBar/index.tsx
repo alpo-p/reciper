@@ -8,14 +8,16 @@ interface Props {
   testID?: string
 }
 
+
 const TopBar = (props: Props) => {
   const { testID } = props;
   return (
     <View style={styles.container} testID={testID}>
+      <View style={styles.emptyContainer}></View>
       <View style={styles.logoContainer} >
         <LogoDark />
       </View>
-      <View >
+      <View style={styles.buttonContainer} >
         <IconButton icon='heart' testID='myRecipesButton' />
       </View>
     </View>

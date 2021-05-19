@@ -1,27 +1,29 @@
 import { StyleSheet, ViewStyle } from "react-native";
+import theme from "../../../../../theme";
 
 interface Styles {
   container: ViewStyle
+  emptyContainer: ViewStyle
   logoContainer: ViewStyle
-  button: ViewStyle
+  buttonContainer: ViewStyle
 }
 
 export const styles: Styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 50,
-    //
-    borderColor: 'red',
-    borderWidth: 1,
+    borderBottomColor: theme.colors.lightBlack,
+    borderBottomWidth: 0.4, 
+  },
+  emptyContainer: {
+    flex: 1,
   },
   logoContainer: {
-    marginBottom: 15,
-    justifyContent: 'center',
-    //
-    borderColor: 'red',
-    borderWidth: 1,
+    flex: 1,
+    alignSelf: 'center',
   },
-  button: {
+  buttonContainer: {
+    flex: 1,
     marginBottom: 10,
   }
 });

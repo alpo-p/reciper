@@ -19,7 +19,7 @@ const styles: Styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'TangerineBold',
     paddingRight: 10,
-    fontSize: theme.fontSizes.hugeminus,
+    fontSize: theme.fontSizes.bigger,
     alignSelf: 'center'
   }
 });
