@@ -14,7 +14,11 @@ describe('The home screen', () => {
     expect(getByTestId('homeScreen')).toBeDefined();
   });
 
-  it('should have a header', () => {
-    expect(getByTestId('homeHeader')).toBeDefined();
+  it('should have a topBar', () => {
+    expect(getByTestId('topBar')).toBeDefined();
+  });
+
+  it('should have a container for the cards', () => {
+    expect(getByTestId('cardContainer')).toBeDefined();
   });
 });
