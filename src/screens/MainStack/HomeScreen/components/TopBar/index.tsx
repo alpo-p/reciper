@@ -10,9 +10,14 @@ interface Props {
 const TopBar = (props: Props) => {
   const { testID } = props;
   return (
-    <View testID={testID}>
-      <Logo />
-      <IconButton icon='heart' testID='myRecipesButton' />
+    <View style={styles.container} testID={testID}>
+      <View style={styles.logo}>
+        <Logo />
+      </View>
+      <View style={styles.button}>
+        <IconButton icon='heart' testID='myRecipesButton' />
+
+      </View>
     </View>
   );
 };

@@ -45,15 +45,13 @@ const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) =>
     try {
       await signUp({ username, password });
       await signIn({ username, password });
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'HomeScreen' }]
-      });
     } catch(e) {
       Alert.alert('The username already exists');
-      console.log(e);
     }
-
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'HomeScreen' }]
+    });
   };
 
   return (

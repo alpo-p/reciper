@@ -12,7 +12,7 @@ export const BackgroundImage = (props: { children: React.ReactNode; }) => (
     </View>
     <Video
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      source={require('../../../../assets/movingBackground.mp4')}
+      source={require('../../../../../assets/movingBackground.mp4')}
       rate={1.0}
       isMuted={true}
       resizeMode='cover'

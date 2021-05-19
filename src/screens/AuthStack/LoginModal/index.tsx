@@ -38,13 +38,14 @@ const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => 
     const { username, password } = values;
     try {
       await signIn({ username, password });
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'HomeScreen' }]
-      });
     } catch (e) {
       Alert.alert('Incorrect username or password');
     }
+
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'HomeScreen' }]
+    });
   };
 
   return (
