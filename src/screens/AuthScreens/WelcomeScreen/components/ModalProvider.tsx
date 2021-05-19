@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider, Portal } from 'react-native-paper';
   
-import LoginModal from '../LoginModal';
-import RegisterModal from '../RegisterModal';
+import LoginModal from '../../LoginModal';
+import RegisterModal from '../../RegisterModal';
 
 interface Props {
   registerVisible: boolean

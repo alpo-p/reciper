@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 
 
 import SModal from '../../../components/SModal';
@@ -24,7 +24,7 @@ const Header = () => (
   </View>
 );
 
-const RegisterModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
+export const RegisterModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
   <SModal style={styles.modalContainer} visible={visible} toggleVisible={toggleVisible}>
     <Header />
     <FormikForm onSubmit={handleSubmit}/> 
@@ -50,7 +50,7 @@ const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) =>
         routes: [{ name: 'HomeScreen' }]
       });
     } catch(e) {
-      //TODO: show a popup or something?
+      Alert.alert('The username already exists');
       console.log(e);
     }
 

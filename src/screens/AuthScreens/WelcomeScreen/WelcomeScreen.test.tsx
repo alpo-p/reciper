@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { ExtendedMatchers } from '../../../types';
 import { WelcomeText } from '.';
-import { LoginAndRegisterButtonsView } from "./LoginAndRegisterButtonsView";
+import { LoginAndRegisterButtonsView } from "./components/LoginAndRegisterButtonsView";
 
 /// NOTE: These tests broke down when started using video as a background image. Cannot get these to work...
 describe('The welcome screen', () => {

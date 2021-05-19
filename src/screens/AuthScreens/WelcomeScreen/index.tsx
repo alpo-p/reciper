@@ -3,8 +3,8 @@ import React from 'react';
 import { View } from 'react-native';
 import SLogo from '../../../components/Logo';
 import STitle from '../../../components/STitle';
-import { BackgroundImage } from './BackgroundImage';
-import { LoginAndRegisterContainer } from './LoginAndRegisterContainer';
+import { BackgroundImage } from './components/BackgroundImage';
+import { LoginAndRegisterContainer } from './components/LoginAndRegisterContainer';
 import { styles } from './styles';
 
 export const WelcomeText = () => (

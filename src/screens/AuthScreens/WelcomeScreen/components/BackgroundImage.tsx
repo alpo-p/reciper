@@ -2,7 +2,7 @@
 import React from 'react';
 import { Video } from 'expo-av';
 import { StyleSheet, View } from 'react-native';
-import theme from '../../../theme';
+import theme from '../../../../theme';
 
 // Video source: https://vod-progressive.akamaized.net/exp=1621001497~acl=%2A%2F1049364409.mp4%2A~hmac=5b5ec8e8794e90e413b694261dabc88f2e02c76a66a398130e227cff2caa67fb/vimeo-prod-skyfire-std-us/01/996/11/279984417/1049364409.mp4
 export const BackgroundImage = (props: { children: React.ReactNode; }) => (

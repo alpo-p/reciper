@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import FilledButton from '../../../components/FilledButton';
-import OutlinedButton from '../../../components/OutlinedButton';
-import { styles } from './styles';
+import FilledButton from '../../../../components/FilledButton';
+import OutlinedButton from '../../../../components/OutlinedButton';
+import { styles } from '../styles';
 
 export interface Props {
   toRegister: () => void

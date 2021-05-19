@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 
 import { useNavigation } from '@react-navigation/core';
 
@@ -23,7 +23,7 @@ const Header = () => (
   </View>
 );
 
-const LoginModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
+export const LoginModalView = ({ visible, toggleVisible, handleSubmit }: Props) => (
   <SModal style={styles.modalContainer} visible={visible} toggleVisible={toggleVisible}>
     <Header />
     <FormikForm onSubmit={handleSubmit}/> 
@@ -43,8 +43,7 @@ const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => 
         routes: [{ name: 'HomeScreen' }]
       });
     } catch (e) {
-      //TODO: show incorrect password popup or something?
-      console.log(e);
+      Alert.alert('Incorrect username or password');
     }
   };
 
