@@ -14,4 +14,7 @@ describe('The TopBar', () => {
     expect(getByTestId('Logo')).toBeDefined();
   });
 
+  it('should have a button for MyRecipes', () => {
+    expect(getByTestId('myRecipesButton')).toBeDefined();
+  });
 });
