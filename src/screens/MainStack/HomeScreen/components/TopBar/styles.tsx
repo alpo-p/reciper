@@ -24,6 +24,7 @@ export const styles: Styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    marginBottom: 10,
+    alignSelf: 'center',
+    alignItems: 'flex-end',
   }
 });

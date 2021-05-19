@@ -6,12 +6,22 @@ import CardContainer from './components/CardContainer';
 
 import { styles } from './styles';
 
-const HomeScreen = () => {
+interface Props {
+  navigateToMyRecipes: () => void
+}
+
+export const HomeScreenView = ({ navigateToMyRecipes }: Props) => (
+  <View testID='homeScreen' style={styles.homeContainer}>
+    <TopBar navigateToMyRecipes={navigateToMyRecipes} testID='topBar'/>
+    <CardContainer testID='cardContainer' />
+  </View>
+);
+
+const HomeScreen= () => {
+  const handleNavigateToMyRecipes = () => console.log("tässä!");
+
   return (
-    <View testID='homeScreen' style={styles.homeContainer}>
-      <TopBar testID='topBar'/>
-      <CardContainer testID='cardContainer' />
-    </View>
+    <HomeScreenView navigateToMyRecipes={handleNavigateToMyRecipes} />
   );
 };
 

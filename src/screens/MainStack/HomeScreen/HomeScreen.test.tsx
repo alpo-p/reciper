@@ -1,13 +1,15 @@
 import React from "react";
 import { render } from "@testing-library/react-native";
-import HomeScreen from ".";
+import { HomeScreenView } from ".";
 import { ReactTestInstance } from "react-test-renderer";
 
 describe('The home screen', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
+  let handleNavigateToMyRecipes: () => void;
 
   beforeEach(() => {
-    ({ getByTestId } = render(<HomeScreen />));
+    handleNavigateToMyRecipes = jest.fn();
+    ({ getByTestId } = render(<HomeScreenView navigateToMyRecipes={handleNavigateToMyRecipes} />));
   });
 
   it('should render', () => {
@@ -21,4 +23,5 @@ describe('The home screen', () => {
   it('should have a container for the cards', () => {
     expect(getByTestId('cardContainer')).toBeDefined();
   });
+
 });
