@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 interface Props {
-  testID: string
+  testID?: string
 }
 
 const CardContainer = (props: Props) => {
