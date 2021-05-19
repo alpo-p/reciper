@@ -1,6 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
+
 import TopBar from './components/TopBar';
+import CardContainer from './components/CardContainer';
+
 import { styles } from './styles';
 
 const HomeScreen = () => {
