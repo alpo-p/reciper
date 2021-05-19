@@ -36,16 +36,21 @@ const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => 
 
   const handleSubmitLogin = async (values: ILogin) => {
     const { username, password } = values;
+
+    let success: boolean;
     try {
       await signIn({ username, password });
+      success = true;
     } catch (e) {
       Alert.alert('Incorrect username or password');
+      success = false;
     }
-
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'HomeScreen' }]
-    });
+    if (success) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }]
+      });
+    }
   };
 
   return (

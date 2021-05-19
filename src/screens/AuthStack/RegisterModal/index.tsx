@@ -42,16 +42,22 @@ const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) =>
       throw new Error("Password doesn't match confirmation!");
     }
 
+    let success: boolean;
     try {
       await signUp({ username, password });
       await signIn({ username, password });
+      success = true;
     } catch(e) {
       Alert.alert('The username already exists');
+      success= false;
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'HomeScreen' }]
-    });
+
+    if (success) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }]
+      });
+    }
   };
 
   return (

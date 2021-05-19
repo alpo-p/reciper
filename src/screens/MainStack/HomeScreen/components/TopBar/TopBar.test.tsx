@@ -10,8 +10,8 @@ describe('The TopBar', () => {
     ({ getByTestId } = render(<TopBar />));
   });
 
-  it('should have a logo', () => {
-    expect(getByTestId('Logo')).toBeDefined();
+  it('should have a dark logo', () => {
+    expect(getByTestId('LogoDark')).toBeDefined();
   });
 
   it('should have a button for MyRecipes', () => {
