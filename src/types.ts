@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 // Used for testing
 export interface ExtendedMatchers extends jest.Matchers<void> {
   toHaveTextContent: (htmlElement: string) => object;
@@ -33,3 +35,5 @@ export interface IRecipes {
     allRecipes: IRecipe[]
   }
 }
+
+export type MaterialIconName = React.ComponentProps<typeof MaterialCommunityIcons>['name'];
