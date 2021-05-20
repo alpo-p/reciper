@@ -7,6 +7,7 @@ import STitle from '../../../../../../../components/STitle';
 import { IRecipe } from '../../../../../../../types';
 import theme from '../../../../../../../theme';
 import InfoButton from './InfoButton';
+import LikeButton from './LikeButton';
 
 interface Props {
   testID?: string
@@ -24,13 +25,7 @@ const Card = (props: Props) => {
         testID='cardPicture'
       />
       <STitle testID='cardTitle'>{recipe.name}</STitle>
-      <IconButton
-        icon={(props) => <MaterialCommunityIcons name='heart-outline' {...props} />}
-        size={20}
-        color={theme.colors.primaryColor}
-        testID='cardHeartButton'
-        onPress={handleLikeRecipe}
-      />
+      <LikeButton onPress={handleLikeRecipe} />
       <InfoButton onPress={handleShowDetails} />
     </View>
   );
