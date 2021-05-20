@@ -48,8 +48,16 @@ describe('The Card components', () => {
     });
   });
   
-  it('should have an info button', () => {
-    
+  describe('The info button', () => {
+    it('should render correctly', () => {
+      expect((getByTestId('cardInfoButton') as unknown as ReactTestInstance)).toBeDefined();
+    });
+
+    it('should call the event handler when it is clicked', () => {
+      fireEvent.press((getByTestId('cardInfoButton') as unknown as ReactTestInstance));
+      expect(mockHandleLike).toHaveBeenCalled();
+
+    });
   });
 
   it('should show the preparation time', () => {
