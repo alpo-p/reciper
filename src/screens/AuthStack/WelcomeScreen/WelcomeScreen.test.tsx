@@ -2,7 +2,6 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { LoginAndRegisterButtonsView } from "./components/LoginAndRegisterButtonsView";
 
-/// NOTE: These tests broke down when started using video as a background image. Cannot get these to work...
 describe('The welcome screen', () => {
   it('should render buttons with correct text and should register clicks', () => {
     const handlePress = jest.fn();
