@@ -1,22 +1,12 @@
 import React from 'react';
-import { IconButton } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import theme from '../../../../../../../theme';
+import SIcon from '../../../../../../../components/SIcon';
 
 interface Props {
   onPress: () => void
 }
 
-const InfoButton = ({ onPress }: Props) => {
-  return (
-    <IconButton
-      icon={() => <MaterialCommunityIcons name='information-outline' />}
-      size={20}
-      color={theme.colors.primaryColor}
-      testID='cardInfoButton'
-      onPress={onPress}
-    />
-  );
-};
+const InfoButton = ({ onPress }: Props) => (
+  <SIcon onPress={onPress} name='information-outline' testID='cardInfoButton' />
+);
 
 export default InfoButton;
