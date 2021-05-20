@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import Card from './Card';
 import useGetRecipes from './useGetRecipes';
@@ -7,11 +7,12 @@ import { ExtendedMatchers, IRecipe, IRecipes } from '../../../../../../types';
 
 describe('The Card components', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
+  let mockHandleLike: () => void;
 
   beforeEach(() => {
     const recipes: IRecipes = useGetRecipes();
     const recipe: IRecipe = recipes.data.allRecipes[0];
-    const mockHandleLike = jest.fn();
+    mockHandleLike = jest.fn();
 
     ({ getByTestId } = render(
       <Card 
@@ -35,9 +36,18 @@ describe('The Card components', () => {
   });
 
 
-  it('should have a heart button', () => {
-    expect(getByTestId('cardHeartButton')).toBeDefined();
+  describe('The heart button', () => {
+    it('should render correctly', () => {
+      expect((getByTestId('cardHeartButton') as unknown as ReactTestInstance)).toBeDefined();
+    });
+
+    it('should call the event handler when it is clicked', () => {
+      fireEvent.press((getByTestId('cardHeartButton') as unknown as ReactTestInstance));
+      expect(mockHandleLike).toHaveBeenCalled();
+
+    });
   });
+  
   it('should have an info button', () => {
     
   });
