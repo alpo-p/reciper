@@ -8,16 +8,19 @@ import { ExtendedMatchers, IRecipe, IRecipes } from '../../../../../../types';
 describe('The Card components', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
   let mockHandleLike: () => void;
+  let mockHandleShowDetails: () => void;
 
   beforeEach(() => {
     const recipes: IRecipes = useGetRecipes();
     const recipe: IRecipe = recipes.data.allRecipes[0];
     mockHandleLike = jest.fn();
+    mockHandleShowDetails = jest.fn();
 
     ({ getByTestId } = render(
       <Card 
         recipe={recipe}
         handleLikeRecipe={mockHandleLike}
+        handleShowDetails={mockHandleShowDetails}
         testID='card' 
       />
     ));
@@ -55,7 +58,7 @@ describe('The Card components', () => {
 
     it('should call the event handler when it is clicked', () => {
       fireEvent.press((getByTestId('cardInfoButton') as unknown as ReactTestInstance));
-      expect(mockHandleLike).toHaveBeenCalled();
+      expect(mockHandleShowDetails).toHaveBeenCalled();
 
     });
   });

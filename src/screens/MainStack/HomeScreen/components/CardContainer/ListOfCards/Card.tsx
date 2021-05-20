@@ -11,10 +11,11 @@ interface Props {
   testID?: string
   recipe: IRecipe
   handleLikeRecipe: () => void
+  handleShowDetails: () => void
 }
 
 const Card = (props: Props) => {
-  const { testID, recipe, handleLikeRecipe } = props;
+  const { testID, recipe, handleLikeRecipe, handleShowDetails } = props;
   return (
     <View testID={testID}>
       <Image
@@ -28,6 +29,13 @@ const Card = (props: Props) => {
         color={theme.colors.primaryColor}
         testID='cardHeartButton'
         onPress={handleLikeRecipe}
+      />
+      <IconButton
+        icon={(props) => <MaterialCommunityIcons name='information-outline' {...props} />}
+        size={20}
+        color={theme.colors.primaryColor}
+        testID='cardInfoButton'
+        onPress={handleShowDetails}
       />
     </View>
   );
