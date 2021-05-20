@@ -62,7 +62,14 @@ describe('The Card components', () => {
     });
   });
 
-  it('should show the preparation time', () => {
+  describe('PreparationTime component', () => {
+    it('should show the preparation time', () => {
+      expect(getByTestId('preparationTime')).toHaveTextContent('21');
+    });
+
+    it('should show an icon', () => {
+      expect(getByTestId('preparationTimeIcon')).toBeDefined(); 
+    });
   
   });
   it('should show some tags related to the recipe', () => {

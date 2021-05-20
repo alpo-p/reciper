@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { IconButton } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import STitle from '../../../../../../../components/STitle';
 import { IRecipe } from '../../../../../../../types';
-import theme from '../../../../../../../theme';
+
 import InfoButton from './InfoButton';
 import LikeButton from './LikeButton';
+import PreparationTime from './PreparationTime';
 
 interface Props {
   testID?: string
@@ -27,6 +26,7 @@ const Card = (props: Props) => {
       <STitle testID='cardTitle'>{recipe.name}</STitle>
       <LikeButton onPress={handleLikeRecipe} />
       <InfoButton onPress={handleShowDetails} />
+      <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
     </View>
   );
 };
