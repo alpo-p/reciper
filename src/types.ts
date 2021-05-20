@@ -14,3 +14,22 @@ export interface ILogin {
 export interface IRegister extends ILogin {
   confirmation: string
 }
+
+export interface IRecipe {
+  id: string,
+  name: string,
+  pictureUrl: string,
+  preparationTimeInMinutes: number,
+  numberOfServings: number,
+  shortDescription: string,
+  longDescription: string,
+  tags: string[],
+  ingredients: string[],
+  stepByStepDirections: string[]
+}
+
+export interface IRecipes {
+  data: {
+    allRecipes: IRecipe[]
+  }
+}
