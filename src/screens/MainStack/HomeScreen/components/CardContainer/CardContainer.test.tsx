@@ -9,9 +9,9 @@ describe('The CardContainer', () => {
   beforeEach(() => {
     ({ getByTestId } = render(<CardContainer />));
   });
-
-  it('should have a stack of cards inside it', () => {
-    expect(getByTestId('stackOfCards')).toBeDefined();
+  
+  it('should have a list of cards inside it', () => {
+    expect(getByTestId('listOfCards')).toBeDefined();
   });
 
 });
