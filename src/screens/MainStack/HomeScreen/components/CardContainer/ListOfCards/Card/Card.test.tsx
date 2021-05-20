@@ -63,7 +63,7 @@ describe('The Card components', () => {
   });
 
   it('should show the preparation time', () => {
-    
+  
   });
   it('should show some tags related to the recipe', () => {
     
