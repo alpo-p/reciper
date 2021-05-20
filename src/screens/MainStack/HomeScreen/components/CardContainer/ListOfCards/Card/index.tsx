@@ -3,9 +3,9 @@ import { View, Image } from 'react-native';
 import { IconButton } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import STitle from '../../../../../../components/STitle';
-import { IRecipe } from '../../../../../../types';
-import theme from '../../../../../../theme';
+import STitle from '../../../../../../../components/STitle';
+import { IRecipe } from '../../../../../../../types';
+import theme from '../../../../../../../theme';
 
 interface Props {
   testID?: string

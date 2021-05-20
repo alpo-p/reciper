@@ -14,11 +14,16 @@ const ListOfCards = (props: Props) => {
   const recipes: IRecipes = useGetRecipes();
   const recipe: IRecipe =  recipes.data.allRecipes[0]; 
 
+  const handleLikeRecipe = () => console.log("Liked recipe");
+  const handleShowDetails = () => console.log("Showing details");
+
   return (
     <View testID={testID}>
       <Card 
         recipe={recipe} 
         testID='card'
+        handleLikeRecipe={handleLikeRecipe}
+        handleShowDetails={handleShowDetails}
       />
     </View>
   );
