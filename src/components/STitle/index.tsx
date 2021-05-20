@@ -4,8 +4,13 @@ import { StyleSheet, TextStyle } from 'react-native';
 import { Text } from 'react-native-paper';
 import theme from '../../theme';
 
-const STitle = ({ ...props }: {children: React.ReactNode}) => (
-  <Text testID='STitle' style={styles.title}>{props.children}</Text>
+interface Props {
+  children: React.ReactNode
+  testID?: string
+}
+
+const STitle = ({ ...props }: Props ) => (
+  <Text testID={props.testID} style={styles.title}>{props.children}</Text>
 );
 
 interface Styles {

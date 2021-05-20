@@ -7,7 +7,7 @@ import { ExtendedMatchers } from '../../types';
 
 describe('The stylish title text', () => {
   it('renders correctly with text from props.children', () => {
-    const { getByTestId } = render(<STitle>Testi</STitle>);
+    const { getByTestId } = render(<STitle testID='STitle'>Testi</STitle>);
     const sTitle = getByTestId('STitle');
 
     (expect(sTitle) as unknown as ExtendedMatchers).toHaveTextContent('Testi');
