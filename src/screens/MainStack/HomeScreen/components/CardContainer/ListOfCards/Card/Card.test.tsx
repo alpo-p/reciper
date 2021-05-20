@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import Card from '.';
-import useGetRecipes from '../useGetRecipes';
+import useGetRecipes from '../../../../../../../hooks/useGetRecipes';
 import { ExtendedMatchers, IRecipe, IRecipes } from '../../../../../../../types';
 
 describe('The Card components', () => {
