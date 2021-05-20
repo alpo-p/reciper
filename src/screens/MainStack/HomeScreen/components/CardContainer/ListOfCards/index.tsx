@@ -1,6 +1,6 @@
-import React from 'react';
-import { View } from 'react-native';
-import { IRecipe, IRecipes } from '../../../../../../types';
+import React  from 'react';
+import { FlatList } from 'react-native';
+import { IRecipes } from '../../../../../../types';
 import Card from './Card';
 
 interface Props {
@@ -11,20 +11,25 @@ interface Props {
 const ListOfCards = (props: Props) => {
   const { testID, recipes } = props;
 
-  const recipe: IRecipe =  recipes.data.allRecipes[0]; 
+  const parsedRecipes = recipes.data.allRecipes;
 
   const handleLikeRecipe = () => console.log("Liked recipe");
   const handleShowDetails = () => console.log("Showing details");
 
   return (
-    <View testID={testID}>
-      <Card 
-        recipe={recipe} 
-        testID='card'
-        handleLikeRecipe={handleLikeRecipe}
-        handleShowDetails={handleShowDetails}
-      />
-    </View>
+    <FlatList
+      data={parsedRecipes}
+      renderItem={({ item }) => (
+        <Card 
+          recipe={item} 
+          testID='card'
+          handleLikeRecipe={handleLikeRecipe}
+          handleShowDetails={handleShowDetails}
+        />
+      )}
+      keyExtractor={(i) => i.id}
+      testID={testID}
+    />
   );
 };
 
