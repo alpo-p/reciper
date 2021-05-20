@@ -18,6 +18,7 @@ interface Props {
   handleSubmit: (values: IRegister) => void
 }
 
+//todo: refactor the pure components out
 const Header = () => (
   <View style={styles.header}>
     <BoldText>Create an account</BoldText>
