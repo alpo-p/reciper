@@ -6,9 +6,11 @@ import TopBar from '.';
 describe('The TopBar', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
   let handleNavigateToMyRecipes: () => void;
+  let handleNavigateToAddNewRecipe: () => void;
 
   beforeEach(() => {
     handleNavigateToMyRecipes = jest.fn();
+    handleNavigateToAddNewRecipe = jest.fn();
     ({ getByTestId } = render(<TopBar navigateToMyRecipes={handleNavigateToMyRecipes} />));
   });
 
@@ -16,12 +18,27 @@ describe('The TopBar', () => {
     expect(getByTestId('LogoDark')).toBeDefined();
   });
 
-  it('should have a button for MyRecipes', () => {
-    expect(getByTestId('myRecipesButton')).toBeDefined();
+  describe('A button for MyRecipes (heart)', () => {
+    it('should render correctly', () => {
+      expect(getByTestId('myRecipesButton')).toBeDefined();
+    });
+    
+    it('should register a click', () => {
+      fireEvent.press(getByTestId('myRecipesButton'));
+      expect(handleNavigateToMyRecipes).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('should register a click on the MyRecipes button', () => {
-    fireEvent.press(getByTestId('myRecipesButton'));
-    expect(handleNavigateToMyRecipes).toHaveBeenCalledTimes(1);
+  describe('A button for AddARecipe (plus)', () => {
+    it('should render correctly', () => {
+      expect(getByTestId('addNewRecipeButton')).toBeDefined();
+    });
+    
+    it('should register a click', () => {
+      fireEvent.press(getByTestId('addNewRecipeButton'));
+      expect(handleNavigateToAddNewRecipe).toHaveBeenCalledTimes(1);
+    });
   });
+  
+  
 });
