@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import STitle from '../../../../../../../components/STitle';
 import { IRecipe } from '../../../../../../../types';
 import theme from '../../../../../../../theme';
+import InfoButton from './InfoButton';
 
 interface Props {
   testID?: string
@@ -30,13 +31,7 @@ const Card = (props: Props) => {
         testID='cardHeartButton'
         onPress={handleLikeRecipe}
       />
-      <IconButton
-        icon={(props) => <MaterialCommunityIcons name='information-outline' {...props} />}
-        size={20}
-        color={theme.colors.primaryColor}
-        testID='cardInfoButton'
-        onPress={handleShowDetails}
-      />
+      <InfoButton onPress={handleShowDetails} />
     </View>
   );
 };
