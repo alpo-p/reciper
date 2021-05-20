@@ -7,6 +7,7 @@ import { IRecipe } from '../../../../../../../types';
 import InfoButton from './InfoButton';
 import LikeButton from './LikeButton';
 import PreparationTime from './PreparationTime';
+import RecipeTags from './RecipeTags';
 
 interface Props {
   testID?: string
@@ -27,6 +28,7 @@ const Card = (props: Props) => {
       <LikeButton onPress={handleLikeRecipe} />
       <InfoButton onPress={handleShowDetails} />
       <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
+      <RecipeTags tags={recipe.tags} />
     </View>
   );
 };

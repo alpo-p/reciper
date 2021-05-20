@@ -7,16 +7,18 @@ import { ExtendedMatchers, IRecipe, IRecipes } from '../../../../../../../types'
 
 describe('The Card components', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
+  let getByText: (text: string) => ReactTestInstance;
   let mockHandleLike: () => void;
   let mockHandleShowDetails: () => void;
+  let recipe: IRecipe;
 
   beforeEach(() => {
     const recipes: IRecipes = useGetRecipes();
-    const recipe: IRecipe = recipes.data.allRecipes[0];
+    recipe = recipes.data.allRecipes[0];
     mockHandleLike = jest.fn();
     mockHandleShowDetails = jest.fn();
 
-    ({ getByTestId } = render(
+    ({ getByTestId, getByText } = render(
       <Card 
         recipe={recipe}
         handleLikeRecipe={mockHandleLike}
@@ -39,7 +41,7 @@ describe('The Card components', () => {
   });
 
 
-  describe('The heart button', () => {
+  describe('The like/heart button', () => {
     it('should render correctly', () => {
       expect((getByTestId('cardHeartButton') as unknown as ReactTestInstance)).toBeDefined();
     });
@@ -72,7 +74,10 @@ describe('The Card components', () => {
     });
   
   });
-  it('should show some tags related to the recipe', () => {
-    
+
+  it('should show correct tags related to the recipe', () => {
+    expect(getByText('Kotiruoka')).toBeDefined();
+    expect(getByText('Helpot')).toBeDefined();
+    expect(getByText('Kasvisruoka')).toBeDefined();
   });
 });
