@@ -20,6 +20,7 @@ export const styles: Styles = StyleSheet.create({
   },
   logoContainer: {
     flex: 1,
+    marginTop: 5,
     marginLeft: 10,
     alignItems: 'flex-start',
   },
