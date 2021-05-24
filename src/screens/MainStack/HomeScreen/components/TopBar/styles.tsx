@@ -24,8 +24,9 @@ export const styles: Styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   buttonContainer: {
+    flexDirection: 'row',
     flex: 1,
-    alignSelf: 'center',
+    borderWidth: 1,
     alignItems: 'flex-end',
   }
 });
