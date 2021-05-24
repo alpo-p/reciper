@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { Text } from 'react-native-paper';
-import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import theme from '../../theme';
 
 interface Props {
@@ -12,12 +12,10 @@ interface Props {
 
 const SText = ({ ...props }: Props) => {
   const _styles = [styles.text, props.style] as TextStyle;
-  const { testID } = props;
+  const { testID } = props;
 
   return (
-    <View testID={testID}>
-      <Text testID='SText' style={_styles}>{props.children}</Text>
-    </View>
+    <Text testID={testID} style={_styles}>{props.children}</Text>
   );
 };
 

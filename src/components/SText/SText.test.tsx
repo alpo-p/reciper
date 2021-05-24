@@ -7,7 +7,7 @@ import { ExtendedMatchers } from '../../types';
 
 describe('The stylish text', () => {
   it('renders correctly with text', () => {
-    const { getByTestId } = render(<SText>Testi</SText>);
+    const { getByTestId } = render(<SText testID='SText'>Testi</SText>);
     const logo = getByTestId('SText');
 
     (expect(logo) as unknown as ExtendedMatchers).toHaveTextContent('Testi');
