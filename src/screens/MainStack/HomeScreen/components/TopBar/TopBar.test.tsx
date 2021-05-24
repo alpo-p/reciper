@@ -11,7 +11,9 @@ describe('The TopBar', () => {
   beforeEach(() => {
     handleNavigateToMyRecipes = jest.fn();
     handleNavigateToAddNewRecipe = jest.fn();
-    ({ getByTestId } = render(<TopBar navigateToMyRecipes={handleNavigateToMyRecipes} />));
+    ({ getByTestId } = render(
+      <TopBar navigateToMyRecipes={handleNavigateToMyRecipes} navigateToAddARecipe={handleNavigateToAddNewRecipe} />
+    ));
   });
 
   it('should have a dark logo', () => {

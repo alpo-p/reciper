@@ -6,10 +6,17 @@ import { ReactTestInstance } from "react-test-renderer";
 describe('The home screen', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
   let handleNavigateToMyRecipes: () => void;
+  let handleNavigateToAddARecipe: () => void;
 
   beforeEach(() => {
     handleNavigateToMyRecipes = jest.fn();
-    ({ getByTestId } = render(<HomeScreenView navigateToMyRecipes={handleNavigateToMyRecipes} />));
+    handleNavigateToAddARecipe = jest.fn();
+    ({ getByTestId } = render(
+      <HomeScreenView 
+        navigateToMyRecipes={handleNavigateToMyRecipes} 
+        navigateToAddARecipe={handleNavigateToAddARecipe}
+      />
+    ));
   });
 
   it('should render', () => {
