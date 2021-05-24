@@ -46,10 +46,9 @@ describe('The Card components', () => {
       expect((getByTestId('cardHeartButton') as unknown as ReactTestInstance)).toBeDefined();
     });
 
-    it('should call the event handler when it is clicked', () => {
+    it('should call the event handler when it is clicked with the id of the card', () => {
       fireEvent.press((getByTestId('cardHeartButton') as unknown as ReactTestInstance));
-      expect(mockHandleLike).toHaveBeenCalled();
-
+      expect(mockHandleLike).toHaveBeenCalledWith('609e231da6b1ce53d1e1ada8');
     });
   });
   
@@ -58,9 +57,9 @@ describe('The Card components', () => {
       expect((getByTestId('cardInfoButton') as unknown as ReactTestInstance)).toBeDefined();
     });
 
-    it('should call the event handler when it is clicked', () => {
+    it('should call the event handler when it is clicked with the id of the card', () => {
       fireEvent.press((getByTestId('cardInfoButton') as unknown as ReactTestInstance));
-      expect(mockHandleShowDetails).toHaveBeenCalled();
+      expect(mockHandleShowDetails).toHaveBeenCalledWith('609e231da6b1ce53d1e1ada8');
     });
   });
 

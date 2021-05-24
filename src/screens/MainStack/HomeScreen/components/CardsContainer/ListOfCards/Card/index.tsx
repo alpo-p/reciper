@@ -15,16 +15,17 @@ import { styles } from './styles';
 interface Props {
   testID?: string
   recipe: IRecipe
-  handleLikeRecipe: () => void
-  handleShowDetails: () => void
+  handleLikeRecipe: (id: string) => void
+  handleShowDetails: (id: string) => void
 }
 
 const Card = (props: Props) => {
   const { testID, recipe, handleLikeRecipe, handleShowDetails } = props;
+  const id = recipe.id;
   return (
     <PCard 
       style={styles.cardContainer}
-      onPress={handleShowDetails}
+      onPress={() => handleShowDetails(id)}
       elevation={2} 
       testID={testID}
     >
@@ -36,8 +37,8 @@ const Card = (props: Props) => {
         <View style={styles.cardTitle}>
           <STitle testID='cardTitle'>{recipe.name}</STitle>
         </View>
-        <LikeButton onPress={handleLikeRecipe} />
-        <InfoButton onPress={handleShowDetails} />
+        <LikeButton onPress={() => handleLikeRecipe(id)} />
+        <InfoButton onPress={() => handleShowDetails(id)} />
         <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
       </PCard.Content>
       <PCard.Content>

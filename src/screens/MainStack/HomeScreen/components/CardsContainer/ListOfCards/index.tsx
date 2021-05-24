@@ -13,8 +13,8 @@ const ListOfCards = (props: Props) => {
 
   const parsedRecipes = recipes.data.allRecipes;
 
-  const handleLikeRecipe = () => console.log("Liked recipe");
-  const handleShowDetails = () => console.log("Showing details");
+  const handleLikeRecipe = (id: string) => console.log("Liked recipe:", id);
+  const handleShowDetails = (id: string) => console.log("Showing details:",id);
 
   return (
     <FlatList
