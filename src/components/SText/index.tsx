@@ -1,19 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { Text } from 'react-native-paper';
-import { StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
 import theme from '../../theme';
 
 interface Props {
   children: React.ReactNode,
   style?: StyleProp<TextStyle>
+  testID?: string
 }
 
 const SText = ({ ...props }: Props) => {
   const _styles = [styles.text, props.style] as TextStyle;
+  const { testID } = props;
 
   return (
-    <Text testID='SText' style={_styles}>{props.children}</Text>
+    <View testID={testID}>
+      <Text testID='SText' style={_styles}>{props.children}</Text>
+    </View>
   );
 };
 
