@@ -11,7 +11,7 @@ interface Props {
 const CardsContainer = (props: Props) => {
   const { testID } = props;
   const recipes: IRecipes = useGetRecipes();
-  const handleLikeRecipe = (id: string) => console.log("Liked recipe:", id);
+  const handleLikeRecipe = (id: string) => console.log("Liked recipe:", recipes.data.allRecipes.find(r => r.id === id));
   const handleShowDetails = (id: string) => console.log("Showing details:",id);
 
   return (
