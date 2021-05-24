@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import TopBar from './components/TopBar';
-import CardContainer from './components/CardContainer';
+import CardsContainer from './components/CardsContainer';
 
 import { styles } from './styles';
 
@@ -17,7 +17,7 @@ export const HomeScreenView = ({ navigateToMyRecipes, navigateToAddARecipe }: Pr
       navigateToMyRecipes={navigateToMyRecipes} 
       navigateToAddARecipe={navigateToAddARecipe}
       testID='topBar'/>
-    <CardContainer testID='cardContainer' />
+    <CardsContainer testID='cardContainer' />
   </View>
 );
 

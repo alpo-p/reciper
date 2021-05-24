@@ -8,7 +8,7 @@ interface Props {
   testID?: string
 }
 
-const CardContainer = (props: Props) => {
+const CardsContainer = (props: Props) => {
   const { testID } = props;
   const recipes: IRecipes = useGetRecipes();
   return (
@@ -18,4 +18,4 @@ const CardContainer = (props: Props) => {
   );
 };
 
-export default CardContainer;
+export default CardsContainer;

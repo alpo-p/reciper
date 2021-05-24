@@ -1,5 +1,5 @@
 import React from 'react';
-import { Debug, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import ListOfCards from '.';
 import useGetRecipes from '../../../../../../hooks/useGetRecipes';
