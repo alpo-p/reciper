@@ -1,12 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import { IconButton } from 'react-native-paper';
-
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import LogoDark from '../../../../../components/LogoDark';
-import theme from '../../../../../theme';
 import { styles } from './styles';
+import MyRecipesButton from './MyRecipesButton';
 
 interface Props {
   testID?: string
@@ -22,13 +19,7 @@ const TopBar = (props: Props) => {
         <LogoDark />
       </View>
       <View style={styles.buttonContainer} >
-        <IconButton 
-          icon={(props) => <MaterialCommunityIcons name='heart' {...props} />}
-          size={40}
-          color={theme.colors.primaryColor}
-          testID='myRecipesButton' 
-          onPress={navigateToMyRecipes}
-        />
+        <MyRecipesButton onPress={navigateToMyRecipes} />
       </View>
     </View>
   );
