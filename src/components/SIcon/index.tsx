@@ -11,17 +11,20 @@ interface Props {
   name: MaterialIconName
   onPress: () => void
   size?: number
+  color?: string
 }
 
 const SIcon = (props: Props) => {
-  const { testID, name, onPress, size } = props;
+  const { testID, name, onPress, size, color } = props;
 
   const _size: number = size ? size : 20;
+  const _color: string = color ? color : theme.colors.primaryColor;
+
   return (
     <IconButton
       icon={(props) => <MaterialCommunityIcons name={name} {...props}/>}
       size={_size}
-      color={theme.colors.primaryColor}
+      color={_color}
       testID={testID}
       onPress={onPress}
     />
