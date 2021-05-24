@@ -8,6 +8,8 @@ interface Props {
   recipes: IRecipes
 }
 
+const BOTTOM_MARGIN_GLITCH_FIX_VALUE = 50;
+
 const ListOfCards = (props: Props) => {
   const { testID, recipes } = props;
 
@@ -18,6 +20,7 @@ const ListOfCards = (props: Props) => {
 
   return (
     <FlatList
+      style={{ marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE }}
       data={parsedRecipes}
       renderItem={({ item }) => (
         <Card 
