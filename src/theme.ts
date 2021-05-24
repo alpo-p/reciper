@@ -7,6 +7,7 @@ const theme = {
     primaryColor: '#2a9d8f',
     error: '#e76f51',
     lightBlack: '#666666',
+    lightGrey: '#d3d3d3'
   },
   dimensions: {
     height: Dimensions.get('window').height,

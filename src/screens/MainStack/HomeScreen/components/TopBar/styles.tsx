@@ -12,8 +12,8 @@ export const styles: Styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 50,
-    borderBottomColor: theme.colors.lightBlack,
-    borderBottomWidth: 0.4, 
+    borderBottomColor: theme.colors.lightGrey,
+    borderBottomWidth: 0.2, 
   },
   emptyContainer: {
     flex: 1,
