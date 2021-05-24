@@ -16,11 +16,12 @@ export const styles: Styles = StyleSheet.create({
     borderBottomWidth: 0.2, 
   },
   emptyContainer: {
-    flex: 1,
+    flex: 0,
   },
   logoContainer: {
     flex: 1,
-    alignSelf: 'center',
+    marginLeft: 10,
+    alignItems: 'flex-start',
   },
   buttonContainer: {
     flex: 1,
