@@ -16,7 +16,7 @@ export const styles: Styles = StyleSheet.create({
     borderBottomWidth: 0.2, 
   },
   emptyContainer: {
-    flex: 0,
+    flex: 1,
   },
   logoContainer: {
     flex: 1,
@@ -26,7 +26,8 @@ export const styles: Styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     flex: 1,
-    borderWidth: 1,
+    marginBottom: -10,
+    justifyContent: 'space-around',
     alignItems: 'flex-end',
   }
 });

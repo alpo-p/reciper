@@ -17,10 +17,10 @@ const TopBar = (props: Props) => {
   const { testID, navigateToMyRecipes, navigateToAddARecipe } = props;
   return (
     <View style={styles.container} testID={testID}>
-      <View style={styles.emptyContainer}></View>
       <View style={styles.logoContainer} >
         <LogoDark />
       </View>
+      <View style={styles.emptyContainer}></View>
       <View style={styles.buttonContainer} >
         <AddARecipeButton onPress={navigateToAddARecipe} />
         <MyRecipesButton onPress={navigateToMyRecipes} />
