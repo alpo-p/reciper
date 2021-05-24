@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { Card as PCard } from 'react-native-paper';
 
 import STitle from '../../../../../../../components/STitle';
@@ -31,11 +32,15 @@ const Card = (props: Props) => {
         source={{ uri: recipe.pictureUrl }}
         testID='cardPicture'
       />
-      <PCard.Content>
-        <STitle testID='cardTitle'>{recipe.name}</STitle>
+      <PCard.Content style={styles.cardContent}>
+        <View style={styles.cardTitle}>
+          <STitle testID='cardTitle'>{recipe.name}</STitle>
+        </View>
         <LikeButton onPress={handleLikeRecipe} />
         <InfoButton onPress={handleShowDetails} />
         <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
+      </PCard.Content>
+      <PCard.Content>
         <RecipeTags tags={recipe.tags} />
       </PCard.Content>
     </PCard>
