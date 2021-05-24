@@ -12,7 +12,7 @@ interface Props {
 
 const SText = ({ ...props }: Props) => {
   const _styles = [styles.text, props.style] as TextStyle;
-  const { testID } = props;
+  const { testID } = props;
 
   return (
     <Text testID={testID} style={_styles}>{props.children}</Text>
