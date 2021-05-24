@@ -66,7 +66,7 @@ describe('The Card components', () => {
 
   describe('PreparationTime component', () => {
     it('should show the preparation time', () => {
-      expect(getByTestId('preparationTime')).toHaveTextContent('21');
+      expect(getByTestId('preparationTime')).toHaveTextContent('21 min');
     });
 
     it('should show an icon', () => {
