@@ -11,9 +11,16 @@ interface Props {
 const CardsContainer = (props: Props) => {
   const { testID } = props;
   const recipes: IRecipes = useGetRecipes();
+  const handleLikeRecipe = (id: string) => console.log("Liked recipe:", id);
+  const handleShowDetails = (id: string) => console.log("Showing details:",id);
+
   return (
     <View testID={testID}>
-      <ListOfCards recipes={recipes} testID='listOfCards' />
+      <ListOfCards 
+        handleLikeRecipe={handleLikeRecipe}
+        handleShowDetails={handleShowDetails}
+        recipes={recipes} 
+        testID='listOfCards' />
     </View>
   );
 };

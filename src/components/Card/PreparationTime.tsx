@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import SIcon from '../../../../../../../components/SIcon';
-import SText from '../../../../../../../components/SText';
-import theme from '../../../../../../../theme';
+import SIcon from '../SIcon';
+import SText from '../SText';
+import theme from '../../theme';
 
 interface Props {
   timeInMinutes: number

@@ -9,7 +9,13 @@ describe('The ListOfCards component', () => {
   const recipes = useGetRecipes();
 
   beforeEach(() => {
-    ({ getAllByTestId } = render(<ListOfCards recipes={recipes} />));
+    ({ getAllByTestId } = render(
+      <ListOfCards 
+        recipes={recipes} 
+        handleLikeRecipe={() => null}
+        handleShowDetails={() => null}
+      />
+    ));
   });
 
   it('should have 3 cards inside it', () => {

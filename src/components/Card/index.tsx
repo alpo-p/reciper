@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 import { Card as PCard } from 'react-native-paper';
 
-import STitle from '../../../../../../../components/STitle';
-import { IRecipe } from '../../../../../../../types';
+import STitle from '../STitle';
+import { IRecipe } from '../../types';
 
 import InfoButton from './InfoButton';
 import LikeButton from './LikeButton';

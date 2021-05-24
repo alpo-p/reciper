@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import SText from '../../../../../../../components/SText';
-import theme from '../../../../../../../theme';
+import SText from '../SText';
+import theme from '../../theme';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {
