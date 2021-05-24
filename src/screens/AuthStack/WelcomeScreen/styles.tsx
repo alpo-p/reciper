@@ -18,7 +18,7 @@ export const styles: Styles = StyleSheet.create({
     marginTop: 220
   },
   subheading: {
-    marginTop: 300,
+    marginTop: 270,
   },
   img: {
     width: '100%',
