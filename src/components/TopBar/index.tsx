@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import LogoDark from '../../../../components/LogoDark';
+import LogoDark from '../LogoDark';
 import { styles } from './styles';
 
 import MyRecipesButton from './MyRecipesButton';

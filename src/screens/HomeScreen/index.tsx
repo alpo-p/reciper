@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import TopBar from './components/TopBar';
+import TopBar from '../../components/TopBar';
 import CardsContainer from './components/CardsContainer';
 
 import { styles } from './styles';

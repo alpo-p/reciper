@@ -1,5 +1,5 @@
 import React from 'react';
-import SIcon from '../../../../components/SIcon';
+import SIcon from '../SIcon';
 
 interface Props {
   onPress: () => void
