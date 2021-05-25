@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
-import Card from '.';
+import RecipeCard from '.';
 import useGetRecipes from '../../hooks/useGetRecipes';
 import { ExtendedMatchers, IRecipe, IRecipes } from '../../types';
 
@@ -19,7 +19,7 @@ describe('The Card components', () => {
     mockHandleShowDetails = jest.fn();
 
     ({ getByTestId, getByText } = render(
-      <Card 
+      <RecipeCard 
         recipe={recipe}
         handleLikeRecipe={mockHandleLike}
         handleShowDetails={mockHandleShowDetails}

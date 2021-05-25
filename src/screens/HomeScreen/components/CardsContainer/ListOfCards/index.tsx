@@ -1,7 +1,7 @@
 import React  from 'react';
 import { FlatList } from 'react-native';
 import { IRecipes } from '../../../../../types';
-import Card from '../../../../../components/Card';
+import RecipeCard from '../../../../../components/RecipeCard';
 
 interface Props {
   testID?: string
@@ -22,7 +22,7 @@ const ListOfCards = (props: Props) => {
       style={{ marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE }}
       data={parsedRecipes}
       renderItem={({ item }) => (
-        <Card 
+        <RecipeCard 
           recipe={item} 
           testID='card'
           handleLikeRecipe={handleLikeRecipe}
