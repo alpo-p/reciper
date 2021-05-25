@@ -13,7 +13,7 @@ const PreparationTime = (props: Props) => {
 
   return (
     <View style={styles.prepTime} >
-      <SIcon onPress={() => null} name='clock-outline' testID='preparationTimeIcon' />
+      <SIcon color={theme.colors.lightBlack} onPress={() => null} name='clock-outline' testID='preparationTimeIcon' />
       <SText testID='preparationTime' style={styles.text}>{timeInMinutes} min</SText>
     </View>
   );
@@ -22,9 +22,11 @@ const PreparationTime = (props: Props) => {
 const styles = StyleSheet.create({
   prepTime: {
     flexDirection: 'row',
+    flex: 2,
   },
   text: {
-    fontSize: theme.fontSizes.mediumMinus,
+    fontSize: theme.fontSizes.small,
+    marginLeft: -5,
   }
 });
 

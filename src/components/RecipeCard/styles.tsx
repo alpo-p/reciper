@@ -9,8 +9,9 @@ export const styles = StyleSheet.create({
   },
   cardTitle: {
     position: 'absolute',
+    backgroundColor: 'rgba(52, 52, 52, 0.4)',
     left: 10,
-    bottom: 50,
+    bottom: 42,
   },
   cardContent: {
     flexDirection: 'row',

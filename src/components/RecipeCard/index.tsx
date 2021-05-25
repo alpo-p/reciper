@@ -43,6 +43,7 @@ const Card = (props: Props) => {
       testID={testID}
     >
       <PCard.Cover
+        style={{ width: 400, height: 250}}
         source={{ uri: recipe.pictureUrl }}
         testID='cardPicture'
       />
