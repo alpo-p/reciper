@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Loading from './components/Loading';
 import useAuthorizedUser from './hooks/useAuthorizedUser';
-import WelcomeScreen from './screens/AuthStack/WelcomeScreen';
-import HomeScreen from './screens/MainStack/HomeScreen';
-import RecipeDetails from './screens/MainStack/RecipeDetails';
+import WelcomeScreen from './screens/AuthScreen/WelcomeScreen';
+import HomeScreen from './screens/HomeScreen';
+import RecipeDetails from './screens/RecipeDetailsScreen';
 
 
 const Navigator = () => {
