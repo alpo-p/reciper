@@ -25,7 +25,7 @@ describe('The recipe details component', () => {
 
   it('should have a RecipeCard without buttons in it', () => {
     expect(getByTestId('recipeCardWithoutButtons')).toBeDefined();
-    
+    expect(getByTestId('cardHeartButton')).not.toBeDefined(); 
   });
 
   it('should have a TabView inside', () => {
