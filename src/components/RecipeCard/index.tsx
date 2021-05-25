@@ -17,11 +17,24 @@ interface Props {
   recipe: IRecipe
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
+  hideButtons?: boolean
 }
 
 const Card = (props: Props) => {
-  const { testID, recipe, handleLikeRecipe, handleShowDetails } = props;
+  const { testID, recipe, handleLikeRecipe, handleShowDetails, hideButtons } = props;
   const id = recipe.id;
+
+  const renderButtons = () => {
+    if (!hideButtons) {
+      return (
+        <>
+          <LikeButton onPress={() => handleLikeRecipe(id)} />
+          <InfoButton onPress={() => handleShowDetails(id)} />
+        </>
+      );
+    }
+  };
+
   return (
     <PCard 
       style={styles.cardContainer}
@@ -37,8 +50,7 @@ const Card = (props: Props) => {
         <View style={styles.cardTitle}>
           <STitle testID='cardTitle'>{recipe.name}</STitle>
         </View>
-        <LikeButton onPress={() => handleLikeRecipe(id)} />
-        <InfoButton onPress={() => handleShowDetails(id)} />
+        {renderButtons()}
         <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
       </PCard.Content>
       <PCard.Content>
