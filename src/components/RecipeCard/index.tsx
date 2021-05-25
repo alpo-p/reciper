@@ -16,7 +16,7 @@ interface Props {
   testID?: string
   recipe: IRecipe
   handleLikeRecipe: (id: string) => void
-  handleShowDetails?: (id: string) => void
+  handleShowDetails: (id: string) => void
   hideButtons?: boolean
 }
 
