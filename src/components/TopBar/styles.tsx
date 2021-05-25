@@ -21,7 +21,7 @@ export const styles: Styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     marginTop: 5,
-    marginLeft: 10,
+    marginLeft: 17,
     alignItems: 'flex-start',
   },
   buttonContainer: {
