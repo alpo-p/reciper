@@ -23,12 +23,13 @@ describe('The recipe details component', () => {
     expect(getByTestId('recipeDetailsContainer')).toBeDefined();
   });
 
-  describe('should have a view with', () => {
-    it('a correct title', () => {
-      expect(getByTestId('detailsTitle')).toHaveTextContent('Uunifetapasta');
-    });
+  it('should have a RecipeCard without buttons in it', () => {
+    expect(getByTestId('recipeCardWithoutButtons')).toBeDefined();
+    
   });
-  
 
+  it('should have a TabView inside', () => {
+    expect(getByTestId('recipeDetailsTabView')).toBeDefined();
+  });
 
 });
