@@ -1,0 +1,1 @@
+export const BOTTOM_MARGIN_GLITCH_FIX_VALUE = 50;

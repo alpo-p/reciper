@@ -1,30 +1,39 @@
-import { RouteProp } from '@react-navigation/native';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import { View } from 'react-native';
-
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { RouteProp } from '@react-navigation/native';
 import { IRecipe } from '../../types';
-import TabbedView from './components/TabbedView';
+
+import Description from './components/Description';
+import Ingredients from './components/Ingredients';
+import theme from '../../theme';
+import Directions from './components/Directions';
+
+const Tab = createMaterialTopTabNavigator();
 
 interface Props {
   testID?: string
   route: RouteProp<{ params: { recipe: IRecipe} }, 'params'>
 }
 
-const RecipeDetails = (props: Props) => {
-  const { testID, route } = props;
+const RecipeDetailsScreen = (props: Props) => {
+  const { route } = props;
   const { recipe } = route.params;
 
-  const handleLikeRecipe = (id: string) => console.log("liked the recipe", id);
-
   return (
-    <View testID={testID}>
-      <TabbedView 
-        testID="recipeDetailsTabView" 
-        recipe={recipe} 
-        handleLikeRecipe={handleLikeRecipe}
-      />
-    </View>
+    <Tab.Navigator style={{marginTop: theme.dimensions.statusBar}}>
+      <Tab.Screen name="Description">
+        {() => <Description recipe={recipe} />} 
+      </Tab.Screen>
+      <Tab.Screen name="Ingredients">
+        {() => <Ingredients ingredients={recipe.ingredients} />} 
+      </Tab.Screen>
+      <Tab.Screen name="Directions">
+        {() => <Directions directions={recipe.stepByStepDirections} />} 
+      </Tab.Screen>
+    </Tab.Navigator>
   );
 };
 
-export default RecipeDetails;
+export default RecipeDetailsScreen;

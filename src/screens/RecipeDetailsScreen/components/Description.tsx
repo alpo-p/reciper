@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import RecipeCard from '../../../components/RecipeCard';
 import SText from '../../../components/SText';
 import { IRecipe } from '../../../types';
@@ -7,23 +7,34 @@ import { IRecipe } from '../../../types';
 interface Props {
   testID?: string
   recipe: IRecipe
-  handleLikeRecipe: (id: string) => void
 }
 
 const Description = (props: Props) => {
-  const { testID, recipe, handleLikeRecipe } = props;
+  const { testID, recipe } = props;
+  
   return (
-    <ScrollView testID={testID}>
+    <ScrollView style={styles.container} testID={testID}>
       <RecipeCard 
         hideButtons
         testID="recipeCardWithoutButtons"
         recipe={recipe}
         handleShowDetails={() => console.log('show details')}
-        handleLikeRecipe={handleLikeRecipe}
+        handleLikeRecipe={() => null}
       />
-      <SText testID="descriptionText">{recipe.longDescription}</SText>
+      <View style={styles.textContainer}>
+        <SText testID="descriptionText">{recipe.longDescription}</SText>
+      </View>
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  textContainer: {
+    padding: 20,
+  }
+});
 
 export default Description;

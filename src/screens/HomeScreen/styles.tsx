@@ -8,6 +8,5 @@ interface Styles {
 export const styles: Styles = StyleSheet.create({
   homeContainer: {
     height: theme.dimensions.height,
-    marginTop: theme.dimensions.statusBar
   },
 });

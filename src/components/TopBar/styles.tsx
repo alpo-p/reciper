@@ -10,6 +10,7 @@ interface Styles {
 
 export const styles: Styles = StyleSheet.create({
   container: {
+    marginTop: theme.dimensions.statusBar,
     flexDirection: 'row',
     height: 50,
     borderBottomColor: theme.colors.lightGrey,
