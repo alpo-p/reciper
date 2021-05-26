@@ -15,6 +15,7 @@ interface Props {
 
 const TopBar = (props: Props) => {
   const { testID, navigateToMyRecipes, navigateToAddARecipe } = props;
+
   return (
     <View style={styles.container} testID={testID}>
       <View style={styles.logoContainer} >
