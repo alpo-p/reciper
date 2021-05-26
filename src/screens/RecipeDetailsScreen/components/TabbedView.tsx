@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { View, StyleSheet, Dimensions, StatusBar } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
+import theme from '../../../theme';
 import { IRecipe } from '../../../types';
 
 const FirstRoute = () => (
@@ -11,7 +12,7 @@ const SecondRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
 );
 
-const initialLayout = { width: Dimensions.get('window').width };
+const initialLayout = { height: theme.dimensions.height, width: theme.dimensions.width };
 
 const renderScene = SceneMap({
   first: FirstRoute,
@@ -49,7 +50,9 @@ export default function TabViewExample(props: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: StatusBar.currentHeight,
+    height: 500,
+    width: 200,
+    marginTop: theme.dimensions.statusBar,
   },
   scene: {
     flex: 1,

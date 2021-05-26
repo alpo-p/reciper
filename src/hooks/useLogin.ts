@@ -1,4 +1,5 @@
 import { useApolloClient, useMutation } from '@apollo/client';
+import { useState } from 'react';
 import { LOGIN } from '../graphql/mutations';
 import { ILogin } from '../types';
 import AuthStorage from '../utils/authStorage';
@@ -20,25 +21,32 @@ const parseData = (data: unknown): IData => {
 };
 
 const useLogin = () => {
+  const [loading, setLoading] = useState(false);
   const apolloClient = useApolloClient();
   const authStorage: AuthStorage = useAuthStorage();
 
   const [login] = useMutation<{ login: IData }>(LOGIN);
 
-  const signIn = async ({ username, password }: ILogin) => {
+  const signIn = async ({ username, password }: ILogin): Promise<void> => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
     const { data } = await login({
       variables: { username, password }
     });
-
     
     if (data) {
       const parsedData = parseData(data);
       await authStorage.setAccessToken(parsedData.login.token);
       void apolloClient.resetStore();
+      setLoading(false);
     }
   };
 
-  return [signIn];
+  return {signIn, loading};
 };
 
 export default useLogin;

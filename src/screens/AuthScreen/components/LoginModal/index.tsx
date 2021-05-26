@@ -10,6 +10,7 @@ import { styles } from './styles';
 import { FormikForm } from './FormikForm';
 import BoldText from '../../../../components/BoldText';
 import { ILogin } from '../../../../types';
+import Loading from '../../../../components/Loading';
 
 interface Props {
   visible: boolean
@@ -31,7 +32,7 @@ export const LoginModalView = ({ visible, toggleVisible, handleSubmit }: Props) 
 );
 
 const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => {
-  const [signIn] = useLogin();
+  const { signIn, loading } = useLogin();
   const navigation = useNavigation();
 
   const handleSubmitLogin = async (values: ILogin) => {
@@ -52,6 +53,10 @@ const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => 
       });
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <LoginModalView visible={visible} toggleVisible={toggleVisible} handleSubmit={handleSubmitLogin} />

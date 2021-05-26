@@ -11,6 +11,7 @@ import { IRegister } from '../../../../types';
 import useRegister from '../../../../hooks/useRegister';
 import useLogin from '../../../../hooks/useLogin';
 import { useNavigation } from '@react-navigation/native';
+import Loading from '../../../../components/Loading';
 
 interface Props {
   visible: boolean
@@ -34,7 +35,7 @@ export const RegisterModalView = ({ visible, toggleVisible, handleSubmit }: Prop
 
 const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) => {
   const [signUp] = useRegister();
-  const [signIn] = useLogin();
+  const {signIn, loading} = useLogin();
   const navigation = useNavigation();
 
   const handleSubmitRegister = async (values: IRegister) => {
@@ -60,6 +61,10 @@ const RegisterModal = ({visible, toggleVisible}: Omit<Props, 'handleSubmit'>) =>
       });
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <RegisterModalView visible={visible} toggleVisible={toggleVisible} handleSubmit={handleSubmitRegister} />
