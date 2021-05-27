@@ -8,18 +8,19 @@ import SingleItem from './SingleItem';
 
 interface Props {
   testID?: string
-  ingredients: string[]
+  name: string
+  items: string[]
 }
 
-const Ingredients = (props: Props) => {
-  const { ingredients } = props;
+const List = (props: Props) => {
+  const { name, items } = props;
   
   return (
     <View style={styles.topContainer}>
-      <STitle style={styles.title}>Ingredients</STitle>
+      <STitle style={styles.title}>{name}</STitle>
       <FlatList
         style={styles.container}
-        data={ingredients}
+        data={items}
         renderItem={({ item }) => <SingleItem item={item} />}
         keyExtractor={(i) => i}
       />
@@ -28,4 +29,4 @@ const Ingredients = (props: Props) => {
   );
 };
 
-export default Ingredients;
+export default List;

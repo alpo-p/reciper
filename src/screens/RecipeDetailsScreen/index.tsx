@@ -6,9 +6,8 @@ import { RouteProp  } from '@react-navigation/native';
 import { IRecipe } from '../../types';
 
 import Description from './components/Description';
-import Ingredients from './components/Ingredients';
 import theme from '../../theme';
-import Directions from './components/Directions';
+import List from './components/List';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -27,10 +26,10 @@ const RecipeDetailsScreen = (props: Props) => {
         {() => <Description recipe={recipe} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Ingredients">
-        {() => <Ingredients ingredients={recipe.ingredients} />} 
+        {() => <List name="Ingredients" items={recipe.ingredients} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Directions">
-        {() => <Directions directions={recipe.stepByStepDirections} />} 
+        {() => <List name="Directions" items={recipe.stepByStepDirections} />} 
       </TopTab.Screen>
     </TopTab.Navigator>
   );

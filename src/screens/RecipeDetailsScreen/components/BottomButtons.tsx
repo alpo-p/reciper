@@ -8,8 +8,10 @@ const BottomButtons = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <SIcon size={25} color={theme.colors.lightBlack} name='arrow-left-circle-outline' onPress={() => navigation.navigate('HomeScreen')} />
-      <SIcon size={25} name='heart' onPress={() => console.log("liked the recipe")} />
+      <SIcon size={25} color={theme.colors.lightBlack} name='arrow-left-circle-outline' 
+        onPress={() => navigation.navigate('HomeScreen')} />
+      <SIcon size={25} name='heart' 
+        onPress={() => console.log("liked the recipe")} />
     </View>
   );
 };
