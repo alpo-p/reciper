@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { RouteProp } from '@react-navigation/native';
+import { RouteProp  } from '@react-navigation/native';
 import { IRecipe } from '../../types';
 
 import Description from './components/Description';
@@ -10,7 +10,7 @@ import Ingredients from './components/Ingredients';
 import theme from '../../theme';
 import Directions from './components/Directions';
 
-const Tab = createMaterialTopTabNavigator();
+const TopTab = createMaterialTopTabNavigator();
 
 interface Props {
   testID?: string
@@ -22,17 +22,17 @@ const RecipeDetailsScreen = (props: Props) => {
   const { recipe } = route.params;
 
   return (
-    <Tab.Navigator style={{marginTop: theme.dimensions.statusBar}}>
-      <Tab.Screen name="Description">
+    <TopTab.Navigator style={{flex: 1, marginTop: theme.dimensions.statusBar}}>
+      <TopTab.Screen name="Description">
         {() => <Description recipe={recipe} />} 
-      </Tab.Screen>
-      <Tab.Screen name="Ingredients">
+      </TopTab.Screen>
+      <TopTab.Screen name="Ingredients">
         {() => <Ingredients ingredients={recipe.ingredients} />} 
-      </Tab.Screen>
-      <Tab.Screen name="Directions">
+      </TopTab.Screen>
+      <TopTab.Screen name="Directions">
         {() => <Directions directions={recipe.stepByStepDirections} />} 
-      </Tab.Screen>
-    </Tab.Navigator>
+      </TopTab.Screen>
+    </TopTab.Navigator>
   );
 };
 

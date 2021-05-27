@@ -1,8 +1,10 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import RecipeCard from '../../../components/RecipeCard';
 import SText from '../../../components/SText';
+import theme from '../../../theme';
 import { IRecipe } from '../../../types';
+import BottomButtons from './BottomButtons';
 
 interface Props {
   testID?: string
@@ -13,7 +15,7 @@ const Description = (props: Props) => {
   const { testID, recipe } = props;
   
   return (
-    <ScrollView style={styles.container} testID={testID}>
+    <View style={styles.container} testID={testID}>
       <RecipeCard 
         hideButtons
         testID="recipeCardWithoutButtons"
@@ -24,13 +26,14 @@ const Description = (props: Props) => {
       <View style={styles.textContainer}>
         <SText testID="descriptionText">{recipe.longDescription}</SText>
       </View>
-    </ScrollView>
+      <BottomButtons />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    height: theme.dimensions.height - theme.dimensions.statusBar,
   },
   textContainer: {
     padding: 20,
