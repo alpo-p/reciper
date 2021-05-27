@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
+import STitle from '../../../components/STitle';
 import BottomButtons from './BottomButtons';
 import { styles } from './sharedStyles';
 import SingleItem from './SingleItem';
@@ -16,6 +17,7 @@ const Directions = (props: Props) => {
   
   return (
     <View style={styles.topContainer}>
+      <STitle style={styles.title}>Directions</STitle>
       <FlatList
         style={styles.container}
         data={directions}

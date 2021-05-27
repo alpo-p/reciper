@@ -1,16 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import { StyleSheet, TextStyle } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import { Text } from 'react-native-paper';
 import theme from '../../theme';
 
 interface Props {
   children: React.ReactNode
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  style?: StyleProp<any>
   testID?: string
 }
 
 const STitle = ({ ...props }: Props ) => (
-  <Text testID={props.testID} style={styles.title}>{props.children}</Text>
+  <Text testID={props.testID} style={[props.style, styles.title]}>{props.children}</Text>
 );
 
 interface Styles {

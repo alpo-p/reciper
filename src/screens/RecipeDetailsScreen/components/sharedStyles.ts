@@ -5,9 +5,12 @@ import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from "../../../utils/utils";
 export const styles = StyleSheet.create({
   topContainer: {
     height: theme.dimensions.height - theme.dimensions.statusBar,
+    backgroundColor: theme.colors.primaryWhite,
   },
   container: {
     marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE,
-    backgroundColor: theme.colors.primaryWhite,
   },
+  title: {
+    color: theme.colors.lightBlack
+  }
 });
