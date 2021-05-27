@@ -1,5 +1,5 @@
 import React from 'react';
-import { Debug, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import SIcon from '.';
 
