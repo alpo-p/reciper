@@ -2,8 +2,9 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import RecipeCard from '.';
-import useGetRecipes from '../../hooks/useGetRecipes';
 import { ExtendedMatchers, IRecipe, IRecipes } from '../../types';
+// eslint-disable-next-line jest/no-mocks-import
+import useGetRecipes from '../../../__mocks__/useGetRecipes';
 
 describe('The Card components', () => {
   let getByTestId: (testId: string) => ReactTestInstance;
