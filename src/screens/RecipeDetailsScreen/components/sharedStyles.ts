@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.primaryWhite,
   },
   container: {
-    padding: 5,
+    margin: 10,
+    padding: 15,
     borderWidth: 0.5,
     borderColor: theme.colors.lightGrey,
     borderRadius: 5,
