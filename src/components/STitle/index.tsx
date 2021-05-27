@@ -12,7 +12,7 @@ interface Props {
 }
 
 const STitle = ({ ...props }: Props ) => (
-  <Text testID={props.testID} style={[props.style, styles.title]}>{props.children}</Text>
+  <Text testID={props.testID} style={[ styles.title, props.style ]}>{props.children}</Text>
 );
 
 interface Styles {

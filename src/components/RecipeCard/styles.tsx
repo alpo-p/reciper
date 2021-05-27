@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
     left: 10,
     bottom: 42,
   },
+  titleText: {
+    fontSize: theme.fontSizes.bigMinus
+  },
   cardContent: {
     flexDirection: 'row',
     alignItems: 'flex-start',

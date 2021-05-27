@@ -49,7 +49,7 @@ const Card = (props: Props) => {
       />
       <PCard.Content style={styles.cardContent}>
         <View style={styles.cardTitle}>
-          <STitle testID='cardTitle'>{recipe.name}</STitle>
+          <STitle style={styles.titleText} testID='cardTitle'>{recipe.name}</STitle>
         </View>
         {renderButtons()}
         <PreparationTime timeInMinutes={recipe.preparationTimeInMinutes} />
