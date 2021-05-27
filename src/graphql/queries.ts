@@ -7,3 +7,20 @@ export const GET_AUTHORIZED_USER = gql`
     }
   }
 `;
+
+export const GET_RECIPES = gql`
+  query {
+    allRecipes {
+      id
+      name
+      pictureUrl
+      preparationTimeInMinutes
+      numberOfServings
+      shortDescription
+      longDescription
+      tags
+      ingredients
+      stepByStepDirections
+    }
+  }
+`;
