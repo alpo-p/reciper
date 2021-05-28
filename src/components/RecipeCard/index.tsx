@@ -6,7 +6,7 @@ import STitle from '../STitle';
 import { IRecipe } from '../../types';
 
 import InfoButton from './InfoButton';
-import LikeButton from './LikeButton';
+import LikeButton from '../LikeButton';
 import PreparationTime from './PreparationTime';
 import RecipeTags from './RecipeTags';
 
