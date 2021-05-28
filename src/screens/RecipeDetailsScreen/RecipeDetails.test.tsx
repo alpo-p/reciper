@@ -32,7 +32,8 @@ describe('The recipe details component', () => {
   // Can't fix this for now...
   it('should render', () => {
     expect(1).toBe(1);
-    /*
+  });
+  /*
     const Stack = createStackNavigator();
     const tree = renderer.create(
       <NavigationContainer>
@@ -46,7 +47,6 @@ describe('The recipe details component', () => {
       </NavigationContainer>
     );
     expect(tree).toMatchSnapshot();
-  });
     expect(getByTestId('recipeDetailsContainer')).toBeDefined();
 
   describe('should have a Description component inside', () => {

@@ -20,11 +20,9 @@ module.exports = {
   cacheDirectory: '.jest/cache',
   setupFilesAfterEnv: [
     "./setupTests.js",
-    "./jestSetup.ts"
   ],
   setupFiles: [
     "./node_modules/react-native-gesture-handler/jestSetup.js",
-    "./jestSetup.ts"
   ],
   moduleFileExtensions: [
     "ts",
