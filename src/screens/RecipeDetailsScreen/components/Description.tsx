@@ -8,12 +8,13 @@ import BottomButtons from './BottomButtons';
 
 interface Props {
   testID?: string
-  handleLike: () => void
   recipe: IRecipe
+  handleLike: () => void
+  isLiked: boolean
 }
 
 const Description = (props: Props) => {
-  const { testID, recipe, handleLike } = props;
+  const { testID, recipe, handleLike, isLiked } = props;
   
   return (
     <View style={styles.container} testID={testID}>
@@ -27,7 +28,7 @@ const Description = (props: Props) => {
       <View style={styles.textContainer}>
         <SText testID="descriptionText">{recipe.longDescription}</SText>
       </View>
-      <BottomButtons handleLike={handleLike} />
+      <BottomButtons handleLike={handleLike} isLiked={isLiked}/>
     </View>
   );
 };

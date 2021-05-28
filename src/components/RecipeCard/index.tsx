@@ -18,20 +18,20 @@ interface Props {
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
   hideButtons?: boolean
-  likedRecipes: string[]
+  likedRecipes?: string[]
 }
 
 const Card = (props: Props) => {
   const { testID, recipe, handleLikeRecipe, handleShowDetails, hideButtons, likedRecipes } = props;
   const id = recipe.id;
 
-  const isPressed = Boolean(likedRecipes && likedRecipes.find(r => r === id));
+  const isLiked = Boolean(likedRecipes && likedRecipes.find(r => r === id));
 
   const renderButtons = () => {
     if (!hideButtons) {
       return (
         <>
-          <LikeButton onPress={() => handleLikeRecipe(id)} isPressed={isPressed} />
+          <LikeButton onPress={() => handleLikeRecipe(id)} isPressed={isLiked} />
           <InfoButton onPress={() => handleShowDetails(id)} />
         </>
       );

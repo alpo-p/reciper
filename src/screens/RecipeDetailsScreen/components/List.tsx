@@ -7,14 +7,14 @@ import { styles } from './sharedStyles';
 import SingleItem from './SingleItem';
 
 interface Props {
-  testID?: string
   name: string
-  handleLike: () => void
   items: string[]
+  handleLike: () => void
+  isLiked: boolean
 }
 
 const List = (props: Props) => {
-  const { name, items, handleLike } = props;
+  const { name, items, handleLike, isLiked } = props;
   
   return (
     <View style={styles.topContainer}>
@@ -25,7 +25,7 @@ const List = (props: Props) => {
         renderItem={({ item }) => <SingleItem item={item} />}
         keyExtractor={(i) => i}
       />
-      <BottomButtons handleLike={handleLike}/>
+      <BottomButtons handleLike={handleLike} isLiked={isLiked}/>
     </View>
   );
 };

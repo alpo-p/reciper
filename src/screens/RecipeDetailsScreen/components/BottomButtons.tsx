@@ -7,15 +7,16 @@ import theme from '../../../theme';
 
 interface Props {
   handleLike: () => void
+  isLiked: boolean
 }
 
-const BottomButtons = ({ handleLike }: Props) => {
+const BottomButtons = ({ handleLike, isLiked }: Props) => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SIcon size={30} color={theme.colors.lightBlack} name='arrow-left-circle-outline' 
         onPress={() => navigation.navigate('HomeScreen')} />
-      <LikeButton bigger onPress={handleLike} />
+      <LikeButton bigger onPress={handleLike} isPressed={isLiked} />
     </View>
   );
 };

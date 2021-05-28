@@ -17,7 +17,6 @@ const ListOfCards = (props: Props) => {
   const { testID, recipes, handleLikeRecipe, handleShowDetails, likedRecipes } = props;
 
   const parsedRecipes = recipes.data.allRecipes;
-  console.log(likedRecipes);
 
   return (
     <FlatList

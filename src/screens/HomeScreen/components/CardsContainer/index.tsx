@@ -42,7 +42,8 @@ const CardsContainer = (props: Props) => {
   const handleLikeRecipe = (id: string) => console.log("liked:",recipes.data.allRecipes.find(r => r.id === id));
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {
-      recipe: recipes.data.allRecipes.find(r => r.id === id)
+      recipe: recipes.data.allRecipes.find(r => r.id === id),
+      likedRecipes
     });
 
   return (
