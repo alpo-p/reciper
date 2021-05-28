@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
-
 import { GET_AUTHORIZED_USER } from '../graphql/queries';
+
 
 interface Iid {
   id: string
@@ -19,18 +19,15 @@ const parseData = (data: unknown): ICurrentUser => {
   return data as ICurrentUser;
 };
 
-const useAuthorizedUser = () => {
+const useGetLikedRecipes = () => {
   const { data, loading, ...rest } = useQuery<ICurrentUser>(GET_AUTHORIZED_USER, {
     fetchPolicy: 'cache-and-network',
   });
+  const _loading = loading;
+  const parsedData = parseData(data);
+  const likedRecipes = parsedData.currentUser.likedRecipes;
 
-  let authorizedUser: Iid | undefined;
-  if (data) {
-    const parsedData = parseData(data);
-    authorizedUser = parsedData ? parsedData?.currentUser : undefined;
-  }
-
-  return { authorizedUser, loading, ...rest };
+  return { likedRecipes, _loading, ...rest };
 };
 
-export default useAuthorizedUser;
+export default useGetLikedRecipes;

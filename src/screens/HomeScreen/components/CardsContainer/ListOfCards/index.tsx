@@ -6,6 +6,7 @@ import RecipeCard from '../../../../../components/RecipeCard';
 interface Props {
   testID?: string
   recipes: IRecipes
+  likedRecipes: string[]
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
 }
@@ -13,9 +14,10 @@ interface Props {
 const BOTTOM_MARGIN_GLITCH_FIX_VALUE = 50;
 
 const ListOfCards = (props: Props) => {
-  const { testID, recipes, handleLikeRecipe, handleShowDetails } = props;
+  const { testID, recipes, handleLikeRecipe, handleShowDetails, likedRecipes } = props;
 
   const parsedRecipes = recipes.data.allRecipes;
+  console.log(likedRecipes);
 
   return (
     <FlatList
@@ -27,6 +29,7 @@ const ListOfCards = (props: Props) => {
           testID='card'
           handleLikeRecipe={handleLikeRecipe}
           handleShowDetails={handleShowDetails}
+          likedRecipes={likedRecipes}
         />
       )}
       keyExtractor={(i) => i.id}
