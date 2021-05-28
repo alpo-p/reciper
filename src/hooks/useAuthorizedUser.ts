@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_AUTHORIZED_USER } from '../graphql/queries';
 
 interface Iid {
-  id: string
+  username: string
 }
 
 interface ICurrentUser {

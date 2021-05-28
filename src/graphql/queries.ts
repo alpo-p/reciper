@@ -3,10 +3,14 @@ import { gql } from '@apollo/client';
 export const GET_AUTHORIZED_USER = gql`
   query {
     currentUser {
-      id
+      username
     }
   }
 `;
+
+//export const GET_LIKED_RECIPES_FOR_USER = gql`
+
+//`; 
 
 export const GET_RECIPES = gql`
   query {
