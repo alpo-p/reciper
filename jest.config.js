@@ -10,6 +10,7 @@ module.exports = {
   },
   transformIgnorePatterns: [
     "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|expo-font/build/.*|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*|react-router-native)",
+    "/node_modules/(?!native-base)/"
   ],
   globals: {
     'ts-jest': {
@@ -18,7 +19,12 @@ module.exports = {
   },
   cacheDirectory: '.jest/cache',
   setupFilesAfterEnv: [
-    "./setupTests.js"
+    "./setupTests.js",
+    "./jestSetup.ts"
+  ],
+  setupFiles: [
+    "./node_modules/react-native-gesture-handler/jestSetup.js",
+    "./jestSetup.ts"
   ],
   moduleFileExtensions: [
     "ts",
