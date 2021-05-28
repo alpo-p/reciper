@@ -9,11 +9,12 @@ import SingleItem from './SingleItem';
 interface Props {
   testID?: string
   name: string
+  handleLike: () => void
   items: string[]
 }
 
 const List = (props: Props) => {
-  const { name, items } = props;
+  const { name, items, handleLike } = props;
   
   return (
     <View style={styles.topContainer}>
@@ -24,7 +25,7 @@ const List = (props: Props) => {
         renderItem={({ item }) => <SingleItem item={item} />}
         keyExtractor={(i) => i}
       />
-      <BottomButtons />
+      <BottomButtons handleLike={handleLike}/>
     </View>
   );
 };

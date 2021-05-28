@@ -19,17 +19,18 @@ interface Props {
 const RecipeDetailsScreen = (props: Props) => {
   const { route } = props;
   const { recipe } = route.params;
+  const handleLike = () => console.log("liked recipe: ", recipe.id);
 
   return (
     <TopTab.Navigator style={{flex: 1, marginTop: theme.dimensions.statusBar}}>
       <TopTab.Screen name="Description">
-        {() => <Description recipe={recipe} />} 
+        {() => <Description recipe={recipe} handleLike={handleLike} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Ingredients">
-        {() => <List name="Ingredients" items={recipe.ingredients} />} 
+        {() => <List name="Ingredients" items={recipe.ingredients} handleLike={handleLike} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Directions">
-        {() => <List name="Directions" items={recipe.stepByStepDirections} />} 
+        {() => <List name="Directions" items={recipe.stepByStepDirections} handleLike={handleLike} />} 
       </TopTab.Screen>
     </TopTab.Navigator>
   );
