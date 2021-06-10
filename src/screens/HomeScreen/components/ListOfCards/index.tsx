@@ -1,7 +1,10 @@
 import React  from 'react';
 import { FlatList } from 'react-native';
-import { IRecipes } from '../../../../../types';
-import RecipeCard from '../../../../../components/RecipeCard';
+
+import { IRecipes } from '../../../../types';
+import RecipeCard from '../../../../components/RecipeCard';
+
+import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../../../utils/utils';
 
 interface Props {
   testID?: string
@@ -10,8 +13,6 @@ interface Props {
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
 }
-
-const BOTTOM_MARGIN_GLITCH_FIX_VALUE = 50;
 
 const ListOfCards = (props: Props) => {
   const { testID, recipes, handleLikeRecipe, handleShowDetails, likedRecipes } = props;

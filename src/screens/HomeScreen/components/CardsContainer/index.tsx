@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import ListOfCards from './ListOfCards';
+import ListOfCards from '../ListOfCards';
 import useGetRecipes from '../../../../hooks/useGetRecipes';
 import { IRecipes } from '../../../../types';
 import { useNavigation } from '@react-navigation/core';

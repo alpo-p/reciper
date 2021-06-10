@@ -18,6 +18,7 @@ describe('The CardContainer', () => {
     ({ getByTestId } = render(
       <CardsContainerView 
         recipes={recipes}
+        likedRecipes={[]}
         handleLikeRecipe={handleLikeRecipe} 
         handleShowDetails={handleShowDetails} 
       /> 
