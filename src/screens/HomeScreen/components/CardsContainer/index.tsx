@@ -8,6 +8,7 @@ import Loading from '../../../../components/Loading';
 
 import useGetRecipes from '../../../../hooks/useGetRecipes';
 import useGetLikedRecipes from '../../../../hooks/useGetLikedRecipes';
+import useLikeRecipe from '../../../../hooks/useLikeRecipe';
 
 interface Props {
   testID?: string
@@ -38,10 +39,14 @@ const CardsContainer = (props: Props) => {
 
   const { recipes, loading } = useGetRecipes();
   const { likedRecipes, _loading } = useGetLikedRecipes();
+
+  const { likeRecipe } = useLikeRecipe();
   
   if (loading || _loading) return <Loading />;
+  
+  // TÄSSÄ JOTAIN HÄIKKÄÄ
+  const handleLikeRecipe = async (id: string) => await likeRecipe(id);
 
-  const handleLikeRecipe = (id: string) => console.log("liked:",recipes.data.allRecipes.find(r => r.id === id));
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {
       recipe: recipes.data.allRecipes.find(r => r.id === id),

@@ -17,3 +17,11 @@ export const REGISTER = gql`
     ) {id}
   }
 `;
+
+export const LIKE_RECIPE = gql`
+  mutation likeRecipe($recipeID: String!) {
+    likeRecipe(
+      recipeID:$recipeID
+    )
+  }
+`;
