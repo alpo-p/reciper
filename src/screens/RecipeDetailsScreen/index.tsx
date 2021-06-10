@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { RouteProp  } from '@react-navigation/native';
 import { IRecipe } from '../../types';
@@ -17,12 +17,19 @@ interface Props {
 }
 
 const RecipeDetailsScreen = (props: Props) => {
+  const [isLiked, setIsLiked] = useState(false);
+
   const { route } = props;
   const { recipe, likedRecipes } = route.params;
 
-  const handleLike = () => console.log("liked recipe: ", recipe.id);
+  useEffect(() => {
+    setIsLiked(Boolean(likedRecipes && likedRecipes.find(r => r === recipe.id)));
+  }, [likedRecipes]);
 
-  const isLiked = Boolean(likedRecipes && likedRecipes.find(r => r === recipe.id));
+  const handleLike = () => {
+    setIsLiked(!isLiked);
+    console.log("Liked recipe:", recipe.id);
+  };
 
   return (
     <TopTab.Navigator style={{flex: 1, marginTop: theme.dimensions.statusBar}}>
