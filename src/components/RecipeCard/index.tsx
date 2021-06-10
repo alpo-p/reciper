@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Card as PCard } from 'react-native-paper';
 
@@ -22,16 +22,25 @@ interface Props {
 }
 
 const Card = (props: Props) => {
+  const [isLiked, setIsLiked] = useState(false);
+
   const { testID, recipe, handleLikeRecipe, handleShowDetails, hideButtons, likedRecipes } = props;
   const id = recipe.id;
 
-  const isLiked = Boolean(likedRecipes && likedRecipes.find(r => r === id));
+  useEffect(() => {
+    setIsLiked(Boolean(likedRecipes && likedRecipes.find(r => r === id)));
+  }, [likedRecipes]);
+
+  const handlePress = () => {
+    setIsLiked(!isLiked);
+    handleLikeRecipe(id);
+  };
 
   const renderButtons = () => {
     if (!hideButtons) {
       return (
         <>
-          <LikeButton onPress={() => handleLikeRecipe(id)} isPressed={isLiked} />
+          <LikeButton onPress={handlePress} isPressed={isLiked} />
           <InfoButton onPress={() => handleShowDetails(id)} />
         </>
       );
