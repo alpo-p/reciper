@@ -36,4 +36,10 @@ export interface IRecipes {
   }
 }
 
+export interface IAllLikedRecipes {
+  data: {
+    likedRecipesByCurrentUser: IRecipe[]
+  }
+}
+
 export type MaterialIconName = React.ComponentProps<typeof MaterialCommunityIcons>['name'];

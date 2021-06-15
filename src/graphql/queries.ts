@@ -10,9 +10,8 @@ export const GET_AUTHORIZED_USER = gql`
   }
 `;
 
-export const GET_RECIPES = gql`
-  query {
-    allRecipes {
+const RECIPE_DETAILS = gql`
+  fragment RecipeDetails on Recipe {
       id
       name
       pictureUrl
@@ -23,6 +22,23 @@ export const GET_RECIPES = gql`
       tags
       ingredients
       stepByStepDirections
+  }
+`;
+
+export const GET_RECIPES = gql`
+  query {
+    allRecipes {
+      ...RecipeDetails
     }
   }
+  ${RECIPE_DETAILS}
+`;
+
+export const LIKED_RECIPES = gql`
+  query {
+    likedRecipesByCurrentUser {
+      ...RecipeDetails
+    }
+  }
+  ${RECIPE_DETAILS}
 `;
