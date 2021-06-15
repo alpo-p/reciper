@@ -19,7 +19,7 @@ export const REGISTER = gql`
 `;
 
 export const LIKE_RECIPE = gql`
-  mutation likeRecipe($recipeID: String!) {
+  mutation likeRecipe($recipeID: ID!) {
     likeRecipe(
       recipeID:$recipeID
     )

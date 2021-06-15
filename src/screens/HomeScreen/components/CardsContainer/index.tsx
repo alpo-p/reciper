@@ -44,7 +44,6 @@ const CardsContainer = (props: Props) => {
   
   if (loading || _loading) return <Loading />;
   
-  // TÄSSÄ JOTAIN HÄIKKÄÄ
   const handleLikeRecipe = async (id: string) => await likeRecipe(id);
 
   const handleShowDetails = (id: string) => 
