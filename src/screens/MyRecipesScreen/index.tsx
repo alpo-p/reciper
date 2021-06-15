@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
 import TopBar from '../../components/TopBar';
+import MyRecipesTitle from './components/MyRecipesTitle';
 
 interface Props {
   testID?: string
@@ -20,6 +21,7 @@ const MyRecipesScreen = (props: Props) => {
         navigateToAddARecipe={handleNavigateToAddARecipe} 
         navigateToHome={handleNavigateToHome}
       />
+      <MyRecipesTitle />
     </View>
   );
 };
