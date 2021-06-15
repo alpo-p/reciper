@@ -12,9 +12,7 @@ const Navigator = () => {
   const Stack = createStackNavigator();
   const { authorizedUser, loading } = useAuthorizedUser();
 
-  if(loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
   const initialRouteName = authorizedUser ? 'HomeScreen' : 'AuthScreen';
 
