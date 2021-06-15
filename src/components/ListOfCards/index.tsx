@@ -9,7 +9,7 @@ import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../utils/utils';
 interface Props {
   testID?: string
   recipes: IRecipe[]
-  likedRecipes: string[]
+  likedRecipes?: string[]
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
 }
