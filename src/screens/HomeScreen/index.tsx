@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
 
@@ -15,15 +16,18 @@ export const HomeScreenView = ({ navigateToMyRecipes, navigateToAddARecipe }: Pr
   <View testID='homeScreen' style={styles.homeContainer}>
     <TopBar 
       navigateToMyRecipes={navigateToMyRecipes} 
+      showMyRecipes
       navigateToAddARecipe={navigateToAddARecipe}
       testID='topBar'/>
     <CardsContainer testID='cardContainer' />
   </View>
 );
 
-const HomeScreen= () => {
-  const handleNavigateToMyRecipes = () => console.log("tässä!");
-  const handleNavigateToAddARecipe = () => console.log("tässä!");
+const HomeScreen = () => {
+  const navigation = useNavigation();
+
+  const handleNavigateToMyRecipes = () => navigation.navigate('MyRecipes');
+  const handleNavigateToAddARecipe = () => console.log("Navigating to add a recipe");
 
   return (
     <HomeScreenView 

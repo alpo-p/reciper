@@ -5,8 +5,8 @@ import Loading from './components/Loading';
 import useAuthorizedUser from './hooks/useAuthorizedUser';
 import WelcomeScreen from './screens/AuthScreen/WelcomeScreen';
 import HomeScreen from './screens/HomeScreen';
+import MyRecipesScreen from './screens/MyRecipesScreen';
 import RecipeDetailsScreen from './screens/RecipeDetailsScreen';
-
 
 const Navigator = () => {
   const Stack = createStackNavigator();
@@ -25,6 +25,7 @@ const Navigator = () => {
         <Stack.Screen name='AuthScreen' component={WelcomeScreen} />
         <Stack.Screen name='HomeScreen' component={HomeScreen} />
         <Stack.Screen name='RecipeDetails' component={RecipeDetailsScreen} />
+        <Stack.Screen name='MyRecipes' component={MyRecipesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
