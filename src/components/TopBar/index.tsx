@@ -6,15 +6,20 @@ import { styles } from './styles';
 
 import MyRecipesButton from './MyRecipesButton';
 import AddARecipeButton from './AddARecipeButton';
+import NavigateHomeButton from './NavigateHomeButton';
 
 interface Props {
   testID?: string
-  navigateToMyRecipes: () => void
+  navigateToMyRecipes?: () => void
   navigateToAddARecipe: () => void
+  navigateToHome?: () => void
+  showMyRecipes?: boolean
+  showNavigateHome?: boolean
 }
 
 const TopBar = (props: Props) => {
-  const { testID, navigateToMyRecipes, navigateToAddARecipe } = props;
+  const { testID, navigateToMyRecipes, 
+    navigateToAddARecipe, navigateToHome, showMyRecipes, showNavigateHome } = props;
 
   return (
     <View style={styles.container} testID={testID}>
@@ -24,7 +29,8 @@ const TopBar = (props: Props) => {
       <View style={styles.emptyContainer}></View>
       <View style={styles.buttonContainer} >
         <AddARecipeButton onPress={navigateToAddARecipe} />
-        <MyRecipesButton onPress={navigateToMyRecipes} />
+        {showMyRecipes && <MyRecipesButton onPress={navigateToMyRecipes} />}
+        {showNavigateHome && <NavigateHomeButton onPress={navigateToHome} />}
       </View>
     </View>
   );

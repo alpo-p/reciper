@@ -9,7 +9,7 @@ import { MaterialIconName } from '../../types';
 interface Props {
   testID?: string
   name: MaterialIconName
-  onPress: () => void
+  onPress?: () => void
   size?: number
   color?: string
 }

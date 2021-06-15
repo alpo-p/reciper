@@ -12,7 +12,7 @@ describe('The TopBar', () => {
     handleNavigateToMyRecipes = jest.fn();
     handleNavigateToAddNewRecipe = jest.fn();
     ({ getByTestId } = render(
-      <TopBar navigateToMyRecipes={handleNavigateToMyRecipes} navigateToAddARecipe={handleNavigateToAddNewRecipe} />
+      <TopBar navigateToMyRecipes={handleNavigateToMyRecipes} navigateToAddARecipe={handleNavigateToAddNewRecipe} showMyRecipes />
     ));
   });
 
