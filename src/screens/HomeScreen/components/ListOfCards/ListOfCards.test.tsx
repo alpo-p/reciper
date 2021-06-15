@@ -8,11 +8,12 @@ import useGetRecipes from '../../../../../__mocks__/useGetRecipes';
 describe('The ListOfCards component', () => {
   let getAllByTestId: (testId: string) => ReactTestInstance[];
   const recipes = useGetRecipes();
+  const parsedRecipes = recipes.data.allRecipes;
 
   beforeEach(() => {
     ({ getAllByTestId } = render(
       <ListOfCards 
-        recipes={recipes} 
+        recipes={parsedRecipes} 
         likedRecipes={[]}
         handleLikeRecipe={() => null}
         handleShowDetails={() => null}

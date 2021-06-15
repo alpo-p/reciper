@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
-import { IRecipes } from '../../../../types';
+import { IRecipe } from '../../../../types';
 import ListOfCards from '../ListOfCards';
 import Loading from '../../../../components/Loading';
 
@@ -16,7 +16,7 @@ interface Props {
 
 interface ViewProps {
   testID?: string
-  recipes: IRecipes
+  recipes: IRecipe[]
   likedRecipes: string[]
   handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
@@ -38,6 +38,8 @@ const CardsContainer = (props: Props) => {
   const navigation = useNavigation();
 
   const { recipes, loading } = useGetRecipes();
+  const parsedRecipes = recipes.data.allRecipes;
+
   const { likedRecipes, _loading } = useGetLikedRecipes();
 
   const { likeRecipe } = useLikeRecipe();
@@ -48,14 +50,14 @@ const CardsContainer = (props: Props) => {
 
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {
-      recipe: recipes.data.allRecipes.find(r => r.id === id),
+      recipe: parsedRecipes.find(r => r.id === id),
       likedRecipes
     });
 
   return (
     <CardsContainerView 
       testID={testID} 
-      recipes={recipes}
+      recipes={parsedRecipes}
       likedRecipes={likedRecipes}
       handleLikeRecipe={handleLikeRecipe} 
       handleShowDetails={handleShowDetails} 

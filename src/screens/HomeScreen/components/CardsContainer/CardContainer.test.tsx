@@ -12,12 +12,14 @@ describe('The CardContainer', () => {
 
   beforeEach(() => {
     const recipes: IRecipes = useGetRecipes();
+    const parsedRecipes = recipes.data.allRecipes;
+
     const handleLikeRecipe = jest.fn();
     const handleShowDetails = jest.fn();
 
     ({ getByTestId } = render(
       <CardsContainerView 
-        recipes={recipes}
+        recipes={parsedRecipes}
         likedRecipes={[]}
         handleLikeRecipe={handleLikeRecipe} 
         handleShowDetails={handleShowDetails} 
