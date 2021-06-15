@@ -2,13 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
-import { IRecipe } from '../../../../types';
-import ListOfCards from '../ListOfCards';
-import Loading from '../../../../components/Loading';
+import { IRecipe } from '../../../types';
+import ListOfCards from '../../../components/ListOfCards';
+import Loading from '../../../components/Loading';
 
-import useGetRecipes from '../../../../hooks/useGetRecipes';
-import useGetLikedRecipes from '../../../../hooks/useGetLikedRecipes';
-import useLikeRecipe from '../../../../hooks/useLikeRecipe';
+import useGetRecipes from '../../../hooks/useGetRecipes';
+import useGetLikedRecipes from '../../../hooks/useGetLikedRecipes';
+import useLikeRecipe from '../../../hooks/useLikeRecipe';
 
 interface Props {
   testID?: string
@@ -38,15 +38,16 @@ const CardsContainer = (props: Props) => {
   const navigation = useNavigation();
 
   const { recipes, loading } = useGetRecipes();
-  const parsedRecipes = recipes.data.allRecipes;
-
+  
   const { likedRecipes, _loading } = useGetLikedRecipes();
-
+  
   const { likeRecipe } = useLikeRecipe();
   
   if (loading || _loading) return <Loading />;
   
   const handleLikeRecipe = async (id: string) => await likeRecipe(id);
+  
+  const parsedRecipes = recipes.data.allRecipes;
 
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {

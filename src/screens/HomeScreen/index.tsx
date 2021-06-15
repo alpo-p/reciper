@@ -3,7 +3,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import TopBar from '../../components/TopBar';
-import CardsContainer from './components/CardsContainer';
+import CardsContainer from './CardsContainer';
 
 import { styles } from './styles';
 

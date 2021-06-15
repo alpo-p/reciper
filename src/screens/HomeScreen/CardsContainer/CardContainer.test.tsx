@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import { ReactTestInstance } from 'react-test-renderer';
 import { CardsContainerView } from '.';
-import { IRecipes } from '../../../../types';
+import { IRecipes } from '../../../types';
 // eslint-disable-next-line jest/no-mocks-import
-import useGetRecipes from '../../../../../__mocks__/useGetRecipes';
+import useGetRecipes from '../../../../__mocks__/useGetRecipes';
 
 describe('The CardContainer', () => {
   let getByTestId: (testId: string) => ReactTestInstance;

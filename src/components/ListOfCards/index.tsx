@@ -1,10 +1,10 @@
 import React  from 'react';
 import { FlatList } from 'react-native';
 
-import { IRecipe } from '../../../../types';
-import RecipeCard from '../../../../components/RecipeCard';
+import { IRecipe } from '../../types';
+import RecipeCard from '../RecipeCard';
 
-import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../../../utils/utils';
+import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../utils/utils';
 
 interface Props {
   testID?: string
