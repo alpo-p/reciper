@@ -10,12 +10,11 @@ interface Props {
   testID?: string
   recipes: IRecipe[]
   likedRecipes?: string[]
-  handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
 }
 
 const ListOfCards = (props: Props) => {
-  const { testID, recipes, handleLikeRecipe, handleShowDetails, likedRecipes } = props;
+  const { testID, recipes, handleShowDetails, likedRecipes } = props;
 
   return (
     <FlatList
@@ -25,7 +24,6 @@ const ListOfCards = (props: Props) => {
         <RecipeCard 
           recipe={item} 
           testID='card'
-          handleLikeRecipe={handleLikeRecipe}
           handleShowDetails={handleShowDetails}
           likedRecipes={likedRecipes}
         />

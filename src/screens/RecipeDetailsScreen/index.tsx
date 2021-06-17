@@ -17,14 +17,13 @@ interface Props {
 }
 
 const RecipeDetailsScreen = (props: Props) => {
-  const [isLiked, setIsLiked] = useState(false);
-
   const { route } = props;
   const { recipe, likedRecipes } = route.params;
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     setIsLiked(Boolean(likedRecipes && likedRecipes.find(r => r === recipe.id)));
-  }, [likedRecipes]);
+  }, []);
 
   const handleLike = () => {
     setIsLiked(!isLiked);

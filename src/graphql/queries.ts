@@ -42,3 +42,9 @@ export const LIKED_RECIPES = gql`
   }
   ${RECIPE_DETAILS}
 `;
+
+export const IS_RECIPE_LIKED_BY_CURRENT_USER = gql`
+  query isRecipeLikedByCurrentUser($id: ID!) {
+    isRecipeLikedByCurrentUser(id: $id)
+  }
+`;

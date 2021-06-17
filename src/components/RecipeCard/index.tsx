@@ -11,11 +11,11 @@ import PreparationTime from './PreparationTime';
 import RecipeTags from './RecipeTags';
 
 import { styles } from './styles';
+import useLikeRecipe from '../../hooks/useLikeRecipe';
 
 interface Props {
   testID?: string
   recipe: IRecipe
-  handleLikeRecipe: (id: string) => void
   handleShowDetails: (id: string) => void
   hideButtons?: boolean
   likedRecipes?: string[]
@@ -23,17 +23,18 @@ interface Props {
 
 const Card = (props: Props) => {
   const [isLiked, setIsLiked] = useState(false);
+  const { likeRecipe } = useLikeRecipe();
 
-  const { testID, recipe, handleLikeRecipe, handleShowDetails, hideButtons, likedRecipes } = props;
+  const { testID, recipe, handleShowDetails, hideButtons, likedRecipes } = props;
   const id = recipe.id;
 
   useEffect(() => {
     setIsLiked(Boolean(likedRecipes && likedRecipes.find(r => r === id)));
-  }, [likedRecipes]);
+  }, []);
 
   const handlePress = () => {
+    void likeRecipe(id);
     setIsLiked(!isLiked);
-    handleLikeRecipe(id);
   };
 
   const renderButtons = () => {
