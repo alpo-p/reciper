@@ -37,7 +37,6 @@ const CardsContainer = (props: Props) => {
   const { recipes, loading } = useGetRecipes();
   const { recipes: likedRecipes, loading: _loading} = useFetchLikedRecipes();
 
-  
   if (loading || _loading) return <Loading />;
   
   const parsedRecipes = recipes.data.allRecipes;
