@@ -23,7 +23,6 @@ const MyRecipesScreen = (props: Props) => {
   const handleNavigateToHome = () => navigation.navigate('HomeScreen');
   const handleNavigateToAddARecipe = () => console.log('navigating to add a recipe');
 
-  const handleLikeRecipe = () => console.log("liking recipe");
   const handleShowDetails = () => console.log("showing details");
 
   return (
@@ -35,7 +34,6 @@ const MyRecipesScreen = (props: Props) => {
       <MyRecipesTitle />
       <ListOfCards 
         recipes={parsedRecipes} 
-        handleLikeRecipe={handleLikeRecipe} 
         handleShowDetails={handleShowDetails}
       />
     </View>
