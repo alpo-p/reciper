@@ -23,7 +23,6 @@ const Description = (props: Props) => {
         testID="recipeCardWithoutButtons"
         recipe={recipe}
         handleShowDetails={() => console.log('show details')}
-        handleLikeRecipe={() => null}
       />
       <View style={styles.textContainer}>
         <SText testID="descriptionText">{recipe.longDescription}</SText>
