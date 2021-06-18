@@ -11,7 +11,7 @@ const MyRecipesTitle = (props: Props) => {
   const { testID } = props;
   return (
     <View testID={testID}>
-      <STitle style={{ color: theme.colors.primaryColor }}>Liked recipes</STitle>
+      <STitle style={{ color: theme.colors.primaryColor, fontFamily: 'TangerineBold' }}>Liked recipes</STitle>
     </View>
   );
 };
