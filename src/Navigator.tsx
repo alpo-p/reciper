@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Loading from './components/Loading';
 import useAuthorizedUser from './hooks/useAuthorizedUser';
+import AddARecipeScreen from './screens/AddARecipeScreen';
 import WelcomeScreen from './screens/AuthScreen/WelcomeScreen';
 import HomeScreen from './screens/HomeScreen';
 import MyRecipesScreen from './screens/MyRecipesScreen';
@@ -26,6 +27,7 @@ const Navigator = () => {
         <Stack.Screen name='HomeScreen' component={HomeScreen} />
         <Stack.Screen name='RecipeDetails' component={RecipeDetailsScreen} />
         <Stack.Screen name='MyRecipes' component={MyRecipesScreen} />
+        <Stack.Screen name='AddARecipe' component={AddARecipeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

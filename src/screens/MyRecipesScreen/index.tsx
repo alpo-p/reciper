@@ -23,7 +23,7 @@ const MyRecipesScreen = (props: Props) => {
   const likedRecipeIds = parsedRecipes.map(recipe => recipe.id);
 
   const handleNavigateToHome = () => navigation.navigate('HomeScreen');
-  const handleNavigateToAddARecipe = () => console.log('navigating to add a recipe');
+  const handleNavigateToAddARecipe = () => navigation.navigate('AddARecipe');
 
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {

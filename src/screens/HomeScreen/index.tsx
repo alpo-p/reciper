@@ -27,7 +27,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   const handleNavigateToMyRecipes = () => navigation.navigate('MyRecipes');
-  const handleNavigateToAddARecipe = () => console.log("Navigating to add a recipe");
+  const handleNavigateToAddARecipe = () => navigation.navigate('AddARecipe');
 
   return (
     <HomeScreenView 
