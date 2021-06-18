@@ -5,6 +5,7 @@ import ListOfCards from '../../components/ListOfCards';
 import Loading from '../../components/Loading';
 import TopBar from '../../components/TopBar';
 import useFetchLikedRecipes from '../../hooks/useFetchLikedRecipes';
+import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../utils/utils';
 import MyRecipesTitle from './MyRecipesTitle';
 
 interface Props {
@@ -19,14 +20,19 @@ const MyRecipesScreen = (props: Props) => {
   if (loading) return <Loading />;
 
   const parsedRecipes = recipes?.data.likedRecipesByCurrentUser;
+  const likedRecipeIds = parsedRecipes.map(recipe => recipe.id);
 
   const handleNavigateToHome = () => navigation.navigate('HomeScreen');
   const handleNavigateToAddARecipe = () => console.log('navigating to add a recipe');
 
-  const handleShowDetails = () => console.log("showing details");
+  const handleShowDetails = (id: string) => 
+    navigation.navigate('RecipeDetails', {
+      recipe: parsedRecipes.find(r => r.id === id),
+      likedRecipes: likedRecipeIds
+    });
 
   return (
-    <View testID={testID}>
+    <View style={{ marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE + 10 }} testID={testID}>
       <TopBar showNavigateHome 
         navigateToAddARecipe={handleNavigateToAddARecipe} 
         navigateToHome={handleNavigateToHome}
@@ -35,6 +41,7 @@ const MyRecipesScreen = (props: Props) => {
       <ListOfCards 
         recipes={parsedRecipes} 
         handleShowDetails={handleShowDetails}
+        likedRecipes={likedRecipeIds}
       />
     </View>
   );
