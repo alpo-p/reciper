@@ -11,10 +11,11 @@ interface Props {
   items: string[]
   handleLike: () => void
   isLiked: boolean
+  navigateBackToMyRecipes?: boolean
 }
 
 const List = (props: Props) => {
-  const { name, items, handleLike, isLiked } = props;
+  const { name, items, handleLike, isLiked, navigateBackToMyRecipes } = props;
   
   return (
     <View style={styles.topContainer}>
@@ -25,7 +26,7 @@ const List = (props: Props) => {
         renderItem={({ item }) => <SingleItem item={item} />}
         keyExtractor={(i) => i}
       />
-      <BottomButtons handleLike={handleLike} isLiked={isLiked}/>
+      <BottomButtons handleLike={handleLike} isLiked={isLiked} navigateBackToMyRecipes={navigateBackToMyRecipes} />
     </View>
   );
 };

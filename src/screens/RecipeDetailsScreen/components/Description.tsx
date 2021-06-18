@@ -11,10 +11,11 @@ interface Props {
   recipe: IRecipe
   handleLike: () => void
   isLiked: boolean
+  navigateBackToMyRecipes?: boolean
 }
 
 const Description = (props: Props) => {
-  const { testID, recipe, handleLike, isLiked } = props;
+  const { testID, recipe, handleLike, isLiked, navigateBackToMyRecipes } = props;
   
   return (
     <View style={styles.container} testID={testID}>
@@ -27,7 +28,7 @@ const Description = (props: Props) => {
       <View style={styles.textContainer}>
         <SText testID="descriptionText">{recipe.longDescription}</SText>
       </View>
-      <BottomButtons handleLike={handleLike} isLiked={isLiked}/>
+      <BottomButtons handleLike={handleLike} isLiked={isLiked} navigateBackToMyRecipes={navigateBackToMyRecipes} />
     </View>
   );
 };

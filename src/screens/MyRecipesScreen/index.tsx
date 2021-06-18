@@ -28,7 +28,8 @@ const MyRecipesScreen = (props: Props) => {
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {
       recipe: parsedRecipes.find(r => r.id === id),
-      likedRecipes: likedRecipeIds
+      likedRecipes: likedRecipeIds,
+      navigateBackToMyRecipes: true
     });
 
   return (

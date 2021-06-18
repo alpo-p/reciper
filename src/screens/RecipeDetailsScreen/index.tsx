@@ -14,12 +14,12 @@ const TopTab = createMaterialTopTabNavigator();
 
 interface Props {
   testID?: string
-  route: RouteProp<{ params: { recipe: IRecipe, likedRecipes: string[] } }, 'params'>
+  route: RouteProp<{ params: { recipe: IRecipe, likedRecipes: string[], navigateBackToMyRecipes?: boolean } }, 'params'>
 }
 
 const RecipeDetailsScreen = (props: Props) => {
   const { route } = props;
-  const { recipe, likedRecipes } = route.params;
+  const { recipe, likedRecipes, navigateBackToMyRecipes } = route.params;
   const [isLiked, setIsLiked] = useState(false);
   const { likeRecipe } = useLikeRecipe();
 
@@ -35,13 +35,16 @@ const RecipeDetailsScreen = (props: Props) => {
   return (
     <TopTab.Navigator style={{flex: 1, marginTop: theme.dimensions.statusBar}}>
       <TopTab.Screen name="Description">
-        {() => <Description recipe={recipe} handleLike={handleLike} isLiked={isLiked}/>} 
+        {() => <Description recipe={recipe} handleLike={handleLike} isLiked={isLiked} 
+          navigateBackToMyRecipes={navigateBackToMyRecipes} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Ingredients">
-        {() => <List name="Ingredients" items={recipe.ingredients} handleLike={handleLike} isLiked={isLiked} />} 
+        {() => <List name="Ingredients" items={recipe.ingredients} handleLike={handleLike} isLiked={isLiked} 
+          navigateBackToMyRecipes={navigateBackToMyRecipes} />} 
       </TopTab.Screen>
       <TopTab.Screen name="Directions">
-        {() => <List name="Directions" items={recipe.stepByStepDirections} handleLike={handleLike} isLiked={isLiked} />} 
+        {() => <List name="Directions" items={recipe.stepByStepDirections} handleLike={handleLike} isLiked={isLiked}
+          navigateBackToMyRecipes={navigateBackToMyRecipes} />} 
       </TopTab.Screen>
     </TopTab.Navigator>
   );
