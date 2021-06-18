@@ -8,6 +8,7 @@ import { IRecipe } from '../../types';
 import Description from './components/Description';
 import theme from '../../theme';
 import List from './components/List';
+import useLikeRecipe from '../../hooks/useLikeRecipe';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -20,6 +21,7 @@ const RecipeDetailsScreen = (props: Props) => {
   const { route } = props;
   const { recipe, likedRecipes } = route.params;
   const [isLiked, setIsLiked] = useState(false);
+  const { likeRecipe } = useLikeRecipe();
 
   useEffect(() => {
     setIsLiked(Boolean(likedRecipes && likedRecipes.find(r => r === recipe.id)));
@@ -27,7 +29,7 @@ const RecipeDetailsScreen = (props: Props) => {
 
   const handleLike = () => {
     setIsLiked(!isLiked);
-    console.log("Liked recipe:", recipe.id);
+    void likeRecipe(recipe.id);
   };
 
   return (
