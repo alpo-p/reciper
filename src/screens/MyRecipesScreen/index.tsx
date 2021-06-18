@@ -5,7 +5,7 @@ import ListOfCards from '../../components/ListOfCards';
 import Loading from '../../components/Loading';
 import TopBar from '../../components/TopBar';
 import useFetchLikedRecipes from '../../hooks/useFetchLikedRecipes';
-import MyRecipesTitle from './components/MyRecipesTitle';
+import MyRecipesTitle from './MyRecipesTitle';
 
 interface Props {
   testID?: string

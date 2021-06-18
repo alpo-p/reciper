@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import STitle from '../../../components/STitle';
-import theme from '../../../theme';
+import STitle from '../../components/STitle';
+import theme from '../../theme';
 
 interface Props {
   testID?: string
