@@ -1,19 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View } from 'react-native';
-import ListOfCards from '../../components/ListOfCards';
 import Loading from '../../components/Loading';
-import TopBar from '../../components/TopBar';
 import useFetchLikedRecipes from '../../hooks/useFetchLikedRecipes';
-import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../utils/utils';
-import MyRecipesTitle from './MyRecipesTitle';
+import MyRecipesView from './MyRecipesView';
 
-interface Props {
-  testID?: string
-}
-
-const MyRecipesScreen = (props: Props) => {
-  const { testID  } = props;
+const MyRecipesScreen = () => {
   const navigation = useNavigation();
   const { recipes, loading } = useFetchLikedRecipes();
 
@@ -33,18 +24,13 @@ const MyRecipesScreen = (props: Props) => {
     });
 
   return (
-    <View style={{ marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE + 10 }} testID={testID}>
-      <TopBar showNavigateHome 
-        navigateToAddARecipe={handleNavigateToAddARecipe} 
-        navigateToHome={handleNavigateToHome}
-      />
-      <MyRecipesTitle />
-      <ListOfCards 
-        recipes={parsedRecipes} 
-        handleShowDetails={handleShowDetails}
-        likedRecipes={likedRecipeIds}
-      />
-    </View>
+    <MyRecipesView 
+      navigateToAddARecipe={handleNavigateToAddARecipe} 
+      navigateToHome={handleNavigateToHome}
+      recipes={parsedRecipes} 
+      handleShowDetails={handleShowDetails}
+      likedRecipes={likedRecipeIds}
+    />
   );
 };
 
