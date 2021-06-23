@@ -7,6 +7,7 @@ import { styles } from './styles';
 import MyRecipesButton from './MyRecipesButton';
 import AddARecipeButton from './AddARecipeButton';
 import NavigateHomeButton from './NavigateHomeButton';
+import LogoutButton from './LogoutButton';
 
 interface Props {
   testID?: string
@@ -29,6 +30,7 @@ const TopBar = (props: Props) => {
       </View>
       <View style={styles.emptyContainer}></View>
       <View style={styles.buttonContainer} >
+        <LogoutButton />
         <AddARecipeButton onPress={navigateToAddARecipe} />
         {showMyRecipes && <MyRecipesButton onPress={navigateToMyRecipes} />}
         {showNavigateHome && <NavigateHomeButton onPress={navigateToHome} />}
