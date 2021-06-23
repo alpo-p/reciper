@@ -40,7 +40,13 @@ const CardsContainer = (props: Props) => {
   if (loading || _loading) return <Loading />;
   
   const parsedRecipes = recipes.data.allRecipes;
-  const likedRecipeIds = likedRecipes.data.likedRecipesByCurrentUser.map(recipe => recipe.id);
+  let likedRecipeIds = [''];
+
+  try {
+    likedRecipeIds = likedRecipes.data.likedRecipesByCurrentUser.map(recipe => recipe.id);
+  } catch (e) {
+    console.error(e);
+  }
 
   const handleShowDetails = (id: string) => 
     navigation.navigate('RecipeDetails', {

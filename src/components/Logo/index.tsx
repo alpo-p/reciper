@@ -19,7 +19,8 @@ const styles: Styles = StyleSheet.create({
     fontFamily: 'TangerineBold',
     paddingRight: 10,
     fontSize: theme.fontSizes.huge,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    color: theme.colors.primaryWhite
   }
 });
 

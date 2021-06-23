@@ -24,6 +24,7 @@ const styles: Styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     textAlign: 'center',
     fontSize: theme.fontSizes.bigger,
+    color: theme.colors.primaryWhite,
   },
 });
 
