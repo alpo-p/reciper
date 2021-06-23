@@ -23,12 +23,14 @@ export interface IRecipe {
   pictureUrl: string,
   preparationTimeInMinutes: number,
   numberOfServings: number,
-  shortDescription: string,
+  shortDescription?: string,
   longDescription: string,
   tags: string[],
   ingredients: string[],
   stepByStepDirections: string[]
 }
+
+export type IRecipeForm = Omit<IRecipe, 'id'>;
 
 export interface IRecipes {
   data: {

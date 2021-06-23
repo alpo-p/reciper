@@ -9,6 +9,7 @@ interface Props {
   name: string
   label: string
   secureTextEntry?: boolean
+  multiline?: boolean
 }
 
 const FormikTextInput = ({ name, label, ...props}: Props) => {

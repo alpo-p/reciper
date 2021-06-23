@@ -1,6 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import STitle from '../../components/STitle';
+import { IRecipeForm } from '../../types';
+import { FormikForm } from './FormikForm';
+import { styles } from './styles';
 
 interface Props {
   testID?: string
@@ -8,9 +10,11 @@ interface Props {
 
 const AddARecipeScreen = (props: Props) => {
   const { testID } = props;
+  const handleSubmit = (values: IRecipeForm) => console.log(values);
+
   return (
-    <View testID={testID}>
-      <STitle style={{color: 'black'}}>Here we'll add a new recipe</STitle>
+    <View style={styles.container} testID={testID}>
+      <FormikForm onSubmit={handleSubmit}/>
     </View>
   );
 };
