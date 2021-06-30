@@ -37,7 +37,8 @@
     "react-native-tab-view": "^2.16.0",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
-    "yup": "^0.32.9"
+    "yup": "^0.32.9",
+    "expo-image-picker": "~9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",

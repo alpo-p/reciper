@@ -30,7 +30,15 @@ export interface IRecipe {
   stepByStepDirections: string[]
 }
 
-export type IRecipeForm = Omit<IRecipe, 'id'>;
+export interface IRecipeForm {
+  name: string,
+  preparationTimeInMinutes: string,
+  numberOfServings: string,
+  longDescription: string,
+  tags: string
+  ingredients: string,
+  stepByStepDirections: string
+}
 
 export interface IRecipes {
   data: {

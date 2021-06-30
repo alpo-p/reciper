@@ -7,12 +7,12 @@ import { IRecipeForm } from '../../types';
 const initialValues = {
   name: '' ,
   pictureUrl: '',
-  preparationTimeInMinutes: 0,
-  numberOfServings: 0,
+  preparationTimeInMinutes: '',
+  numberOfServings: '',
   longDescription: '',
-  tags: [],
-  ingredients: [],
-  stepByStepDirections: []
+  tags: '',
+  ingredients: '',
+  stepByStepDirections: ''
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,28 +21,33 @@ const validationSchema: yup.ObjectSchema<any> = yup.object().shape({
     .string()
     .required('Please type in name of the recipe'),
   preparationTimeInMinutes: yup
-    .number()
-    .required(),
+    .string()
+    .required('Please type in the prep time of the recipe'),
   numberOfServings: yup
-    .number()
-    .required(),
+    .string()
+    .required('Please type in number of servings'),
   longDescription: yup
     .string()
     .required('Please type in description of the recipe'),
   tags: yup
-    .array()
-    .required(),
+    .string()
+    .required('Please type in the tags'),
   ingredients: yup
-    .array()
-    .required(),
+    .string()
+    .required('Please type in ingredients'),
   stepByStepDirections: yup
-    .array()
-    .required(),
+    .string()
+    .required('Please type in the instructions'),
 });
 
-export const FormikForm = ({ onSubmit }: { onSubmit: (values: IRecipeForm) => void; }) => (
+interface I {
+  onSubmit: (values: IRecipeForm) => void
+  addPicture: () => void
+}
+
+export const FormikForm = ({ onSubmit, addPicture }: I) => (
   <Formik
     initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-    {({ handleSubmit }) => <FormView onSubmit={handleSubmit} />}
+    {({ handleSubmit }) => <FormView onSubmit={handleSubmit} addPicture={addPicture} />}
   </Formik>
 );

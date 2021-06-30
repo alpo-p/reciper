@@ -10,6 +10,7 @@ interface Props {
   label: string
   secureTextEntry?: boolean
   multiline?: boolean
+  keyboardType?: undefined | 'number-pad'
 }
 
 const FormikTextInput = ({ name, label, ...props}: Props) => {
