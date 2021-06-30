@@ -11,7 +11,6 @@ interface Styles {
 export const styles: Styles = StyleSheet.create({
   container: {
     height: theme.dimensions.height,
-    marginTop: theme.dimensions.statusBar,
   },
   formContainer: {
     alignItems: 'center',

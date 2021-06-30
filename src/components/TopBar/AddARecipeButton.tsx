@@ -2,7 +2,7 @@ import React from 'react';
 import SIcon from '../SIcon';
 
 interface Props {
-  onPress: () => void
+  onPress?: () => void
 }
 
 const AddARecipeButton = ({ onPress }: Props) => (

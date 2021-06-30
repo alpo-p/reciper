@@ -12,8 +12,9 @@ import LogoutButton from './LogoutButton';
 interface Props {
   testID?: string
   navigateToMyRecipes?: () => void
-  navigateToAddARecipe: () => void
+  navigateToAddARecipe?: () => void
   navigateToHome?: () => void
+  hideNavigateToMyRecipes?: boolean
   showMyRecipes?: boolean
   showNavigateHome?: boolean
 }
@@ -21,7 +22,7 @@ interface Props {
 const TopBar = (props: Props) => {
   const { testID, navigateToMyRecipes, 
     navigateToAddARecipe, navigateToHome, 
-    showMyRecipes, showNavigateHome } = props;
+    showMyRecipes, showNavigateHome, hideNavigateToMyRecipes } = props;
 
   return (
     <View style={styles.container} testID={testID}>
@@ -31,7 +32,7 @@ const TopBar = (props: Props) => {
       <View style={styles.emptyContainer}></View>
       <View style={styles.buttonContainer} >
         <LogoutButton />
-        <AddARecipeButton onPress={navigateToAddARecipe} />
+        {!hideNavigateToMyRecipes && <AddARecipeButton onPress={navigateToAddARecipe} />}
         {showMyRecipes && <MyRecipesButton onPress={navigateToMyRecipes} />}
         {showNavigateHome && <NavigateHomeButton onPress={navigateToHome} />}
       </View>
