@@ -3,7 +3,9 @@ import 'dotenv/config';
 export default {
   extra: {
     env: process.env.ENV,
-    backendDevUri: process.env.BACKEND_DEV_URI
+    backendDevUri: process.env.BACKEND_DEV_URI,
+    AWSAccessKeyId: process.env.AWSAccessKeyId,
+    AWSSecretKey: process.env.AWSSecretKey,
   },
   name: "reciper-front",
   slug: "reciper-front",
