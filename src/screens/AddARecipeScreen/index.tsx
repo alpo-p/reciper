@@ -4,15 +4,14 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image, View, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Constants from 'expo-constants';
 
 import TopBar from '../../components/TopBar';
 import { IRecipeForm } from '../../types';
 import { FormikForm } from './FormikForm';
 import { styles } from './styles';
 
-import { RNS3 } from 'react-native-upload-aws-s3';
 import * as ImagePicker from 'expo-image-picker';
+import { uploadPictureToS3 } from '../../utils/utils';
 
 interface Props {
   testID?: string
@@ -29,34 +28,6 @@ const AddARecipeScreen = (props: Props) => {
 
   const [picture, setPicture] = useState(PLACEHOLDER_PICTURE);
 
-  const uploadPictureToS3 = async (uri: string): Promise<void> => {
-    const name = uri.substr(uri.lastIndexOf('/'));
-
-    const file = {
-      uri,
-      name,
-      type: 'image/jpg'
-    };
-
-    const options = {
-      bucket: 'reciper-pictures',
-      region: 'eu-north-1',
-      accessKey: Constants.manifest.extra.AWSAccessKeyId as string,
-      secretKey: Constants.manifest.extra.AWSSecretKey as string,
-    };
-
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      const response = await RNS3.put(file, options);
-      if (response.status === 201) {
-        console.log('Success: ', response.body);
-      } else {
-        console.log("Failure: ", response.body);
-      }
-    } catch(error) {
-      console.log(error);
-    }
-  };
 
   const handleAddPicture = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
