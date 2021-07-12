@@ -2,8 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Constants from 'expo-constants';
 import { RNS3 } from 'react-native-upload-aws-s3';
+import { IS3response } from '../types';
 
-export const uploadPictureToS3 = async (uri: string): Promise<void> => {
+export const uploadPictureToS3 = async (uri: string): Promise<IS3response | undefined> => {
   const name = uri.substr(uri.lastIndexOf('/'));
 
   const file = {
@@ -22,11 +23,7 @@ export const uploadPictureToS3 = async (uri: string): Promise<void> => {
   try {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const response = await RNS3.put(file, options);
-    if (response.status === 201) {
-      console.log('Success: ', response.body);
-    } else {
-      console.log("Failure: ", response.body);
-    }
+    return response.body as IS3response;
   } catch(error) {
     console.log(error);
   }

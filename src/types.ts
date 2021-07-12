@@ -23,7 +23,6 @@ export interface IRecipe {
   pictureUrl: string,
   preparationTimeInMinutes: number,
   numberOfServings: number,
-  shortDescription?: string,
   longDescription: string,
   tags: string[],
   ingredients: string[],
@@ -49,6 +48,15 @@ export interface IRecipes {
 export interface IAllLikedRecipes {
   data: {
     likedRecipesByCurrentUser: IRecipe[]
+  }
+}
+
+export interface IS3response {
+  postResponse: {
+    bucket: string
+    etag: string
+    key: string
+    location: string
   }
 }
 

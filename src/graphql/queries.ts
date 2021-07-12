@@ -17,7 +17,6 @@ const RECIPE_DETAILS = gql`
       pictureUrl
       preparationTimeInMinutes
       numberOfServings
-      shortDescription
       longDescription
       tags
       ingredients

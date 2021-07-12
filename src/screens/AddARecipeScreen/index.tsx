@@ -6,12 +6,13 @@ import { Image, View, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import TopBar from '../../components/TopBar';
-import { IRecipeForm } from '../../types';
+import { IRecipe, IRecipeForm } from '../../types';
 import { FormikForm } from './FormikForm';
 import { styles } from './styles';
 
 import * as ImagePicker from 'expo-image-picker';
 import { uploadPictureToS3 } from '../../utils/utils';
+import useAddNewRecipe from '../../hooks/useAddNewRecipe';
 
 interface Props {
   testID?: string
@@ -26,8 +27,10 @@ const AddARecipeScreen = (props: Props) => {
   const handleNavigateHome = () => navigation.navigate('HomeScreen');
   const handleNavigateMyRecipes = () => navigation.navigate('MyRecipes');
 
-  const [picture, setPicture] = useState(PLACEHOLDER_PICTURE);
+  const { addRecipe } = useAddNewRecipe();
 
+  const [picture, setPicture] = useState(PLACEHOLDER_PICTURE);
+  const [pictureUrl, setPictureUrl] = useState('');
 
   const handleAddPicture = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -39,11 +42,31 @@ const AddARecipeScreen = (props: Props) => {
     });
     // result.uri not existing is some kind of bug, since it definitely does exist
     const uri = result.uri;
-    await uploadPictureToS3(uri);
     setPicture(uri);
+    const response = await uploadPictureToS3(uri);
+    setPictureUrl(response?.postResponse.location || 'NOT_SET');
   };
 
-  const handleSubmit = (values: IRecipeForm) => console.log(values);
+  const handleSubmit = async (values: IRecipeForm) => {
+    const ingredients = values.ingredients.split(',');
+    const stepByStepDirections = values.stepByStepDirections.split(',');
+    const tags = values.tags.split(',');
+    const preparationTimeInMinutes = Number(values.preparationTimeInMinutes);
+    const numberOfServings = Number(values.numberOfServings);
+
+    const recipe: Omit<IRecipe, 'id'> = {
+      ...values,
+      ingredients,
+      stepByStepDirections,
+      tags,
+      preparationTimeInMinutes,
+      numberOfServings,
+      pictureUrl
+    };
+    await addRecipe(recipe);
+    void handleNavigateHome();
+    Alert.alert('Added the recipe!', 'Go to my recipes to see your recipes');
+  };
 
   return (
     <View style={styles.container} testID={testID}>
