@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import FilledButton from '../../components/FilledButton';
-import FormikTextInput from '../../components/FormikTextInput';
-import SText from '../../components/SText';
-import { styles } from './styles';
+import FilledButton from '../../../components/FilledButton';
+import FormikTextInput from '../../../components/FormikTextInput';
+import SText from '../../../components/SText';
+import { styles } from './../styles';
 
 interface I {
   onSubmit: () => void

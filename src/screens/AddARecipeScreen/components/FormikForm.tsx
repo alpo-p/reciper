@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { FormView } from "./FormView";
-import { IRecipeForm } from '../../types';
+import { IRecipeForm } from '../../../types';
 
 const initialValues = {
   name: '' ,
