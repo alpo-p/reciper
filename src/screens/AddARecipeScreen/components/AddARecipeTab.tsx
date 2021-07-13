@@ -46,6 +46,10 @@ const AddARecipeScreen = (props: Props) => {
   };
 
   const handleSubmit = async (values: IRecipeForm) => {
+    if(pictureUrl === '') {
+      Alert.alert('Please upload a picture');
+      return;
+    }
     const ingredients = values.ingredients.split(',');
     const stepByStepDirections = values.stepByStepDirections.split(',');
     const tags = values.tags.split(',');
