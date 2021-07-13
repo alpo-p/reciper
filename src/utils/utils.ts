@@ -5,7 +5,12 @@ import { RNS3 } from 'react-native-upload-aws-s3';
 import { IS3response } from '../types';
 
 export const uploadPictureToS3 = async (uri: string): Promise<IS3response | undefined> => {
-  const name = uri.substr(uri.lastIndexOf('/'));
+  let name: string;
+  try {
+    name = uri.substr(uri.lastIndexOf('/'));
+  } catch {
+    return undefined;
+  }
 
   const file = {
     uri,
@@ -26,6 +31,7 @@ export const uploadPictureToS3 = async (uri: string): Promise<IS3response | unde
     return response.body as IS3response;
   } catch(error) {
     console.log(error);
+    return undefined;
   }
 };
 
