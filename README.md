@@ -66,3 +66,6 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - Run `npm start` on client root directory
 - Open Expo app on your phone and start using the app by scanning the QR code on expo developer tools
 
+## License
+Distributed under the MIT License.
+
