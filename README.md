@@ -14,6 +14,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - See full description, ingredients and directions for a recipe. Also checkmark which of the ingredients you own 
 - Like a recipe and see the recipes you have liked
 - Add a new recipe with a picture and see/delete recipes you have added
+- Over 80% test coverage of components
 
 ## Tech stack
 ### Client
@@ -59,9 +60,9 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
   - `AWSAccessKeyId=addYourOwnHere`
   - `AWSSecretKey=andAlsoHere`
 - Add .env file to server root directory with
-  -  `MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/DB_NAME_HERE?retyWrites=true&w=majority'
-  -  `TEST_MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/TEST_DB_NAME_HERE?retyWrites=true&w=majority'
-  -  `JWT_SECRET='SECRET_KEY_HERE' 
+  -  `MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/DB_NAME_HERE?retyWrites=true&w=majority`
+  -  `TEST_MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/TEST_DB_NAME_HERE?retyWrites=true&w=majority`
+  -  `JWT_SECRET='SECRET_KEY_HERE'`
 - Run `npm run dev` on server root directory
 - Run `npm start` on client root directory
 - Open Expo app on your phone and start using the app by scanning the QR code on expo developer tools
