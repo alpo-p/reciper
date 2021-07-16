@@ -39,8 +39,8 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 
 ## Product Roadmap
 - Pagination to enable infinite scrolling
-- Move from development build to production (as of now, only use through npm start) 
-- Do not shown added recipes by logged in user in the scroll view
+- Move from development build to production
+- Do not show added recipes by logged in user in the scroll view
 - Advanced user management: allow to change info, delete account, add a picture etc.
 - Register using Google/FB
 - Better caching on GraphQL
