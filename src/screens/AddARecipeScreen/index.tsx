@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import TopBar from '../../components/TopBar';
 import AddARecipeTab from './components/AddARecipeTab';
-import AddedRecipesTab from './components/AddedRecipesTab';
+import AddedRecipesTabContainer from './components/AddedRecipesTabContainer';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -26,7 +26,7 @@ const AddARecipeScreen = () => {
           { () => <AddARecipeTab /> }
         </TopTab.Screen>
         <TopTab.Screen name="Recipes I've added">
-          { () => <AddedRecipesTab /> }
+          { () => <AddedRecipesTabContainer /> }
         </TopTab.Screen>
       </TopTab.Navigator>
     </>

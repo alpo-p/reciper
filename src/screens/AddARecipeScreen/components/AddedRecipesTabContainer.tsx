@@ -1,32 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
-import { FlatList, StyleSheet, View } from 'react-native';
-import { TouchableNativeFeedback } from 'react-native-gesture-handler';
 
 import Loading from '../../../components/Loading';
-import RecipeCard from '../../../components/RecipeCard';
-import SIcon from '../../../components/SIcon';
 import SText from '../../../components/SText';
 
 import useDeleteRecipe from '../../../hooks/useDeleteRecipe';
 
 import useGetAddedRecipesByUser from '../../../hooks/useGetAddedRecipesByUser';
-import theme from '../../../theme';
 import { IRecipe } from '../../../types';
-import { BOTTOM_MARGIN_GLITCH_FIX_VALUE } from '../../../utils/utils';
-
-interface ButtonProps {
-  handleDelete: (id: string) => void
-  item: IRecipe
-}
-
-const DeleteButton = ({ handleDelete, item }: ButtonProps)  => (
-  <TouchableNativeFeedback style={styles.buttonContainer} onPress={() => handleDelete(item.id)}>
-    <SIcon name='trash-can' color={theme.colors.error}/>
-    <SText>Delete {item.name}</SText>
-  </TouchableNativeFeedback>
-);
+import { AddedRecipesTabView } from './AddedRecipesTabView';
 
 // Unfortunately this cannot be refactored into its own file
 const useForceUpdate = () => {
@@ -35,7 +18,7 @@ const useForceUpdate = () => {
   return () => setValue(value => value + 1);
 };
 
-const AddedRecipesTab = () => {
+const AddedRecipesTabContainer = () => {
   const { data, loading } = useGetAddedRecipesByUser();
   const { deleteRecipe } = useDeleteRecipe();
   const navigation = useNavigation();
@@ -72,30 +55,7 @@ const AddedRecipesTab = () => {
       likedRecipes: recipes,
     });
 
-  return (
-    <FlatList
-      style={{ marginBottom: BOTTOM_MARGIN_GLITCH_FIX_VALUE }}
-      data={recipes}
-      renderItem={({ item }) => (
-        <View style={{ marginBottom: 20 }}>
-          <DeleteButton handleDelete={handleDelete} item={item}/>
-          <RecipeCard 
-            recipe={item} 
-            hideButtons
-            handleShowDetails={handleShowDetails}
-          />
-        </View>
-      )}
-      keyExtractor={(i) => i.id}
-    />
-  );
+  return <AddedRecipesTabView recipes={recipes} handleDelete={handleDelete} handleShowDetails={handleShowDetails} />;
 };
 
-const styles = StyleSheet.create({
-  buttonContainer: {
-    alignSelf: 'center',
-    flexDirection: 'row',
-  }
-});
-
-export default AddedRecipesTab;
+export default AddedRecipesTabContainer;
