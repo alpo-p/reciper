@@ -32,12 +32,12 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - GraphQL (Apollo)
 - Mongoose
 - Bcrypt
-### Misc
+### Others
 - MongoDB
 - AWS S3 for pictures
-- Jest
+- Jest and React Testing Library
 
-## Product Roadmap
+## Roadmap
 - Pagination to enable infinite scrolling
 - Move from development build to production
 - Do not show added recipes by logged in user in the scroll view
