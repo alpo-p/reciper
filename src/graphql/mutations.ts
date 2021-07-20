@@ -49,3 +49,9 @@ export const ADD_RECIPE = gql`
     ) {id}
   }
 `;
+
+export const DELETE_RECIPE = gql`
+  mutation deleteRecipe($recipeID: ID!) {
+    deleteRecipe(id:$recipeID)
+  }
+`;
