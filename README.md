@@ -14,7 +14,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - See full description, ingredients and directions for a recipe. Also checkmark which of the ingredients you own 
 - Like a recipe and see the recipes you have liked
 - Add a new recipe with a picture and see/delete recipes you have added
-- Over 80% test coverage of components
+- 78.72% test coverage of lines
 
 ## Tech stack
 ### Client
