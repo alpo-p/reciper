@@ -13,8 +13,8 @@ type Props = {
 };
 
 const OutlinedButton = ({ style, labelStyle, icon, onPress, ...props }: Props) => {
-  const buttonStyles = [style, styles.button];
-  const labelStyles= [labelStyle, styles.label];
+  const buttonStyles = [styles.button, style];
+  const labelStyles= [styles.label, labelStyle];
 
   return (
     <View>
