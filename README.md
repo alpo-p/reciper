@@ -4,7 +4,12 @@
 
 A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes".
 
-[See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
+- [See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
+OR
+- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-2881ca082ebe45c7abf5d30aac40875b-signed.apk)
+  - Demo account username: "Alpo" and password: "12345"
+  - *note: you need to enable installing from other sources than Google Play*
+  - *note2: currently only for Android, since I don't have an Apple device to test it works*
 
 ## Features
 *updated 14.6.2021*
