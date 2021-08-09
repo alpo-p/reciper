@@ -8,8 +8,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 OR
 - [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-2881ca082ebe45c7abf5d30aac40875b-signed.apk)
   - Demo account username: "Alpo" and password: "12345"
-  - *note: you need to enable installing from other sources than Google Play*
-  - *note2: currently only for Android, since I don't have an Apple device to test it*
+  - *note: the backend is hosted on Heroku which auto-kills the server if unused and therefore might take a while to connect when first opening the app*
 
 ## Features
 *updated 14.6.2021*
