@@ -9,7 +9,7 @@ OR
 - [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-2881ca082ebe45c7abf5d30aac40875b-signed.apk)
   - Demo account username: "Alpo" and password: "12345"
   - *note: you need to enable installing from other sources than Google Play*
-  - *note2: currently only for Android, since I don't have an Apple device to test it works*
+  - *note2: currently only for Android, since I don't have an Apple device to test it*
 
 ## Features
 *updated 14.6.2021*
