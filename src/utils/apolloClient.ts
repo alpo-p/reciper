@@ -9,6 +9,7 @@ const uri = env === 'development'
   ? Constants.manifest.extra.backendDevUri as string
   : Constants.manifest.extra.backendProductionUri as string;
 
+
 const httpLink = createHttpLink({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   uri,
