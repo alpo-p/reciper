@@ -1,11 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import Constants from "expo-constants";
 import AuthStorage from "./authStorage";
 
+const env = Constants.manifest.extra.env as string;
+const uri = env === 'development' 
+  ? Constants.manifest.extra.backendDevUri as string
+  : Constants.manifest.extra.backendProductionUri as string;
+
 const httpLink = createHttpLink({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  uri: Constants.manifest.extra.backendDevUri as string,
+  uri,
   fetchOptions: {
     mode: 'no-cors',
   },

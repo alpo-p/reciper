@@ -4,6 +4,7 @@ export default {
   extra: {
     env: process.env.ENV,
     backendDevUri: process.env.BACKEND_DEV_URI,
+    backendProductionUri: process.env.BACKEND_PRODUCTION_URI,
     AWSAccessKeyId: process.env.AWSAccessKeyId,
     AWSSecretKey: process.env.AWSSecretKey,
   },
