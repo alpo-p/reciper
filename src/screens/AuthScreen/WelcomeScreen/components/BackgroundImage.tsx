@@ -26,13 +26,11 @@ export const BackgroundImage = (props: { children: React.ReactNode; }) => (
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'rgba(0,0,0,.7)',
-    height: theme.dimensions.height,
+    height: theme.dimensions.height + theme.dimensions.statusBar,
     flex: 1,
     justifyContent: 'center',
   },
   children: {
-    height: theme.dimensions.height,
-    width: theme.dimensions.width,
     position: 'absolute',
     top: 0,
     left: 0,
