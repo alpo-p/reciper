@@ -5,8 +5,6 @@ import Constants from "expo-constants";
 import AuthStorage from "./authStorage";
 
 let uri;
-console.log(Constants?.manifest);
-
 try {
   const env = Constants.manifest.extra.env as string;
   uri = env === 'development' 
