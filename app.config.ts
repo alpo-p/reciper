@@ -14,9 +14,9 @@ export default {
   orientation: "portrait",
   icon: "./assets/icon.png",
   splash: {
-    image: "./assets/splash.png",
+    image: "./assets/icon.png",
     resizeMode: "contain",
-    backgroundColor: "#ffffff"
+    backgroundColor: "#2a9d8f"
   },
   updates: {
     fallbackToCacheTimeout: 0
