@@ -1,13 +1,15 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
-import Loading from './components/Loading';
-import useAuthorizedUser from './hooks/useAuthorizedUser';
+
 import AddARecipeScreen from './screens/AddARecipeScreen';
 import WelcomeScreen from './screens/AuthScreen/WelcomeScreen';
 import HomeScreen from './screens/HomeScreen';
 import MyRecipesScreen from './screens/MyRecipesScreen';
 import RecipeDetailsScreen from './screens/RecipeDetailsScreen';
+
+import useAuthorizedUser from './hooks/useAuthorizedUser';
+import Loading from './components/Loading';
 
 const Navigator = () => {
   const Stack = createStackNavigator();
