@@ -4,6 +4,8 @@ import Constants from 'expo-constants';
 import { RNS3 } from 'react-native-upload-aws-s3';
 import { IS3response } from '../types';
 
+import keys from '../../keys';
+
 export const uploadPictureToS3 = async (uri: string): Promise<IS3response | undefined> => {
   let name: string;
   try {
@@ -27,8 +29,8 @@ export const uploadPictureToS3 = async (uri: string): Promise<IS3response | unde
   } catch(e) {
     console.log("Caught error in uploading pic to s3:", e);
     // Can't access env variables in production build so this is a bad workaround for that
-    accessKey = "AKIAJJUYCSQSYBOWJHNA"; // THIS IS NOT A GOOD WAY TO GO IN THE FUTURE
-    secretKey = "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"; // NEITHER IS THIS
+    accessKey = keys.AccessKeyId;
+    secretKey = keys.SecretKey;
   }
   const options = {
     bucket: 'reciper-pictures',

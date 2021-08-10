@@ -17,3 +17,5 @@ web-build/
 coverage
 .env
 Reciper-logo.png
+
+keys.ts
