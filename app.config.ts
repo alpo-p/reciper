@@ -8,9 +8,9 @@ export default {
     AWSAccessKeyId: process.env.AWSAccessKeyId,
     AWSSecretKey: process.env.AWSSecretKey,
   },
-  name: "reciper-front",
-  slug: "reciper-front",
-  version: "1.0.0",
+  name: "Reciper",
+  slug: "reciper",
+  version: "0.5.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
   splash: {
@@ -35,5 +35,19 @@ export default {
   },
   web: {
     favicon: "./assets/favicon.png"
+  },
+  expo: {
+    name: "Reciper",
+    icon: "./assets/icon.png",
+    version: "0.5.1",
+    slug: "reciper",
+    ios: {
+      bundleIdentifier: "com.alpo.reciper",
+      buildNumber: "0.5.1"
+    },
+    android: {
+      package: "com.alpo.reciper",
+      versionCode: 2
+    }
   }
 };

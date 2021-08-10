@@ -4,10 +4,16 @@ import { setContext } from '@apollo/client/link/context';
 import Constants from "expo-constants";
 import AuthStorage from "./authStorage";
 
-const env = Constants.manifest.extra.env as string;
-const uri = env === 'development' 
-  ? Constants.manifest.extra.backendDevUri as string
-  : Constants.manifest.extra.backendProductionUri as string;
+let uri;
+try {
+  const env = Constants.manifest.extra.env as string;
+  uri = env === 'development' 
+    ? Constants.manifest.extra.backendDevUri as string
+    : Constants.manifest.extra.backendProductionUri as string;
+} catch (e) {
+  console.log("caught error in apolloClients.ts:", e);
+  uri = "http://gentle-reaches-48944.herokuapp.com/graphql"; // wouldn't want to put this here, but have to for now so .apk works...
+}
 
 
 const httpLink = createHttpLink({

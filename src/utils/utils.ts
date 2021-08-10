@@ -18,11 +18,23 @@ export const uploadPictureToS3 = async (uri: string): Promise<IS3response | unde
     type: 'image/jpg'
   };
 
+  let accessKey: string;
+  let secretKey: string;
+
+  try {
+    accessKey = Constants.manifest.extra.AWSAccessKeyId as string;
+    secretKey = Constants.manifest.extra.AWSSecretKey as string;
+  } catch(e) {
+    console.log("Caught error in uploading pic to s3:", e);
+    // Can't access env variables in production build so this is a bad workaround for that
+    accessKey = "AKIAJJUYCSQSYBOWJHNA"; // THIS IS NOT A GOOD WAY TO GO IN THE FUTURE
+    secretKey = "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"; // NEITHER IS THIS
+  }
   const options = {
     bucket: 'reciper-pictures',
     region: 'eu-north-1',
-    accessKey: Constants.manifest.extra.AWSAccessKeyId as string,
-    secretKey: Constants.manifest.extra.AWSSecretKey as string,
+    accessKey,
+    secretKey 
   };
 
   try {
