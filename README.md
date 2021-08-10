@@ -4,7 +4,11 @@
 
 A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes".
 
-[See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
+- [See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
+OR
+- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-2881ca082ebe45c7abf5d30aac40875b-signed.apk)
+  - Demo account username: "Alpo" and password: "12345"
+  - *note: the backend is hosted on Heroku which auto-kills the server if unused and therefore might take a while to connect when first opening the app*
 
 ## Features
 *updated 14.6.2021*
@@ -32,6 +36,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - GraphQL (Apollo)
 - Mongoose
 - Bcrypt
+- Heroku
 ### Others
 - MongoDB
 - AWS S3 for pictures
@@ -39,7 +44,6 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 
 ## Roadmap
 - Pagination to enable infinite scrolling
-- Move from development build to production
 - Do not show added recipes by logged in user in the scroll view
 - Advanced user management: allow to change info, delete account, add a picture etc.
 - Register using Google/FB
@@ -52,7 +56,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 - Some of the tests have broken down and have had problems fixing them; they have been commented out
 - No automated e2e tests and the reason is silly: the old laptop I'm using cannot run android emulator without lagging
 
-## Installation / usage
+## Installation / usage (if not using the .apk)
 - Clone both [client](https://github.com/alpo-p/reciper) and [server](https://github.com/alpo-p/reciper_backend) repositories
 - `npm install` to install all dependencies
 - Add .env file to client root with
