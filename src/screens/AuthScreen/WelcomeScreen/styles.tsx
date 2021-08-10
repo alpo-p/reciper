@@ -12,10 +12,11 @@ interface Styles {
 
 export const styles: Styles = StyleSheet.create({
   container: {
-    height: theme.dimensions.height,
+    height: theme.dimensions.height + theme.dimensions.statusBar,
   },
   logo : {
-    marginTop: 220
+    // Dirty hack to make buttons scale correctly depending on if gesture navigation is enabled or not
+    marginTop: theme.dimensions.height/4
   },
   subheading: {
     marginTop: 270,
