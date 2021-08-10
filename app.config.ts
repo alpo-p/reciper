@@ -10,7 +10,7 @@ export default {
   },
   name: "Reciper",
   slug: "reciper",
-  version: "0.5.0",
+  version: "0.5.2",
   orientation: "portrait",
   icon: "./assets/icon.png",
   splash: {
@@ -39,15 +39,15 @@ export default {
   expo: {
     name: "Reciper",
     icon: "./assets/icon.png",
-    version: "0.5.1",
+    version: "0.5.2",
     slug: "reciper",
     ios: {
       bundleIdentifier: "com.alpo.reciper",
-      buildNumber: "0.5.1"
+      buildNumber: "0.5.2"
     },
     android: {
       package: "com.alpo.reciper",
-      versionCode: 2
+      versionCode: 3
     }
   }
 };
