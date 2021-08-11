@@ -51,6 +51,7 @@ OR
 - Fix known issues (below)
 
 ## Known issues
+- Scaling problem on some devices
 - Liking a recipe in scroll view doesn't update the heart icon in the full details view or vice versa
 - Logging out *sometimes* throws a non-fatal error
 - Some of the tests have broken down and have had problems fixing them; they have been commented out
