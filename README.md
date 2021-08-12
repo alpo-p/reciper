@@ -58,10 +58,15 @@ OR
 ## Installation / usage (if not using the .apk)
 - Clone both [client](https://github.com/alpo-p/reciper) and [server](https://github.com/alpo-p/reciper_backend) repositories
 - `npm install` to install all dependencies
-- Add .env file to client root with
-  - `BACKEND_DEV_URI=http://192.168.0.14:4242/graphql` (add your own localhost uri) 
-  - `AWSAccessKeyId=addYourOwnHere`
-  - `AWSSecretKey=andAlsoHere`
+- Add keys.ts file to client root with AWS Access Key Id and Secret Key:
+```
+const keys = {
+  AccessKeyId: "YOUR_ACCESS_KEY_HERE",
+  SecretKey: "YOUR_SECRET_KEY_HERE"	
+};
+export default keys;
+```
+
 - Add .env file to server root directory with
   -  `MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/DB_NAME_HERE?retyWrites=true&w=majority`
   -  `TEST_MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/TEST_DB_NAME_HERE?retyWrites=true&w=majority`
