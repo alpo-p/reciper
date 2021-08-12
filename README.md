@@ -8,6 +8,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 OR
 - [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-882a1d6f430f4c6c9e34d8f1cd2ff654-signed.apk)
   - Demo account username: "Alpo" and password: "12345"
+  - Note: since Heroku autokills the server if unused for a while, the app might have troubles connecting to it. If it happens, please give it a minute and try logging in again!
   
 ## Features
 *updated 14.6.2021*
