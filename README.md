@@ -6,7 +6,7 @@ A hobby project for browsing, liking and sharing food recipes. A Fullstack React
 
 - [See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
 OR
-- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-882a1d6f430f4c6c9e34d8f1cd2ff654-signed.apk)
+- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-66b5168bae794dea9bcd04a82d57337f-signed.apk)
   - Demo account username: "Alpo" and password: "12345"
   - Note: since Heroku autokills the server if unused for a while, the client might have troubles connecting to it. If it happens, please give the server a minute to get back up and try logging in again
   
