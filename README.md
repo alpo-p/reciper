@@ -2,14 +2,13 @@
   <img src="Reciper-logo.png">
 </p>
 
-A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes".
+A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes". [Backend repository here](https://github.com/alpo-p/reciper_backend).
 
 - [See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
 OR
-- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-2881ca082ebe45c7abf5d30aac40875b-signed.apk)
+- [Download the .apk from here](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alpo-p/reciper-882a1d6f430f4c6c9e34d8f1cd2ff654-signed.apk)
   - Demo account username: "Alpo" and password: "12345"
-  - *note: the backend is hosted on Heroku which auto-kills the server if unused and therefore might take a while to connect when first opening the app*
-
+  
 ## Features
 *updated 14.6.2021*
 
@@ -51,6 +50,7 @@ OR
 - Fix known issues (below)
 
 ## Known issues
+- Scaling problem on some devices
 - Liking a recipe in scroll view doesn't update the heart icon in the full details view or vice versa
 - Logging out *sometimes* throws a non-fatal error
 - Some of the tests have broken down and have had problems fixing them; they have been commented out
