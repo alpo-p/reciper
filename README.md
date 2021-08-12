@@ -11,8 +11,6 @@ OR
   - Note: since Heroku autokills the server if unused for a while, the client might have troubles connecting to it. If it happens, please give the server a minute to get back up and try logging in again
   
 ## Features
-*updated 14.6.2021*
-
 - Fully working auth: register + login
 - Browse recipes added by other users
 - See full description, ingredients and directions for a recipe. Also checkmark which of the ingredients you own 
