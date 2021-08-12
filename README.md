@@ -66,7 +66,8 @@ const keys = {
 };
 export default keys;
 ```
-
+- Also edit the server uri in utils/apolloClient.ts
+  - *Using .env file is currently commented out since it caused troubles in production build*
 - Add .env file to server root directory with
   -  `MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/DB_NAME_HERE?retyWrites=true&w=majority`
   -  `TEST_MONGODB_URI='mongodb+srv://USERNAME:PASSWORD@cluster0.raufj.mongodb.net/TEST_DB_NAME_HERE?retyWrites=true&w=majority`
