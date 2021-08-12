@@ -2,7 +2,7 @@
   <img src="Reciper-logo.png">
 </p>
 
-A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes".
+A hobby project for browsing, liking and sharing food recipes. A Fullstack React Native app built with Typescript. "Instagram for recipes". [Backend repository here](https://github.com/alpo-p/reciper_backend).
 
 - [See a demo video of the app](https://photos.app.goo.gl/v9hqFFD199kJyVUu9)
 OR
