@@ -2,15 +2,15 @@ import 'dotenv/config';
 
 export default {
   extra: {
-    env: process.env.ENV,
-    backendDevUri: process.env.BACKEND_DEV_URI,
-    backendProductionUri: process.env.BACKEND_PRODUCTION_URI,
-    AWSAccessKeyId: process.env.AWSAccessKeyId,
-    AWSSecretKey: process.env.AWSSecretKey,
+    env: process?.env?.ENV,
+    backendDevUri: process?.env?.BACKEND_DEV_URI,
+    backendProductionUri: process?.env?.BACKEND_PRODUCTION_URI,
+    AWSAccessKeyId: process?.env?.AWSAccessKeyId,
+    AWSSecretKey: process?.env?.AWSSecretKey,
   },
   name: "Reciper",
   slug: "reciper",
-  version: "0.5.2",
+  version: "0.5.3",
   orientation: "portrait",
   icon: "./assets/icon.png",
   splash: {
@@ -39,7 +39,7 @@ export default {
   expo: {
     name: "Reciper",
     icon: "./assets/icon.png",
-    version: "0.5.2",
+    version: "0.5.3",
     slug: "reciper",
     ios: {
       bundleIdentifier: "com.alpo.reciper",
@@ -47,7 +47,7 @@ export default {
     },
     android: {
       package: "com.alpo.reciper",
-      versionCode: 3
+      versionCode: 4
     }
   }
 };

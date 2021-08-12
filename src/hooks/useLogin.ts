@@ -32,7 +32,7 @@ const useLogin = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
 
     const { data } = await login({
       variables: { username, password }

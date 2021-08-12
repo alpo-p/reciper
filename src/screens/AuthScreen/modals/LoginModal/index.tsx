@@ -43,7 +43,11 @@ const LoginModal = ({ visible, toggleVisible }: Omit<Props, 'handleSubmit'>) => 
       await signIn({ username, password });
       success = true;
     } catch (e) {
-      Alert.alert('Incorrect username or password');
+      if (e === 'Wrong username or password') {
+        Alert.alert('Incorrect username or password');
+      } else {
+        Alert.alert('Troubles connecting to the server', 'Server seems to be sleeping: please wait a minute or two and try again');
+      }
       success = false;
     }
     if (success) {
